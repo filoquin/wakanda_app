@@ -1,0 +1,8 @@
+.logo{
+  width: 32px;
+}
+.text-logo{
+  font-family: 'AronGrotesque-Black';
+  font-size: 2.5em;
+  display: inline-block;
+}

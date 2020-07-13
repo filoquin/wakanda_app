@@ -1,0 +1,18 @@
+.register{
+  margin-top: 5px;
+}
+.logo{
+  width: 150px;
+}
+
+.input-custom{
+  border: none;
+  background-color: #ffa7e2;
+  color: #ffffff;
+}
+
+
+.btn-login{
+  background-color: #fe2399;
+  color:#fff;
+}

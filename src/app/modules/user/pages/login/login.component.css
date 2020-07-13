@@ -1,0 +1,24 @@
+.login{
+  margin-top: 150px;
+}
+.logo{
+  width: 150px;
+}
+
+.input-custom{
+  border: none;
+  background-color: #ffa7e2;
+  color: #ffffff;
+}
+
+.btn-login{
+  background-color: #fe2399;
+  color:#fff;
+}
+.text-logo{
+  font-family: 'AronGrotesque-Black';
+  font-size: 3em;
+  display: inline-block;
+  padding: 10px;
+}
+

@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/fonts/AronGrotesque-Black/style.css";
+@import "assets/fonts/AronGrotesque-Bold/style.css";
+@import "assets/fonts/AronGrotesque-Light/style.css";
+@import "assets/fonts/AronGrotesque-Regular/style.css";
+
+@import "assets/fonts/GlacialIndifference-Bold/style.css";
+@import "assets/fonts/GlacialIndifference-Italic/style.css";
+@import "assets/fonts/GlacialIndifference-Regular/style.css";
+
+@import "assets/fonts/ElliotSans-Bold/style.css";
+@import "assets/fonts/ElliotSans-BoldItalic/style.css";
+@import "assets/fonts/ElliotSans-Light/style.css";
+@import "assets/fonts/ElliotSans-LightItalic/style.css";
+@import "assets/fonts/ElliotSans-Medium/style.css";
+@import "assets/fonts/ElliotSans-MediumItalic/style.css";
+@import "assets/fonts/ElliotSans-Regular/style.css";
+@import "assets/fonts/ElliotSans-RegularItalic/style.css";
+
+
+
+
+
+
+
+body{
+  background-color: #ff3cae !important;
+}
+.vh-90{
+  height: 90vh !important;
+}
+.vh-5{
+  height: 5vh !important;
+}
+
