@@ -10,5 +10,6 @@ services:
       dockerfile: Dockerfile
     volumes:
       - '.:/app'
+      - '/app/node_modules'
     ports:
       - "4200:4200"
