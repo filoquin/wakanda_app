@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './pages/login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
-import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 export const routes = [
-  { path: '', component: LoginComponent},
-  { path: 'register', component: RegisterComponent}
+  { path: '', component: RegisterComponent},
+  { path: 'register', PathMatch: 'full', component: RegisterComponent},
+  { path: 'profile',   PathMatch: 'full', component: ProfileComponent}
 ];
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent],
+  declarations: [ RegisterComponent, ProfileComponent],
   imports: [
     CommonModule,
     FormsModule,

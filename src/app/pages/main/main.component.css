@@ -1,5 +1,6 @@
 .container-main{
   background-color: #ffa7e2;
+  position: relative;
 }
 .card-main{
   background-color: #ffffff;
@@ -15,6 +16,6 @@
 }
 
 .card-main-logo{
-  max-height: 80px;
+  max-height: 60px;
 }
 
