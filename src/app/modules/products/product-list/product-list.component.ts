@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ProductSelectComponent} from '../product-select/product-select.component';
+import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-product-list',
@@ -8,12 +10,20 @@ import { Component, OnInit } from '@angular/core';
 export class ProductListComponent implements OnInit {
   products: any = ['Textiles', 'Difusores' , 'Aceites', 'Antibacteriales', 'Auto', 'Mascotas']
 
-  constructor() { }
+  constructor(private bsModalRef: BsModalRef, private bsModalService: BsModalService) { }
 
   ngOnInit(): void {
   }
 
-  showSubproducts() {
-    console.log('Show products');
+  // @product.id
+  showProducts(id) {
+    const initialState = {
+      id
+    };
+    this.bsModalRef = this.bsModalService.show(ProductSelectComponent, { initialState });
+    this.bsModalRef.content.event.subscribe(result => {
+      if (result.status === 'OK') {
+      }
+    });
   }
 }
