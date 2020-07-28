@@ -8,3 +8,15 @@
   font-weight: bolder;
   color: #000000;
 }
+.summary{
+  background-color: #ffdff1;
+  border-radius: 15px;
+  bottom: 90px;
+  position: absolute;
+  color: #ac93a6;
+
+}
+.product-select{
+  background-color: #f762ad !important;
+  color: #ffffff;
+}

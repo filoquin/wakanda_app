@@ -2,3 +2,19 @@
   <h5 class="product-title">PRODUCTOS</h5>
 <a *ngFor="let product of products" class="btn btn-block btn-product ml-1 mr-1" (click)="showProducts()">{{product}}</a>
 </div>
+<div class=" summary p-4 w-100">
+  <div class="row">
+    <h6>Resumen del pedido</h6>
+  </div>
+  <div class="row">
+    <span>Productos comprados: {{total.quantity}}</span>
+  </div>
+  <div class="row">
+    <span>Total: {{total.amount}}</span>
+
+  </div>
+  <div class="row">
+    <span>Ganancia: {{total.gain}}</span>
+  </div>
+
+</div>

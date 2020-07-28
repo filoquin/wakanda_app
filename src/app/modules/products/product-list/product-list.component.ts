@@ -9,6 +9,7 @@ import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 })
 export class ProductListComponent implements OnInit {
   products: any = ['Textiles', 'Difusores' , 'Aceites', 'Antibacteriales', 'Auto', 'Mascotas']
+  public total: any  = { quantity: 0, amount: 0, gain: 0};
 
   constructor(private bsModalRef: BsModalRef, private bsModalService: BsModalService) { }
 
@@ -20,7 +21,7 @@ export class ProductListComponent implements OnInit {
     const initialState = {
       id
     };
-    this.bsModalRef = this.bsModalService.show(ProductSelectComponent, { initialState });
+    this.bsModalRef = this.bsModalService.show(ProductSelectComponent, { initialState , class: 'product-select' });
     this.bsModalRef.content.event.subscribe(result => {
       if (result.status === 'OK') {
       }
