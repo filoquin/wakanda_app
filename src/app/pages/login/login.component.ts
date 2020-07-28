@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {AuthService} from '../../modules/user/shared/auth.service';
 import {Router} from '@angular/router';
+import {UserService} from '../../_services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   authForm: FormGroup;
   isSubmitted = false;
 
-  constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder) {
+  constructor(private userService: UserService, private router: Router, private formBuilder: FormBuilder) {
   }
 
   ngOnInit(): void {
@@ -32,7 +32,14 @@ export class LoginComponent implements OnInit {
     if (this.authForm.invalid) {
       return;
     }
-    // this.authService.signIn(this.authForm.value);
-    this.router.navigateByUrl('/main');
+    const username = this.authForm.controls.email.value;
+    const password = this.authForm.controls.password.value;
+    this.userService.login(username, password).subscribe((data: any) => {
+      if (data.result) {
+        this.router.navigateByUrl('/');
+      }else{
+        alert('Ocurrio un error');
+      }
+    });
   }
 }

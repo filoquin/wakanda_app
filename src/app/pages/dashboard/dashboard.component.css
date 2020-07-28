@@ -1,0 +1,93 @@
+
+.item-main-img{
+  background-color: #ffffff;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.item-main-text{
+
+  font-size: 0.8em;
+  font-family: GlacialIndifference-Bold;
+  font-weight: bolder;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.item-main-logo{
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.order{
+  background-image: url('../../../assets/img/main/order.png');
+
+}
+
+.location{
+  background-image: url('../../../assets/img/main/location.png');
+
+}
+
+
+.catalog{
+  background-image: url('../../../assets/img/main/catalog.png');
+
+}
+
+.bestsellers{
+  background-image: url('../../../assets/img/main/bestsellers.png');
+
+}
+
+.prices{
+  background-image: url('../../../assets/img/main/prices.png');
+
+}
+
+.faq{
+  background-image: url('../../../assets/img/main/faq.png');
+
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  .item-main-img{
+
+    width: 100px;
+    height: 100px;
+  }
+
+  .item-main-text{
+    font-size: 0.8em;
+    font-family: GlacialIndifference-Regular;
+  }
+
+  .item-main-logo{
+    border-radius: 50%;
+    background-color: #ffffff;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+  .item-main-img{
+
+    width: 225px;
+    height: 225px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+
+

@@ -1,0 +1,8 @@
+.container-main{
+  background:rgb(246 215 233);
+  /*background: linear-gradient(180deg, rgba(249,189,229,1) 95%, rgba(249,87,173,1) 100%);*/
+  background-image: url('../../../assets/img/background-1080.jpg');
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: bottom;
+}

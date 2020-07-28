@@ -8,9 +8,10 @@ import { environment } from '../environments/environment';
 import { PagesComponent } from './pages/pages/pages.component';
 import {HeaderComponent} from './pages/header/header.component';
 import {FooterComponent} from './pages/footer/footer.component';
-import {MainComponent} from './pages/main/main.component';
 import {LoginComponent} from './pages/login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {RegisterComponent} from './pages/register/register.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -18,13 +19,14 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     PagesComponent,
     HeaderComponent,
     FooterComponent,
-    MainComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
