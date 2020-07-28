@@ -13,4 +13,7 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  showSubproducts() {
+    console.log('Show products');
+  }
 }
