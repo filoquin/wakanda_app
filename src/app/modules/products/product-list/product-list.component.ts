@@ -10,14 +10,16 @@ import {SaleOrderService} from '../../../_services/sale-order.service';
 })
 export class ProductListComponent implements OnInit {
 
-  products: any = ['Textiles', 'Difusores' , 'Aceites', 'Antibacteriales', 'Auto', 'Mascotas']
+  products: any = []
   public total: any  = { quantity: 0, amount: 0, gain: 0};
 
   constructor(private SaleOrderService: SaleOrderService, private bsModalRef: BsModalRef, private bsModalService: BsModalService) { }
 
   ngOnInit(): void {
     this.SaleOrderService.getCategories()
-      .then((res)=>{console.log(res)})
+      .then((res)=>{console.log(res)
+        this.products = res['records']
+      })
       .catch((err: any) => {});
 
   }
