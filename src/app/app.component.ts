@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Router} from '@angular/router';
 import {UserService} from './_services/user.service';
 import {OdooRPCService} from './_services/odoorcp.service';
+import {environment} from "../environments/environment";
 
 @Component({
   selector: 'app-root',
@@ -13,11 +14,10 @@ export class AppComponent {
   constructor(
     private router: Router,
     private userService: UserService,
-    public odooRPC:OdooRPCService 
+    public odooRPC: OdooRPCService
   ) {
         this.odooRPC.init({
-            //odoo_server: environment.odoo_server,
-            odoo_server: 'http://localhost:8013',
+            odoo_server: environment.apiUrl,
             http_auth: "username:password" // optional
         });
 

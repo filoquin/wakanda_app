@@ -17,8 +17,8 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     this.SaleOrderService.getCategories()
-      .then((res)=>{console.log(res)
-        this.products = res['records']
+      .then((res) => {console.log(res)
+                      this.products = res.records;
       })
       .catch((err: any) => {});
 

@@ -16,10 +16,10 @@ export class SaleOrderService {
 	}
 
 	getProducts(categoryId) {
-		return this.odooRPC.searchRead(
-			"product.template",
-			[["wkn_publish", "=", true], [["categ_id", "chid_of", categoryId]]],
-			["default_code", "name", "display_name","qty_available","list_price"]
-		);
+    return this.odooRPC.searchRead(
+      "product.template",
+      [["wak_published", "=", true], ["categ_id", "child_of", categoryId]],
+      ["default_code", "name", "display_name","qty_available","list_price"]
+    );
 	}
 }
