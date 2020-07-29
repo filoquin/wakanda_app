@@ -65,14 +65,19 @@
             <div class="col-4">
               <select class="form-control input-custom" id="day"   formControlName="day">
                 <option value=""> Dia</option>
+                                    <option value="28">28</option>
+
               </select>
               <div *ngIf="isSubmitted && formControls.day.errors" class="help-block">
                 <div *ngIf="formControls.day.errors.required">Debe seleccionar un día</div>
+
               </div>
             </div>
             <div class="col-4">
               <select class="form-control input-custom" id="month"   formControlName="month">
                 <option value=""> Mes</option>
+                                <option value="02">Feb</option>
+
               </select>
               <div *ngIf="isSubmitted && formControls.day.errors" class="help-block">
                 <div *ngIf="formControls.month.errors.required">Debe seleccionar un mes</div>
@@ -81,6 +86,7 @@
             <div class="col-4">
               <select class="form-control input-custom" id="year"   formControlName="year">
                 <option value=""> Año</option>
+                <option value="1975">1975</option>
               </select>
               <div *ngIf="isSubmitted && formControls.year.errors" class="help-block">
                 <div *ngIf="formControls.year.errors.required">Debe seleccionar un año</div>

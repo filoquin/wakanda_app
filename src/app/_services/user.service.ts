@@ -49,6 +49,31 @@ export class UserService {
     this.router.navigate(['/login']);
   }
 
+  register(user,password,completename,email,phone,address,day,month,year){
+    return this.http.post(`${this.apiUrl}/wkn/json_register`, {params: {
+          user: user,
+          password: password,
+          completename: completename,
+          email: email,
+          phone: phone,
+          address: address,
+          day: day,
+          month: month,
+          year:year
+
+        }})
+      .pipe(map((data: any) => {
+        console.log(data);
+        if ( data.result) {
+          const user = data.result.user;
+          // store user details and jwt token in local storage to keep user logged in between page refreshes
+          localStorage.setItem('user', JSON.stringify(user));
+          this.userSubject.next(user);
+        }
+        return data;
+      }));
+
+  }
 
 
 }
