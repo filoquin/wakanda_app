@@ -19,7 +19,62 @@ export class SaleOrderService {
     return this.odooRPC.searchRead(
       "product.template",
       [["wak_published", "=", true], ["categ_id", "child_of", categoryId]],
-      ["default_code", "name", "display_name","qty_available","list_price"]
+      ["default_code", "name", "display_name","qty_available","list_price","final_price"]
     );
 	}
+
+	createSaleOrder(lines){
+		return this.odooRPC
+			.call(
+				"sale.order",
+				"wkn_create",
+				[lines],
+				{}
+			)
+			.then((order) => {
+				console.log(order)
+			});
+
+	}
+
+	getPromos(orderId){
+		return this.odooRPC
+			.call(
+				"sale.order",
+				"get_promos",
+				[[orderId]],
+				{}
+			)
+			.then((promos) => {
+				console.log(promos)
+			});
+	}
+
+	getCarriers(orderId){
+		return this.odooRPC
+			.call(
+				"sale.order",
+				"read_delivery_methods",
+				[[orderId]],
+				{}
+			)
+			.then((carriers) => {
+				console.log(carriers)
+			});
+	}
+	deliveryConfirm(orderId,carrier_id,price){
+		return this.odooRPC
+			.call(
+				"sale.order",
+				"delivery_confirm",
+				[[orderId],[carrier_id,price]],
+				{}
+			)
+			.then((carriers) => {
+				console.log(carriers)
+			});
+	}
+
+
+ 
 }
