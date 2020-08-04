@@ -11,8 +11,10 @@
 .summary{
   background-color: #ffdff1;
   border-radius: 15px;
-  bottom: 90px;
+  bottom: 0px;
+  margin-bottom: 60px;
   position: absolute;
+
   color: #ac93a6;
 
 }
