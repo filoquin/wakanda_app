@@ -13,9 +13,10 @@
   border-radius: 15px;
   bottom: 0px;
   margin-bottom: 60px;
+   color: #ac93a6;
   position: absolute;
-
-  color: #ac93a6;
+  left: 50%;
+  transform: translate(-50%, 0);
 
 }
 .product-select{

@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductSelectComponent } from './product-select/product-select.component';
-import {BsModalRef, BsModalService, ModalModule} from 'ngx-bootstrap/modal';
+import {BsModalService, ModalModule} from 'ngx-bootstrap/modal';
 import { ProductItemComponent } from './product-item/product-item.component';
 
 export const routes = [
@@ -18,7 +18,7 @@ export const routes = [
     ModalModule.forRoot()
 
   ],
-  providers: [BsModalRef, BsModalService],
+  providers: [BsModalService],
   entryComponents: [ProductSelectComponent]
 })
 export class ProductsModule { }

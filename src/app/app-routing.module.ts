@@ -23,8 +23,13 @@ const routes: Routes = [
         path: 'user',
         loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule)
       },
-      {path: 'products', loadChildren: () => import('./modules/products/products.module').then(m => m.ProductsModule)}
-      ]
+      {path: 'products', loadChildren: () => import('./modules/products/products.module').then(m => m.ProductsModule)},
+      {path: 'prices', loadChildren: () => import('./modules/prices/prices.module').then(m => m.PricesModule)},
+      {path: 'faq', loadChildren: () => import('./modules/faq/faq.module').then(m => m.FaqModule)},
+      {path: 'orders', loadChildren: () => import('./modules/orders/orders.module').then(m => m.OrdersModule)}
+
+
+    ]
   }
 ];
 

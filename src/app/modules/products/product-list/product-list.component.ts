@@ -10,13 +10,14 @@ import {SaleOrderService} from '../../../_services/sale-order.service';
 })
 export class ProductListComponent implements OnInit {
 
+  bsModalRef: BsModalRef;
   products: any = []
   public total: any  = { quantity: 0, amount: 0, gain: 0};
 
-  constructor(private SaleOrderService: SaleOrderService, private bsModalRef: BsModalRef, private bsModalService: BsModalService) { }
+  constructor(private saleOrderService: SaleOrderService,  private bsModalService: BsModalService) { }
 
   ngOnInit(): void {
-    this.SaleOrderService.getCategories()
+    this.saleOrderService.getCategories()
       .then((res) => {console.log(res)
                       this.products = res.records;
       })

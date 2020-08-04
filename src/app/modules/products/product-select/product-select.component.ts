@@ -1,7 +1,8 @@
 import {Component, EventEmitter, OnInit} from '@angular/core';
+
+import {Product} from '../shared/product';
+import {SaleOrderService} from '../../../_services/sale-order.service';
 import {BsModalRef} from 'ngx-bootstrap/modal';
-import {Product} from "../shared/product";
-import {SaleOrderService} from "../../../_services/sale-order.service";
 
 @Component({
   selector: 'app-product-select',
@@ -28,8 +29,7 @@ export class ProductSelectComponent implements OnInit {
   //
   // ];
 
-  // tslint:disable-next-line:no-shadowed-variable
-  constructor( private bsModalRef: BsModalRef, private saleOrderService: SaleOrderService) {
+  constructor(  private bsModalRef: BsModalRef, private saleOrderService: SaleOrderService) {
 
 
   }
