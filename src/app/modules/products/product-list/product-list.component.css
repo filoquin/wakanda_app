@@ -11,15 +11,12 @@
 .summary{
   background-color: #ffdff1;
   border-radius: 15px;
-  bottom: 0px;
+  bottom: 1px;
   margin-bottom: 60px;
    color: #ac93a6;
-  position: absolute;
+  position: fixed;
   left: 50%;
   transform: translate(-50%, 0);
+  font-size: 0.8em;
 
-}
-.product-select{
-  background-color: #f762ad !important;
-  color: #ffffff;
 }

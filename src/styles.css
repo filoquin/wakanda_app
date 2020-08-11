@@ -47,3 +47,7 @@ body{
   color:#fff !important;
   text-decoration: none;
 }
+.product-select .modal-content{
+  background-color: #f762ad !important;
+  color: #ffffff;
+}

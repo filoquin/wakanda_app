@@ -10,9 +10,10 @@ import {BsModalRef} from 'ngx-bootstrap/modal';
   styleUrls: ['./product-select.component.css']
 })
 export class ProductSelectComponent implements OnInit {
-  private id: any;
+  private product: any;
+  public productName: string = null;
   event: EventEmitter<any> = new EventEmitter();
-  products: Product[] = null ;
+  products: Product[] = null;
   // [{id: 1, name: 'Wakanda', price: 200},
   //   {id: 2, name: 'Blue berry', price: 250},
   //   {id: 3, name: 'Tilo y bambu', price: 250},
@@ -29,19 +30,35 @@ export class ProductSelectComponent implements OnInit {
   //
   // ];
 
-  constructor(  private bsModalRef: BsModalRef, private saleOrderService: SaleOrderService) {
+  constructor(private bsModalRef: BsModalRef, private saleOrderService: SaleOrderService) {
 
 
   }
 
   ngOnInit(): void {
-    console.log(this.id);
-    this.saleOrderService.getProducts(this.id)
+    this.productName = this.product.name;
+    this.saleOrderService.getProducts(this.product.id)
       .then((res) => {
         console.log(res);
         this.products = res.records;
       })
-      .catch((err: any) => {});
+      .catch((err: any) => {
+      });
   }
 
+  accept() {
+    let productsSelected = [];
+    this.products.forEach(product => {
+      if (product.qty_select) {
+        productsSelected.push(product);
+      }
+    });
+    this.event.emit({status: 'OK', productsSelected});
+    this.bsModalRef.hide();
+
+  }
+
+  close() {
+    this.bsModalRef.hide();
+  }
 }

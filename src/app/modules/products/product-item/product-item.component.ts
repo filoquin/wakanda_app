@@ -13,4 +13,21 @@ export class ProductItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  removeProductQty(product: any) {
+
+    if ( product.qty_select > 0 ){
+      product.qty_select -= 1;
+    }else{
+      alert('No puede realizar esta operacion');
+    }
+
+  }
+
+  addProductQty(product: any) {
+    if ( !product.qty_select){
+      product.qty_select = 1;
+    }else {
+      product.qty_select += 1;
+    }
+  }
 }

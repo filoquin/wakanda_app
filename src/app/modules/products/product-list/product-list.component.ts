@@ -26,13 +26,19 @@ export class ProductListComponent implements OnInit {
   }
 
   // @product.id
-  showProducts(id) {
+  showProducts(product) {
     const initialState = {
-      id
+      product
     };
     this.bsModalRef = this.bsModalService.show(ProductSelectComponent, { initialState , class: 'product-select' });
     this.bsModalRef.content.event.subscribe(result => {
       if (result.status === 'OK') {
+        const productsSelected = result.productsSelected;
+        productsSelected.forEach( item => {
+          this.total.amount += item.qty_select * item.final_price;
+          this.total.quantity += item.qty_select;
+
+        });
       }
     });
   }

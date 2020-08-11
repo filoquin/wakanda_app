@@ -18,7 +18,10 @@
   height: 60px;
 }
 .logo-footer{
-  max-height: 32px;
+  max-height: 23px;
+}
+.text-footer{
+  font-size: 0.8em;
 }
 
 .link-unstyled, .link-unstyled:visited, .link-unstyled:hover, .link-unstyled:active, .link-unstyled:focus, .link-unstyled:active:hover {

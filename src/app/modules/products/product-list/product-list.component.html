@@ -1,40 +1,40 @@
-<div class="container pt-5 text-center">
+<div class="container pt-1 text-center">
   <div class="row">
     <div class="col-12">
-  <h5 class="product-title">PRODUCTOS</h5>
+      <h5 class="product-title">PRODUCTOS</h5>
     </div>
   </div>
   <div class="row overflow-auto vh-60">
-  <div class=" col-12 ">
-<a *ngFor="let product of products" class="btn btn-block btn-product ml-1 mr-1" (click)="showProducts(product.id)">{{product['name']}}</a>
-  <a *ngFor="let product of products" class="btn btn-block btn-product ml-1 mr-1" (click)="showProducts(product.id)">{{product['name']}}</a>
+    <div class=" col-12 ">
+      <a *ngFor="let product of products" class="btn btn-block btn-product ml-1 mr-1"
+         (click)="showProducts(product)">{{product['name']}}</a>
 
-  </div>
-</div>
-<div class="row vh-20">
-<div class=" summary mt-4 p-4 w-100">
-  <div class="row">
-    <div class="col-12">
-    <h6>Resumen del pedido</h6>
     </div>
   </div>
-  <div class="row">
-    <div class="col-12">
-    <span>Productos comprados: {{total.quantity}}</span>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-    <span>Total: {{total.amount}}</span>
-    </div>
+  <div class="row vh-20">
+    <div class=" summary mt-4 pt-1 pb-1 pl-4 pr-4 w-100 mx-auto">
+      <div class="row">
+        <div class="col-12 text-left">
+          <h6 class="mb-0">Resumen del pedido</h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-left">
+          <span class="mb-0">Productos comprados: {{total.quantity}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-left">
+          <span class="mb-0">Total: {{total.amount | currency}}</span>
+        </div>
 
-  </div>
-  <div class="row">
-    <div class="col-12">
-    <span>Ganancia: {{total.gain}}</span>
+      </div>
+      <div class="row">
+        <div class="col-12 text-left">
+          <span class="mb-0"> Ganancia: {{total.gain}}</span>
+        </div>
+      </div>
+
     </div>
   </div>
-
-</div>
-</div>
 </div>

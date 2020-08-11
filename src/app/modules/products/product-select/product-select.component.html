@@ -1,3 +1,16 @@
-<div *ngFor="let product of products" class="container p-2">
+<div class="row p-2">
+  <div class="col-12 text-center">
+     {{productName}}
+  </div>
+</div>
+<div *ngFor="let product of products" class="">
   <app-product-item [product]="product"></app-product-item>
+</div>
+<div class="row p-2">
+  <div class="col-6 text-center">
+    <a (click)="close()" class="btn btn-dark">Cerrar</a>
+  </div>
+  <div class="col-6 text-center">
+    <a (click)="accept()" class="btn btn-primary">Aceptar</a>
+  </div>
 </div>
