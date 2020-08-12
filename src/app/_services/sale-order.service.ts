@@ -19,7 +19,7 @@ export class SaleOrderService {
     return this.odooRPC.searchRead(
       "product.template",
       [["wak_published", "=", true], ["categ_id", "child_of", categoryId]],
-      ["default_code", "name", "display_name","qty_available","list_price","final_price","price"]
+      ["default_code", "name", "display_name","qty_available","list_price","final_price","user_price"]
     );
 	}
 
@@ -32,7 +32,7 @@ export class SaleOrderService {
 				{}
 			)
 			.then((order) => {
-				console.log(order)
+				return order
 			});
 
 	}

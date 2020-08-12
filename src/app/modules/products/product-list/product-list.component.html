@@ -6,8 +6,8 @@
   </div>
   <div class="row overflow-auto vh-60">
     <div class=" col-12 ">
-      <a *ngFor="let product of products" class="btn btn-block btn-product ml-1 mr-1"
-         (click)="showProducts(product)">{{product['name']}}</a>
+      <a *ngFor="let category of categories" class="btn btn-block btn-product ml-1 mr-1"
+         (click)="showProducts(category)">{{category.name}}</a>
 
     </div>
   </div>
@@ -15,7 +15,7 @@
     <div class=" summary mt-4 pt-1 pb-1 pl-4 pr-4 w-100 mx-auto">
       <div class="row">
         <div class="col-12 text-left">
-          <h6 class="mb-0">Resumen del pedido</h6>
+          <h6 class="mb-0"><u>Resumen del pedido</u></h6>
         </div>
       </div>
       <div class="row">
@@ -30,8 +30,11 @@
 
       </div>
       <div class="row">
-        <div class="col-12 text-left">
-          <span class="mb-0"> Ganancia: {{total.gain}}</span>
+        <div class="col-8 text-left">
+          <span class="mb-0"> Ganancia: {{total.gain | currency}}</span>
+        </div>
+        <div class="col-4 text-right">
+          <a class="btn btn-sm btn-wkn text-uppercase" (click)="next()">siguiente</a>
         </div>
       </div>
 

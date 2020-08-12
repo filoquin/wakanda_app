@@ -2,7 +2,7 @@
   <div class="col-6  text-center my-auto">{{product.name}}</div>
   <div class="col-3 m-0 p-0 text-center  my-auto"> <strong>{{product.final_price|currency}}</strong></div>
   <div class="col-1 m-0 p-0  text-center  my-auto"><a class=""><img src="assets/img/minus.png" class="img-fluid" (click)="removeProductQty(product)"></a></div>
-  <div class="col-1 m-0 p-0 text-center  my-auto"><strong>{{product.qty_select}}</strong></div>
+  <div class="col-1 m-0 p-0 text-center  my-auto"><strong>{{product.qty_select?product.qty_select:0}}</strong></div>
   <div class="col-1 m-0 p-0  text-center  my-auto"><a class=""><img src="assets/img/plus.png" class="img-fluid" (click)="addProductQty(product)"></a></div>
 </div>
 
