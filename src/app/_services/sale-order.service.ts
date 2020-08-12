@@ -64,19 +64,24 @@ export class SaleOrderService {
 		return this.odooRPC
 			.call("sale.order", "read_delivery_methods", [[orderId]], {})
 			.then((carriers) => {
-				console.log(carriers);
+				return carriers;
 			});
 	}
 	deliveryConfirm(orderId, carrier_id, price) {
 		return this.odooRPC
 			.call(
 				"sale.order",
-				"delivery_confirm",
-				[[orderId], [carrier_id, price]],
+				"wkn_delivery_confirm",
+				[[orderId], carrier_id, price],
 				{}
-			)
-			.then((carriers) => {
-				console.log(carriers);
+			);
+			
+	}
+	confirm(orderId) {
+		return this.odooRPC
+			.call("sale.order", "action_confirm", [[orderId]], {})
+			.then((state) => {
+				return state;
 			});
 	}
 }

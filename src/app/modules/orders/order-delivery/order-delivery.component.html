@@ -1,7 +1,43 @@
-<div class="container h-100">
-  <div class="row h-100 justify-content-center align-items-center">
-    <div class="col-12 text-center">
-      <h6>Envio de pedidos en desarrollo....</h6>
+<div class="container mt-2">
+  <div class="row">
+    <div cass="col-12">
+      <h6 class="mb-0"><u>Envio</u></h6>
     </div>
   </div>
+
+  <div class="" *ngIf="carriers">
+    <div class="row">
+      <div class="col-6 text-center">
+        Envio
+      </div>
+      <div class="col-2 text-center">
+        Precio
+      </div>
+      <div class="col-4 text-center">
+        
+      </div>
+    </div>
+    <div class="" >
+    <div class="row" *ngFor="let carrier of carriers">
+      <div class="col-6">
+        -{{carrier.display_name}}
+      </div>
+      <div class="col-2 text-center">
+        {{carrier.amount}}
+      </div>
+      <div class="col-4 text-center">
+      	
+      	  <div class="col-1 m-0 p-0  text-center  my-auto"><a class=""><img src="assets/img/plus.png" class="img-fluid" (click)="selectCarrier(carrier)"></a></div>
+
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+
+  </div>
+</div>
+<div class="row order-actions mx-auto w-100">
 </div>
