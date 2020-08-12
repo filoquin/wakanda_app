@@ -1,0 +1,17 @@
+.faq{
+  background-color: #f762ad;
+  font-family: 'AronGrotesque-Black';
+  font-size: 1.25em;
+  border-radius: 5px;
+}
+.header-item-faq{
+  background-color: #f762ad;
+  font-family: 'AronGrotesque-Black';
+  font-size: 0.8em;
+}
+.rotate-img{
+  transform: rotate(90deg);
+}
+.reverse-rotate-img{
+  transform: rotate(0deg);
+}

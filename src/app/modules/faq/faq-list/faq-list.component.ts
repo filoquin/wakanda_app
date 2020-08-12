@@ -22,4 +22,16 @@ export class FaqListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  clickToggle(event) {
+    console.log('clickeando');
+    if (! event.target.classList.contains('rotate-img')) {
+      event.target.classList.add('rotate-img');
+      event.target.classList.remove('reverse-rotate-img');
+
+    }else{
+      event.target.classList.add('reverse-rotate-img');
+      event.target.classList.remove('rotate-img');
+
+    }
+  }
 }
