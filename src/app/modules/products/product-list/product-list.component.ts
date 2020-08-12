@@ -17,7 +17,9 @@ export class ProductListComponent implements OnInit {
   private productsSelected: any = [];
 
   constructor(private saleOrderService: SaleOrderService, private bsModalService: BsModalService, private router: Router) {
-    if(localStorage.getItem('tmpOrder')){
+    localStorage.removeItem('tmpOrder')
+    if (localStorage.getItem('tmpOrder') ) {
+
       this.productsSelected = JSON.parse(localStorage.getItem('tmpOrder'));
       this.updateTotal();
     }
@@ -39,7 +41,7 @@ export class ProductListComponent implements OnInit {
     let oldProductsSelected = null;
     this.productsSelected.forEach(tps => {
       if (tps.category.id === category.id) {
-        oldProductsSelected =  tps.productsSelected ;
+        oldProductsSelected = tps.productsSelected;
       }
     });
     const initialState = {
@@ -47,6 +49,7 @@ export class ProductListComponent implements OnInit {
     };
     this.bsModalRef = this.bsModalService.show(ProductSelectComponent, {initialState, class: 'product-select'});
     this.bsModalRef.content.event.subscribe(result => {
+
       if (result.status === 'OK') {
 
 
@@ -60,21 +63,23 @@ export class ProductListComponent implements OnInit {
         });
         // Si no hay productos para la categoria seleccionada los agrego
         if (notfound) {
-          const tmpCategorySelected = {category: null, productsSelected: null};
-          tmpCategorySelected.category = category;
-          tmpCategorySelected.productsSelected = result.productsSelected;
-          this.productsSelected.push(tmpCategorySelected);
+          if (result.productsSelected.length > 0) {
+            const tmpCategorySelected = {category: null, productsSelected: null};
+            tmpCategorySelected.category = category;
+            tmpCategorySelected.productsSelected = result.productsSelected;
+            this.productsSelected.push(tmpCategorySelected);
+          }
         }
 
 
-       this.updateTotal();
+        this.updateTotal();
       }
     });
   }
 
   next() {
     console.log(this.productsSelected.length)
-    if ( this.productsSelected.length > 0) {
+    if (this.productsSelected.length > 0) {
       localStorage.setItem('tmpOrder', JSON.stringify(this.productsSelected));
       this.router.navigate(['/orders/summary']);
     } else {
