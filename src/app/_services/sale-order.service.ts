@@ -16,65 +16,67 @@ export class SaleOrderService {
 	}
 
 	getProducts(categoryId) {
-    return this.odooRPC.searchRead(
-      "product.template",
-      [["wak_published", "=", true], ["categ_id", "child_of", categoryId]],
-      ["default_code", "name", "display_name","qty_available","list_price","final_price","user_price"]
-    );
+		return this.odooRPC.searchRead(
+			"product.template",
+			[
+				["wak_published", "=", true],
+				["categ_id", "child_of", categoryId],
+			],
+			[
+				"default_code",
+				"name",
+				"display_name",
+				"qty_available",
+				"list_price",
+				"final_price",
+				"user_price",
+			]
+		);
 	}
 
-	createSaleOrder(lines){
+	createSaleOrder(lines) {
 		return this.odooRPC
-			.call(
-				"sale.order",
-				"wkn_create",
-				[lines],
-				{}
-			)
+			.call("sale.order", "wkn_create", [lines], {})
 			.then((order) => {
-				return order
+				return order;
 			});
-
 	}
 
-	getPromos(orderId){
+	getPromos(orderId) {
 		return this.odooRPC
-			.call(
-				"sale.order",
-				"get_promos",
-				[[orderId]],
-				{}
-			)
+			.call("sale.order", "read_promos", [[orderId]], {})
 			.then((promos) => {
-				console.log(promos)
+				return promos;
 			});
 	}
 
-	getCarriers(orderId){
+	selectPromo(promoId) {
 		return this.odooRPC
-			.call(
-				"sale.order",
-				"read_delivery_methods",
-				[[orderId]],
-				{}
-			)
-			.then((carriers) => {
-				console.log(carriers)
+			.call("sale.order.promo", "add_promo_read_promos", [[promoId]], {})
+			.then((promos) => {
+				return promos;
 			});
 	}
-	deliveryConfirm(orderId,carrier_id,price){
+
+	
+
+	getCarriers(orderId) {
+		return this.odooRPC
+			.call("sale.order", "read_delivery_methods", [[orderId]], {})
+			.then((carriers) => {
+				console.log(carriers);
+			});
+	}
+	deliveryConfirm(orderId, carrier_id, price) {
 		return this.odooRPC
 			.call(
 				"sale.order",
 				"delivery_confirm",
-				[[orderId],[carrier_id,price]],
+				[[orderId], [carrier_id, price]],
 				{}
 			)
 			.then((carriers) => {
-				console.log(carriers)
+				console.log(carriers);
 			});
 	}
-
-
-
 }
