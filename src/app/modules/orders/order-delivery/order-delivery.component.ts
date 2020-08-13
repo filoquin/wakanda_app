@@ -32,15 +32,11 @@ export class OrderDeliveryComponent implements OnInit {
       });
   }
   selectCarrier(carrier) {
-    console.log(this.orderId, carrier.id, carrier.amount);
     this.saleOrderService
       .deliveryConfirm(this.orderId, carrier.id, carrier.amount)
       .then((res) => {
-        console.log(res);
-        this.saleOrderService.confirm(this.orderId).then((status) => {
-          this.router.navigate(["/orders/" ]);
-        });
-      })
+        this.router.navigate(["/orders/"]);
+        })
       .catch((err: any) => {
         console.log("errors" + err);
       });

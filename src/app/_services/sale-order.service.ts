@@ -77,11 +77,4 @@ export class SaleOrderService {
 			);
 			
 	}
-	confirm(orderId) {
-		return this.odooRPC
-			.call("sale.order", "action_confirm", [[orderId]], {})
-			.then((state) => {
-				return state;
-			});
-	}
 }
