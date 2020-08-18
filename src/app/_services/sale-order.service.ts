@@ -11,7 +11,7 @@ export class SaleOrderService {
 		return this.odooRPC.searchRead(
 			"product.category",
 			[["wkn_publish", "=", true]],
-			["name", "display_name"]
+			["name", "display_name", "wkn_categ_image"]
 		);
 	}
 
@@ -58,8 +58,6 @@ export class SaleOrderService {
 			});
 	}
 
-	
-
 	getCarriers(orderId) {
 		return this.odooRPC
 			.call("sale.order", "read_delivery_methods", [[orderId]], {})
@@ -68,13 +66,11 @@ export class SaleOrderService {
 			});
 	}
 	deliveryConfirm(orderId, carrier_id, price) {
-		return this.odooRPC
-			.call(
-				"sale.order",
-				"wkn_delivery_confirm",
-				[[orderId], carrier_id, price],
-				{}
-			);
-			
+		return this.odooRPC.call(
+			"sale.order",
+			"wkn_delivery_confirm",
+			[[orderId], carrier_id, price],
+			{}
+		);
 	}
 }
