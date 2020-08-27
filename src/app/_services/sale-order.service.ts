@@ -58,8 +58,6 @@ export class SaleOrderService {
 			});
 	}
 
-
-
 	getCarriers(orderId) {
 		return this.odooRPC
 			.call("sale.order", "read_delivery_methods", [[orderId]], {})
@@ -68,20 +66,11 @@ export class SaleOrderService {
 			});
 	}
 	deliveryConfirm(orderId, carrier_id, price) {
-		return this.odooRPC
-			.call(
-				"sale.order",
-				"wkn_delivery_confirm",
-				[[orderId], carrier_id, price],
-				{}
-			);
-
-	}
-	confirm(orderId) {
-		return this.odooRPC
-			.call("sale.order", "action_confirm", [[orderId]], {})
-			.then((state) => {
-				return state;
-			});
+		return this.odooRPC.call(
+			"sale.order",
+			"wkn_delivery_confirm",
+			[[orderId], carrier_id, price],
+			{}
+		);
 	}
 }
