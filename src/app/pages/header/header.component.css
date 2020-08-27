@@ -1,6 +1,8 @@
-
+.header{
+  height: 60px;
+}
 .logo{
-  width:  6vh;
+  width:  2.5em;
   vertical-align: center;
 }
 .text-logo{
@@ -19,13 +21,7 @@
 }
 
 @media (min-width: 992px) {
-  .vh-10{
-    height: auto !important;
-  }
-  .logo{
-    width:  4vh;
-    vertical-align: center;
-  }
+
 }
 
 

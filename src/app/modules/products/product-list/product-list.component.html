@@ -1,18 +1,25 @@
 <div class="container pt-1 text-center">
   <div class="row">
-    <div class="col-12">
-      <h5 class="product-title">PRODUCTOS</h5>
+    <div class="col-6 mx-auto">
+      <h5 class="product-title m-2  text-uppercase text-white">Categorias</h5>
     </div>
   </div>
-  <div class="row overflow-auto vh-60">
-    <div class=" col-12 ">
-      <a *ngFor="let category of categories" class="btn btn-block btn-product ml-1 mr-1"
-         (click)="showProducts(category)">{{category.name}}</a>
+  <div class="row overflow-auto vh-70">
+    <div  *ngFor="let category of categories"  class=" col-4 my-auto">
+      <a
+         (click)="showProducts(category)">
+        <div class="col-12 mx-auto">
+          <img src="data:image/png;base64,{{category.wkn_categ_image}}" class="img-circle" />
+        </div>
+        <div class="col-12 text-category">
+        {{category.name}}
+        </div>
+      </a>
 
     </div>
   </div>
-  <div class="row vh-20">
-    <div class=" summary mt-4 pt-1 pb-1 pl-4 pr-4 w-100 mx-auto">
+  <div class="row ">
+    <div class=" col-12 summary mt-4 pt-1 pb-1 pl-4 pr-4 w-100 mx-auto">
       <div class="row">
         <div class="col-12 text-left">
           <h6 class="mb-0"><u>Resumen del pedido</u></h6>
@@ -30,10 +37,10 @@
 
       </div>
       <div class="row">
-        <div class="col-8 text-left">
+        <div class="col-6 text-left">
           <span class="mb-0"> Ganancia: {{total.gain | currency}}</span>
         </div>
-        <div class="col-4 text-right">
+        <div class="col-6 text-right">
           <a class="btn btn-sm btn-wkn text-uppercase" (click)="next()">siguiente</a>
         </div>
       </div>

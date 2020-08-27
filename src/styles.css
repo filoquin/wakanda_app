@@ -24,7 +24,7 @@
 
 
 body{
-  background-color: #ff3cae !important;
+  background-color: #ff5dbc !important;
 }
 .vh-90{
   height: 90vh !important;
@@ -34,6 +34,9 @@ body{
 }
 .vh-80{
   height: 80vh !important;
+}
+.vh-70{
+  height: 70vh !important;
 }
 .vh-60{
   height: 60vh !important;
@@ -46,7 +49,7 @@ body{
 }
 
 .btn-wkn{
-  background-color: #fe2399 !important;
+  background-color: #ff5dbc !important; /* #fe2399 !important;*/
   color:#fff !important;
   text-decoration: none;
 }

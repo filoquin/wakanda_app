@@ -11,7 +11,7 @@ export class SaleOrderService {
 		return this.odooRPC.searchRead(
 			"product.category",
 			[["wkn_publish", "=", true]],
-			["name", "display_name"]
+			["name", "display_name", "wkn_categ_image"]
 		);
 	}
 
@@ -58,7 +58,7 @@ export class SaleOrderService {
 			});
 	}
 
-	
+
 
 	getCarriers(orderId) {
 		return this.odooRPC
@@ -75,7 +75,7 @@ export class SaleOrderService {
 				[[orderId], carrier_id, price],
 				{}
 			);
-			
+
 	}
 	confirm(orderId) {
 		return this.odooRPC

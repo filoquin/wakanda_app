@@ -1,22 +1,39 @@
 .btn-product{
-  background-color: #ff3cae;
+  background-color: #ff5dbc ;/*#ff3cae;*/
   color: #ffffff;
 }
 
 .product-title{
-  font-family: GlacialIndifference-Bold;
-  font-weight: bolder;
-  color: #000000;
+  background-color: #ff5dbc ;/*#f762ad;*/
+  font-family: 'AronGrotesque-Regular';
+  font-size: 1.25em;
+  border-radius: 5px;
+
 }
 .summary{
-  background-color: #ffdff1;
+  background-color: #ffbce4;
   border-radius: 15px;
   bottom: 1px;
   margin-bottom: 60px;
-   color: #ac93a6;
+   color: #ffffff;
   position: fixed;
-  left: 50%;
-  transform: translate(-50%, 0);
+  /*left: 50%;*/
+  /*transform: translate(-50%, 0);*/
   font-size: 0.8em;
 
+}
+
+.text-category{
+  color: #ff5dbc;
+}
+
+.container{
+  background-color: #ffd3f2;
+}
+
+.img-circle{
+  background-color: #ffffff;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
 }
