@@ -1,0 +1,11 @@
+{
+    "\/api/proxy": {
+        "target": "http://157.245.250.143:8013",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+             "^\/api/proxy": "/"
+        }
+    }
+}
+
