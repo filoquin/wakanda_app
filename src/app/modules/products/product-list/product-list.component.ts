@@ -32,6 +32,7 @@ export class ProductListComponent implements OnInit {
         this.categories = res.records;
       })
       .catch((err: any) => {
+        console.log(err);
       });
 
   }
