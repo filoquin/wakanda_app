@@ -1,3 +1,7 @@
+.container-main{
+  background-color: #ffd3f2 !important;
+}
+
 .btn-product{
   background-color: #ff5dbc ;/*#ff3cae;*/
   color: #ffffff;
@@ -16,7 +20,7 @@
   bottom: 1px;
   margin-bottom: 60px;
    color: #ffffff;
-  position: fixed;
+  position: relative;
   /*left: 50%;*/
   /*transform: translate(-50%, 0);*/
   font-size: 0.8em;
@@ -27,13 +31,38 @@
   color: #ff5dbc;
 }
 
-.container{
-  background-color: #ffd3f2;
-}
+/*.container{*/
+/*  background-color: #ffd3f2;*/
+/*}*/
 
 .img-circle{
   background-color: #ffffff;
   border-radius: 50%;
   width: 75px;
   height: 75px;
+}
+
+/* Small devices (landscape phones, 378px and up) */
+@media (max-width: 428px) {
+
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
 }

@@ -26,12 +26,14 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.saleOrderService.getCategories()
       .then((res) => {
         console.log(res);
         this.categories = res.records;
       })
       .catch((err: any) => {
+        console.log(err);
       });
 
   }

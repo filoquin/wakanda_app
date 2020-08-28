@@ -35,12 +35,14 @@ body{
 .vh-80{
   height: 80vh !important;
 }
-.vh-7
-0{
+.vh-70{
   height: 70vh !important;
 }
 .vh-60{
   height: 60vh !important;
+}
+.vh-50{
+  height: 50vh !important;
 }
 .vh-20{
   height: 20vh !important;
