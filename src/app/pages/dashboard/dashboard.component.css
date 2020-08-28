@@ -51,6 +51,12 @@
   background-image: url('../../../assets/img/main/faq.png');
 
 }
+
+.item-main-img{
+
+  width: 100px;
+  height: 100px;
+}
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 576px) {
   .item-main-img{
