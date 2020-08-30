@@ -4,9 +4,10 @@
 .logo{
   width:  2.5em;
   vertical-align: center;
+  display: inline-block;
 }
 .text-logo{
-  font-family: 'AronGrotesque-Black';
+  font-family: 'AronGrotesque-Regular';
   font-size: 2.25em;
   display: inline-block;
 }

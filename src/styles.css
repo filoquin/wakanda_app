@@ -57,6 +57,12 @@ body{
   text-decoration: none;
 }
 .product-select .modal-content{
-  background-color: #f762ad !important;
-  color: #ffffff;
+  background-color: #ffd3f2 !important;
+  color: #ff5dbc;
+}
+
+
+.fill
+{
+  min-height: 90vh;
 }
