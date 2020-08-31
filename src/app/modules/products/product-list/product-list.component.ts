@@ -3,6 +3,7 @@ import {ProductSelectComponent} from '../product-select/product-select.component
 import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 import {SaleOrderService} from '../../../_services/sale-order.service';
 import {Route, Router} from "@angular/router";
+import {PlatformLocation} from "@angular/common";
 
 @Component({
   selector: 'app-product-list',
@@ -16,24 +17,22 @@ export class ProductListComponent implements OnInit {
   public total: any = {quantity: 0, amount: 0, gain: 0};
   private productsSelected: any = [];
 
-  constructor(private saleOrderService: SaleOrderService, private bsModalService: BsModalService, private router: Router) {
-    localStorage.removeItem('tmpOrder')
+  constructor(private saleOrderService: SaleOrderService, private bsModalService: BsModalService, private router: Router , private platformLocation: PlatformLocation ) {
     if (localStorage.getItem('tmpOrder') ) {
-
+      console.log('loading data...');
       this.productsSelected = JSON.parse(localStorage.getItem('tmpOrder'));
       this.updateTotal();
     }
+    platformLocation.onPopState(() => this.bsModalService.hide(1));
   }
 
   ngOnInit(): void {
 
     this.saleOrderService.getCategories()
       .then((res) => {
-        console.log(res);
         this.categories = res.records;
       })
       .catch((err: any) => {
-        console.log(err);
       });
 
   }
@@ -80,7 +79,6 @@ export class ProductListComponent implements OnInit {
   }
 
   next() {
-    console.log(this.productsSelected.length)
     if (this.productsSelected.length > 0) {
       localStorage.setItem('tmpOrder', JSON.stringify(this.productsSelected));
       this.router.navigate(['/orders/summary']);
