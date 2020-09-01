@@ -35,7 +35,7 @@ export class OrderDeliveryComponent implements OnInit {
     this.saleOrderService
       .deliveryConfirm(this.orderId, carrier.id, carrier.amount)
       .then((res) => {
-        this.router.navigate(["/orders/"]);
+        this.router.navigate(["/orders/confirm/"+ this.orderId]);
         })
       .catch((err: any) => {
         console.log("errors" + err);

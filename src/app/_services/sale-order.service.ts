@@ -36,34 +36,22 @@ export class SaleOrderService {
 
 	createSaleOrder(lines) {
 		return this.odooRPC
-			.call("sale.order", "wkn_create", [lines], {})
-			.then((order) => {
-				return order;
-			});
+			.call("sale.order", "wkn_create", [lines], {});
 	}
 
 	getPromos(orderId) {
 		return this.odooRPC
-			.call("sale.order", "read_promos", [[orderId]], {})
-			.then((promos) => {
-				return promos;
-			});
+			.call("sale.order", "read_promos", [[orderId]], {});
 	}
 
 	selectPromo(promoId) {
 		return this.odooRPC
-			.call("sale.order.promo", "add_promo_read_promos", [[promoId]], {})
-			.then((promos) => {
-				return promos;
-			});
+			.call("sale.order.promo", "add_promo_read_promos", [[promoId]], {});
 	}
 
 	getCarriers(orderId) {
 		return this.odooRPC
-			.call("sale.order", "read_delivery_methods", [[orderId]], {})
-			.then((carriers) => {
-				return carriers;
-			});
+			.call("sale.order", "read_delivery_methods", [[orderId]], {});
 	}
 	deliveryConfirm(orderId, carrier_id, price) {
 		return this.odooRPC.call(
@@ -73,4 +61,14 @@ export class SaleOrderService {
 			{}
 		);
 	}
+	getOrder(orderId) {
+		return this.odooRPC
+			.call("sale.order", "read", [[orderId],['name','display_name','date_order','amount_total']], {});
+	}
+
+	getOrderLines(orderId) {
+		return this.odooRPC
+			.searchRead("sale.order.line", [['order_id','=',orderId]], ['name','product_id','product_uom_qty','price_total']);
+	}
+
 }

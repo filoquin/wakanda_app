@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   //apiUrl: 'http://157.245.250.143:8013'
-  apiUrl: '/api/proxy'
+  //apiUrl: '/api/proxy'
+  apiUrl: '/odoo'
 
 };
 

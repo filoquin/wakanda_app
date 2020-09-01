@@ -1,0 +1,35 @@
+<div class="container mt-2" *ngIf="order">
+  <div class="row" >
+    <div cass="col-12">
+      <h2 class="mb-0">Pedido {{ order['display_name'] }} recibido</h2>
+    </div>
+  </div>
+  <div class="row" >
+    <div cass="col-12">
+      <p class="mb-0">Hemos recibido el pedido {{ order['display_name'] }}. Utilice ese numero para posteriores referencias.</p>
+    </div>
+  </div>
+
+<div class="row">
+  <div class="col-6">
+  	Fecha: {{ order['date_order'] }}
+  </div>
+  <div class="col-6">
+  	Total
+  </div>  
+</div>
+<div class="row" *ngIf="orderLines">
+	<table class="table">
+		<tr>
+			<th>C</th>
+			<th>Descripcion</th>
+			<th>Total</th>
+		</tr>
+		<tr  *ngFor="let line of orderLines">
+			<td>{{ line['product_uom_qty']}} </td>
+			<td>{{ line['name'] }}</td>
+			<td>{{ line['price_total']}}</td>
+		</tr>	</table>
+</div>
+<div class="row order-actions mx-auto w-100">
+</div>
