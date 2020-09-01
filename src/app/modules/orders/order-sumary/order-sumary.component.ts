@@ -44,8 +44,8 @@ export class OrderSumaryComponent implements OnInit {
           localStorage.removeItem('tmpOrder');
         }
       })
-      .catch((err: any) => {
-        console.log('errors' + err);
+      .catch((err) => {
+        console.log( err);
       });
   }
 }
