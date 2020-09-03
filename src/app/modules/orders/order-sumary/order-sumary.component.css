@@ -3,3 +3,36 @@
   bottom: 65px;
 }
 
+.container-main{
+  background-color: #ffd3f2 !important;
+}
+
+.btn-product{
+  background-color: #ff5dbc ;/*#ff3cae;*/
+  color: #ffffff;
+}
+
+.product-title{
+  background-color: #ff5dbc ;/*#f762ad;*/
+  font-family: 'AronGrotesque-Regular';
+  font-size: 1.25em;
+  border-radius: 5px;
+
+}
+.summary{
+  	padding: 5px;
+  background-color: #ff99d6;
+  border-radius: 15px;
+  margin-bottom: 60px;
+   color: #ffffff;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /*transform: translate(-50%, 0);*/
+  font-size: 0.9em;
+
+}
+.odd{
+	  color:  #eee;
+
+}

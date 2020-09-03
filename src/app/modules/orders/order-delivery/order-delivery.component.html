@@ -1,33 +1,31 @@
-<div class="container mt-2">
+<div class="fill container-main">
+<div class="container pt-1 text-center">
   <div class="row">
-    <div cass="col-12">
-      <h6 class="mb-0"><u>Envio</u></h6>
+    <div class="col-9 mx-auto">
+      <h5 class="product-title m-2  text-uppercase text-white">Envio</h5>
     </div>
   </div>
 
-  <div class="" *ngIf="carriers">
-    <div class="row">
-      <div class="col-6 text-center">
-        Envio
-      </div>
-      <div class="col-2 text-center">
-        Precio
-      </div>
-      <div class="col-4 text-center">
-        
+  <div class="summary" *ngIf="carriers">
+       <div class="row">
+
+      <div class="col-12 text-center">
+        <strong>Elegí como recibir tu producto.</strong>
       </div>
     </div>
+
+
     <div class="" >
-    <div class="row" *ngFor="let carrier of carriers">
-      <div class="col-6">
-        -{{carrier.display_name}}
+    <div ngClass="row  {{odd ? 'odd' : 'even'}}" *ngFor="let carrier of carriers">
+      <div class="col-6 text-right">
+        {{carrier.display_name}}
       </div>
-      <div class="col-2 text-center">
-        {{carrier.amount}}
+      <div class="col-2 text-right">
+        {{carrier.amount | currency}}
       </div>
       <div class="col-4 text-center">
       	
-      	  <div class="col-1 m-0 p-0  text-center  my-auto"><a class="" (click)="selectCarrier(carrier)">elegir </a></div>
+                          <a class="btn btn-wkn btn-sm text-uppercase pull-right" (click)="selectCarrier(carrier)">Elegir</a>
 
       </div>
     </div>
