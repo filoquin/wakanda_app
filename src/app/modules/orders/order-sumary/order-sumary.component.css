@@ -2,6 +2,10 @@
   position: fixed;
   bottom: 65px;
 }
+.order-total{
+  position: fixed;
+  bottom: 95px;
+}
 
 .container-main{
   background-color: #ffd3f2 !important;

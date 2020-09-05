@@ -1,45 +1,45 @@
 <div class="fill container-main">
-<div class="container pt-1 text-center">
-  <div class="row">
-    <div class="col-9 mx-auto">
-      <h5 class="product-title m-2  text-uppercase text-white">Resumen del pedido</h5>
-    </div>
-  </div>
-
-  <div class="summary" *ngIf="order">
+  <div class="container pt-1 text-center">
     <div class="row">
-      <div class="col-2 text-center">
-        Cantidad
-      </div>
-      <div class="col-6 text-center">
-        Producto
-      </div>
-      <div class="col-4 text-center">
-        Precio
+      <div class="col-9 mx-auto">
+        <h5 class="product-title m-2  text-uppercase text-white">Resumen del pedido</h5>
       </div>
     </div>
-    <div class="" *ngFor="let tmpo of order">
-    <div ngClass="row  {{odd ? 'odd' : 'even'}}" *ngFor="let product of tmpo.productsSelected;let odd =odd;"   >
-      <div class="col-2 text-right">
-        {{product.qty_select}} 
+
+    <div class="summary" *ngIf="order">
+      <div class="row">
+        <div class="col-2 text-center">
+          Cantidad
+        </div>
+        <div class="col-6 text-center">
+          Producto
+        </div>
+        <div class="col-4 text-center">
+          Precio
+        </div>
       </div>
-      <div class="col-6 text-left">
-        {{product.name}}
-      </div>
-      <div class="col-4 text-right">
-        {{product.user_price | currency}}
+      <div class="" *ngFor="let tmpo of order">
+        <div ngClass="row  {{odd ? 'odd' : 'even'}}" *ngFor="let product of tmpo.productsSelected;let odd =odd;">
+          <div class="col-2 text-right">
+            {{product.qty_select}}
+          </div>
+          <div class="col-6 text-left">
+            {{product.name}}
+          </div>
+          <div class="col-4 text-right">
+            {{product.user_price | currency}}
+          </div>
+        </div>
       </div>
     </div>
-    </div>
-  </div>
   </div>
 </div>
-<div class="row">
+<div class="row order-total mx-auto w-100">
   <div class="col-6">
 
   </div>
   <div class="col-6 text-right">
-      Total : {{total|currency}}
+    Total : {{total|currency}}
   </div>
 </div>
 <div class="row order-actions mx-auto w-100">
@@ -47,8 +47,6 @@
     <a routerLink="/products" class="btn btn-wkn btn-sm text-uppercase pull-left"> volver</a>
   </div>
   <div class="col-6 text-right">
-
-              <a class="btn btn-wkn btn-sm text-uppercase pull-right" (click)="saveOrder()">siguiente</a>
-
+    <a class="btn btn-wkn btn-sm text-uppercase pull-right" (click)="saveOrder()">siguiente</a>
   </div>
 </div>
