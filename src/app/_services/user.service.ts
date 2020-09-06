@@ -5,6 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import {User} from '../_models/user';
 import {environment} from '../../environments/environment';
+import {OdooRPCService} from './odoorcp.service';
 
 // import { environment } from '@environments/environment';
 // import { User } from '@app/_models';
@@ -18,7 +19,8 @@ export class UserService {
 
   constructor(
     private router: Router,
-    private http: HttpClient
+    private http: HttpClient,
+    public odooRPC: OdooRPCService
   ) {
     this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')));
     this.user = this.userSubject.asObservable();
@@ -73,6 +75,10 @@ export class UserService {
         return data;
       }));
 
+  }
+  getProfile(){
+    return this.odooRPC
+      .call("res.users", "wkn_my_profile", [], {});
   }
 
 

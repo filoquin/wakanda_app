@@ -7,37 +7,39 @@
 </div>
 <div class="row mt-4">
 
-  <div class="col-10 profile-data p-2 mx-auto ">
+  <div *ngIf="profile" class="col-10 profile-data p-2 mx-auto ">
     <div class="row text-profile mt-2">
-      <div class="col-12">Nombre:</div>
+      <div class="col-12">Nombre y Apellido: {{ profile['name'] }}</div>
     </div>
     <div class="row text-profile mt-2">
-      <div class="col-12">Apellido:</div>
+      <div class="col-12">Mail: {{ profile['email'] }}</div>
     </div>
     <div class="row text-profile mt-2">
-      <div class="col-12">Mail:</div>
+      <div class="col-12">Teléfono: {{ profile['phone'] }}</div>
     </div>
     <div class="row text-profile mt-2">
-      <div class="col-12">Teléfono:</div>
+      <div class="col-12">Domicilio: {{ profile['street'] }}</div>
     </div>
     <div class="row text-profile mt-2">
-      <div class="col-12">Domicilio:</div>
+      <div class="col-12">Productos Comprados: {{ profile['product_uom_qty'] }}</div>
     </div>
     <div class="row text-profile mt-2">
-      <div class="col-12">Productos Comprados:</div>
-    </div>
-    <div class="row text-profile mt-2">
-      <div class="col-12">Ganancia:</div>
+      <div class="col-12">Ganancia: {{ profile['amount_total'] }}</div>
     </div>
     <div class="row text-profile mt-2">
       <div class="col-12">Productos más vendido:</div>
     </div>
     <div class="row text-profile mt-2">
-      <div class="col-12">Pedidos realizados:</div>
+      <div class="col-12">Pedidos realizados: {{ profile['order_count'] }}</div>
     </div>
     <div class="row">
       <div class="col-12 text-center mx-auto mt-2">
         <a href="" class="btn btn-wkn">Editar cuenta</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-center mx-auto mt-2">
+        <a href="" class="btn btn-wkn">Cerrar sesion</a>
       </div>
     </div>
   </div>
