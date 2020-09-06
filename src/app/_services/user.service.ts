@@ -81,5 +81,33 @@ export class UserService {
       .call("res.users", "wkn_my_profile", [], {});
   }
 
+  reqConfirmCode(email){
+    return this.http.post(`${this.apiUrl}/wkn/req_confirm_code`, {params: {
+          email: email,
 
+        }})
+      .pipe(map((data: any) => {
+        console.log(data);
+        return data;
+      }));
+
+  }
+  senConfirmCode(token,password){
+    return this.http.post(`${this.apiUrl}/wkn/send_confirm_code`, {params: {
+          token: token,
+          password: password,
+
+        }})
+      .pipe(map((data: any) => {
+        console.log(data);
+        if ( data.result) {
+          const user = data.result.user;
+          // store user details and jwt token in local storage to keep user logged in between page refreshes
+          localStorage.setItem('user', JSON.stringify(user));
+          this.userSubject.next(user);
+        }
+        return data;
+      }));
+
+  }
 }
