@@ -1,0 +1,38 @@
+.order{
+  background-color: #f762ad;
+  font-family: 'AronGrotesque-Black';
+  font-size: 1.25em;
+  border-radius: 5px;
+}
+.header-item-order{
+  background-color: #f762ad;
+  font-family: 'AronGrotesque-Black';
+  font-size: 0.8em;
+  border-radius: 5px;
+}
+.rotate-img{
+  transform: rotate(90deg);
+}
+.reverse-rotate-img{
+  transform: rotate(0deg);
+}
+.img-item{
+  width: 12px;
+}
+.card-body{
+    padding: 5px;
+  background-color: #ff99d6;
+  border-radius: 15px;
+  margin-bottom: 60px;
+   color: #ffffff;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /*transform: translate(-50%, 0);*/
+  font-size: 0.9em;
+
+}
+.odd{
+    color:  #eee;
+
+}

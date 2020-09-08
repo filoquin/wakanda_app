@@ -70,5 +70,8 @@ export class SaleOrderService {
 		return this.odooRPC
 			.searchRead("sale.order.line", [['order_id','=',orderId]], ['name','product_id','product_uom_qty','price_total']);
 	}
+	getMyOrders() {
+		return this.odooRPC.searchRead("sale.order",[],['name','display_name','state','date_order','amount_total'], 50,0,{},'create_date desc');
+	}
 
 }
