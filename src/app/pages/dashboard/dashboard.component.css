@@ -78,15 +78,15 @@
 
 .item-main-img{
 
-  width: 100px;
+  width: 120px;
   height: 100px;
 }
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 576px) {
   .item-main-img{
 
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
   }
 
   .item-main-text{

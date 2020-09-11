@@ -66,3 +66,7 @@ body{
 {
   min-height: 90vh;
 }
+
+.container-main{
+  background-color: #ffd3f2 !important;
+}

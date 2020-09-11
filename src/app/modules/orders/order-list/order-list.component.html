@@ -1,50 +1,103 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12 text-center">
-      <div class="order m-2 text-white p-2">Mis pedidos</div>
-    </div>
-  </div>
-  <div id="accordion" role="tablist" aria-multiselectable="true">
-    <div *ngFor=" let order of orders; let i = index" class="row p-2">
-      <div class="col-12 header-item-order" role="tab" id="heading-{{i}}">
-        <div class="row m-2 p-0">
-          <div class="col-2 pl-1 pr-1 my-auto">
-            <a data-toggle="collapse" href="#order{{i}}" aria-expanded="false" (click)="clickToggle($event,order)">
-              <img src="assets/img/right-triangle.png" class="img-item" />
-            </a>
+<div class="fill container-main">
+  <div class="container mb-5">
+    <!--  <div class="row">-->
+    <!--    <div class="col-12 text-center">-->
+    <!--      <div class="order m-2 text-white p-2">Mis pedidos</div>-->
+    <!--    </div>-->
+    <!--  </div>-->
+    <div class="row">
+      <div class="col-12">
+
+        <div id="accordion" role="tablist" aria-multiselectable="true" class="mt-2 mb-5">
+          <div class="row">
+            <div class="col-12 text-center">
+              <div class="order m-2 text-white p-2">Mis pedidos</div>
+            </div>
           </div>
-          <div class="col-10 text-left text-white">
-            {{ order['date_order'] | date: 'dd/MM/yyyy'}}: <strong>{{order.display_name}} </strong> 
+          <div class="row">
+            <div class="col-1 text-center">
+
+            </div>
+            <div class="col-3 text-center">
+              <div class=" text-white p-2">Fecha</div>
+            </div>
+            <div class="col-5 text-center">
+              <div class="  text-white p-2">Productos</div>
+            </div>
+            <div class="col-3 text-center">
+              <div class="  text-white p-2">Total</div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div id="{{'order'+i}}" class="collapse" data-parent="#accordion" role="tabpanel">
-        <div class="card-body">
-          <div class="row m-0 p-0">
-            <div class="col-12">
-              <div class="row">
-                <div class="col-6">
-                  Fecha: {{ order['date_order'] | date: 'dd/MM/yyyy'}}
+          <div *ngFor=" let order of orders; let i = index;let superodd =odd;" class="pt-2 pb-2">
+            <div class="col-12 " role="tab" id="heading-{{i}}">
+              <div class="row  p-0  {{superodd ? 'odd' : 'even'}}">
+                <div class="col-1 pl-1 pr-1 my-auto">
+                  <a data-toggle="collapse" href="#order{{i}}" aria-expanded="false"
+                     (click)="clickToggle($event,order)">
+                    <img src="assets/img/right-triangle.png" class="img-item"/>
+                  </a>
                 </div>
-                <div class="col-6">
-                  Total {{order['amount_total'] | currency}}
+                <div class="col-3 text-center text-white">
+                   {{ order['date_order'] | date: 'dd/MM/yyyy'}}
+                </div>
+                <div class="col-5 text-center text-white">
+                  {{order.display_name}}
+                </div>
+                <div class="col-3 text-left text-white">
+                 {{order.amount_total|currency}}
                 </div>
               </div>
-              <div *ngIf="order['orderLines']">
-                <div ngClass="row  {{odd ? 'odd' : 'even'}}" *ngFor="let line of order['orderLines'];let odd =odd;">
-                  <div class="col-2 text-right">
-                    {{ line['product_uom_qty']}}
-                  </div>
-                  <div class="col-6 text-left">
-                    {{ line['name'] }} </div>
-                  <div class="col-4 text-right">
-                    {{line['price_total'] | currency}}
+            </div>
+            <div id="{{'order'+i}}" class="collapse" data-parent="#accordion" role="tabpanel">
+              <div class="card-body m-1">
+                <div class="row m-0 p-0">
+                  <div class="col-12">
+<!--                    <div class="row">-->
+<!--                      <div class="col-6">-->
+<!--                        Fecha: {{ order['date_order'] | date: 'dd/MM/yyyy'}}-->
+<!--                      </div>-->
+<!--                      <div class="col-6">-->
+<!--                        Total {{order['amount_total'] | currency}}-->
+<!--                      </div>-->
+<!--                    </div>-->
+                    <div class="row">
+                      <div class="col-12 mt-2">
+                        <h6><strong ><u>Resumen del Pedido</u></strong></h6>
+                      </div>
+                    </div>
+                    <div class="row mt-2 mb-2">
+                      <div class="col-5">
+                        <strong>Producto</strong>
+                      </div>
+                      <div class="col-5 text-center">
+                        <strong>Cantidad</strong>
+                      </div>
+                      <div class="col-2">
+
+                      </div>
+                    </div>
+                    <div *ngIf="order['orderLines']">
+<!--                      <div ngClass="row  {{odd ? 'odd' : 'even'}}"-->
+                      <div ngClass="row "
+                           *ngFor="let line of order['orderLines'];let odd =odd;">
+                        <div class="col-6 text-left">
+                          <small>{{ line['name'] }} </small></div>
+                        <div class="col-2 text-center">
+                          <small>{{ line['product_uom_qty']}}</small>
+                        </div>
+
+                        <div class="col-4 text-right">
+                          <small>  {{line['price_total'] | currency}}</small>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
