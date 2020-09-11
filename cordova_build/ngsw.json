@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1599490729514,
+  "timestamp": 1599572187052,
   "index": "./index.html",
   "assetGroups": [
     {
@@ -311,7 +311,7 @@
   "hashTable": {
     "./10.js": "07d08f768f295f7268ea0b79f4953449511249f1",
     "./5.js": "ad7fcd998323f088ae7f9ec6c910a940de3e73b8",
-    "./6.js": "8a7d40cdf796ac1c95704377422e59110098fe39",
+    "./6.js": "74a72fa4982a56130966226c1f7c1681f572b1dd",
     "./7.js": "29c7903fd2d804bd0628f5febf8be1b7d82f49e8",
     "./8.js": "c74b21105d28f2702c70309e54a905c000084d4f",
     "./9.js": "e877afc1202bd5151bad838df54b0f70430e2d5a",
@@ -577,7 +577,7 @@
     "./assets/img/right-triangle.png": "1f45938159350ce8b1710dbd12c75d23c0a393e2",
     "./bestsellers.png": "977505a4c1639210b74d12249db0de1f86df14b5",
     "./catalog.png": "dd61635ff3180ac86bfa18c87dc848a72ba35852",
-    "./common.js": "1416f84252b9a1fbb6ecc3bc6f83a7efea482929",
+    "./common.js": "95f67f8fc225311fa2fd51ba5f311498a88022a9",
     "./faq.png": "12d36dc617d060c032b1c6a7efb0074df25dc447",
     "./favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "./index.html": "01d727081eb2b63587b2b5e063dcca8a507b11aa",
