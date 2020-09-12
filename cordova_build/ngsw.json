@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1599572187052,
+  "timestamp": 1599924096443,
   "index": "./index.html",
   "assetGroups": [
     {
@@ -309,12 +309,12 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "./10.js": "07d08f768f295f7268ea0b79f4953449511249f1",
-    "./5.js": "ad7fcd998323f088ae7f9ec6c910a940de3e73b8",
-    "./6.js": "74a72fa4982a56130966226c1f7c1681f572b1dd",
-    "./7.js": "29c7903fd2d804bd0628f5febf8be1b7d82f49e8",
-    "./8.js": "c74b21105d28f2702c70309e54a905c000084d4f",
-    "./9.js": "e877afc1202bd5151bad838df54b0f70430e2d5a",
+    "./10.js": "457d2c2a4fb06e2fa5f1ceb7f6feb10a76ca9c1d",
+    "./5.js": "4ebf7703a6d4d3189c39103207a01bfd2d8106cb",
+    "./6.js": "a7b2021d2a81cd2ceda83aa88224592dd417b236",
+    "./7.js": "813b16330985b9fd28a87dea253e6f6df3b5f6b1",
+    "./8.js": "d5c967f3108be22ed06285250c540da651cb8efc",
+    "./9.js": "97861e53a8075479010d267a90cddce303a406ba",
     "./AronGrotesque-black.eot": "97edb512c75fc51c4118a9872f2d8eaa8a34aa18",
     "./AronGrotesque-black.otf": "e8327d7f0e5505f56396811116c74f092033f96e",
     "./AronGrotesque-black.svg": "2dbf054e9816bb195b92bbd771d87c366c2d19dd",
@@ -577,19 +577,19 @@
     "./assets/img/right-triangle.png": "1f45938159350ce8b1710dbd12c75d23c0a393e2",
     "./bestsellers.png": "977505a4c1639210b74d12249db0de1f86df14b5",
     "./catalog.png": "dd61635ff3180ac86bfa18c87dc848a72ba35852",
-    "./common.js": "95f67f8fc225311fa2fd51ba5f311498a88022a9",
+    "./common.js": "9c79d887e2ee1a6a10f0be64b000dd57e4df0e01",
     "./faq.png": "12d36dc617d060c032b1c6a7efb0074df25dc447",
     "./favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "./index.html": "01d727081eb2b63587b2b5e063dcca8a507b11aa",
     "./location.png": "c5d24e0ff4f2e2297fe7b0d15a4e34e5cb321fe0",
-    "./main.js": "46dcd0b85cde551788e93c00b2a05f27839fbc9a",
+    "./main.js": "924fd3a6197639df6e91585fc8357b74407db5ec",
     "./manifest.webmanifest": "f8857b53e289cebec7b3ab7a814da1b428a0b0ee",
     "./order.png": "4db5b2de70a63eab046462a34d439be3413226c6",
-    "./polyfills.js": "99facf9bee8da793cc8401108fb1e1fa7c6c4782",
+    "./polyfills.js": "57ce78cad97832ce8fec76620e3d215c8de2765e",
     "./prices.png": "52ac00e4e30090b4446418be97df104fbbe3eaa6",
-    "./runtime.js": "63538fb89430e8954344b4a9feb642849a87ccec",
+    "./runtime.js": "a66d94934bc1a9259ee4158348821d331e42468a",
     "./scripts.js": "14abf70338f8ffd4ae45dab3afd431543b5c844f",
-    "./styles.css": "5dcec9dfbea70e51348865ba4a2e11648d4d3976"
+    "./styles.css": "e1b4b1cf1fefe3127fc62bc6695a0a5c3fdc4ce7"
   },
   "navigationUrls": [
     {

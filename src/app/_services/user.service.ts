@@ -46,7 +46,7 @@ export class UserService {
 
   logout() {
     // remove user from local storage and set current user to null
-    this.http.post(`${this.apiUrl}//wkn/json_logout`);
+    this.http.post(`${this.apiUrl}//wkn/json_logout`,null,{});
 
     localStorage.removeItem('user');
     this.userSubject.next(null);

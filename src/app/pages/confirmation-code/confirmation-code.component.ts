@@ -10,6 +10,8 @@ import { ToastrService } from "ngx-toastr";
 	styleUrls: ["./confirmation-code.component.css"],
 })
 export class ConfirmationCodeComponent implements OnInit {
+  authForm: FormGroup;
+  isSubmitted = false;
 	constructor(
 		private userService: UserService,
 		private router: Router,

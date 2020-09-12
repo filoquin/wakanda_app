@@ -10,7 +10,8 @@ import {ToastrService} from "ngx-toastr";
   styleUrls: ['./request-password.component.css']
 })
 export class RequestPasswordComponent implements OnInit {
-
+  authForm: FormGroup;
+  isSubmitted = false;
   constructor(private userService: UserService, private router: Router, private formBuilder: FormBuilder, private toasterService: ToastrService) {}
 
   ngOnInit(): void {
