@@ -18,22 +18,28 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
-      user: ['tests', Validators.required],
-      password: ['test', Validators.required],
-      completename: ['test tet', Validators.required],
-      email: ['lolo@gmail.com', Validators.required],
-      phone: ['2994771757', Validators.required],
-      address: ['lugon 189', Validators.required],
-      day: ['28', Validators.required],
-      month: ['02', Validators.required],
-      year: ['1975', Validators.required]
+      user: ['', Validators.required],
+      password: ['', Validators.required],
+      completename: ['', Validators.required],
+      email: ['', Validators.required],
+      phone: ['', Validators.required],
+      address: ['', Validators.required],
+      day: ['', Validators.required],
+      month: ['', Validators.required],
+      year: ['', Validators.required]
     });
   }
 
   get formControls() {
     return this.registerForm.controls;
   }
+  actual_year(){
+      return new Date().getFullYear()
 
+  }
+  counter(i: number) {
+      return new Array(i);
+  }
 
   register() {
     this.isSubmitted = true;

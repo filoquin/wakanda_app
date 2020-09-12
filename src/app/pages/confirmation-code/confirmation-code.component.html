@@ -1,0 +1,60 @@
+<div class="container login">
+  <div class="row text-center mt-5">
+    <div class="col-12">
+      <img src="assets/img/logo-white.png" class="logo"/>
+    </div>
+
+    <div class="col-12">
+      <h4 class="text-white text-logo">Wakanda</h4>
+    </div>
+    <div class="col-12">
+      <p class="text-white">Ingrese su código de desbloqueo y su nueva clave.</p>
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-md-4 col-12 mx-auto">
+
+
+      <form [formGroup]="authForm" class="login-container" (ngSubmit)="resetPassword()">
+
+        <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.code
+.errors }">
+          <label for="exampleInputCode1" class="text-white">Codigo de desbloqueo</label>
+          <input type="text" class="form-control input-custom" id="exampleInputcode1" aria-describedby="emailHelp"  formControlName="code">
+          <div *ngIf="isSubmitted && formControls.code.errors" class="help-block text-white font-italic">
+            <div *ngIf="formControls.code.errors.required"><strong>*</strong>Debe ingresar su código</div>
+            <div *ngIf="formControls.code.errors.minlength"><strong>*</strong>Su codigo no es correcto</div>
+          </div>
+        </div>
+                <div class="form-group"  [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+          <label for="exampleInputPassword1" class="text-white">Nueva contraseña</label>
+          <input type="password" class="form-control input-custom" id="exampleInputPassword1" formControlName="password">
+          <div *ngIf="isSubmitted && formControls.password.errors" class="help-block text-white font-italic">
+            <div *ngIf="formControls.password.errors.required"><strong>*</strong>Debe ingresar una clave</div>
+            <div *ngIf="formControls.password.errors.minlength"><strong>*</strong>La extensión minima de la clave es 6.</div>
+          </div>
+        </div>
+
+        <div class="form-group"  [ngClass]="{ 'has-error': isSubmitted && formControls.password2.errors }">
+          <label for="exampleInputPassword1" class="text-white">Repita su nueva contraseña</label>
+          <input type="password" class="form-control input-custom" id="exampleInputPassword2" formControlName="password2">
+          <div *ngIf="isSubmitted && formControls.password.errors" class="help-block text-white font-italic">
+            <div *ngIf="formControls.password2.errors.required"><strong>*</strong>Debe repetir la clave</div>
+            <div *ngIf="formControls.password2.errors.minlength"><strong>*</strong>La extensión minima de la clave es 6.</div>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-center">
+        <button type="submit" class="btn btn-login btn-lg">Enviar</button>
+          </div>
+          <div class="col-12 text-center mt-2">
+            <a routerLink="/register" class="text-white">Registrarse</a> | <a routerLink="/login" class="text-white">Ingresar</a>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

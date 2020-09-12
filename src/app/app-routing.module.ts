@@ -3,6 +3,8 @@ import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import {PagesComponent} from './pages/pages/pages.component';
 import {LoginComponent} from './pages/login/login.component';
 import {RegisterComponent} from './pages/register/register.component';
+import {RequestPasswordComponent} from './pages/request-password/request-password.component';
+import {ConfirmationCodeComponent} from './pages/confirmation-code/confirmation-code.component';
 import {AuthGuard} from "./_helpers/auth.guard";
 
 
@@ -10,6 +12,8 @@ const routes: Routes = [
   // {path: '', pathMatch: 'full', redirectTo: 'login'},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'requestpassword', component: RequestPasswordComponent},
+  {path: 'confirmationcode', component: ConfirmationCodeComponent},
   {
     path: '',
     component: PagesComponent,

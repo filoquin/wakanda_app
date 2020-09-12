@@ -46,6 +46,8 @@ export class UserService {
 
   logout() {
     // remove user from local storage and set current user to null
+    this.http.post(`${this.apiUrl}//wkn/json_logout`);
+
     localStorage.removeItem('user');
     this.userSubject.next(null);
     this.router.navigate(['/login']);

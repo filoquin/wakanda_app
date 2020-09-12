@@ -14,6 +14,8 @@ import {RegisterComponent} from './pages/register/register.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ToastrModule} from "ngx-toastr";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { RequestPasswordComponent } from './pages/request-password/request-password.component';
+import { ConfirmationCodeComponent } from './pages/confirmation-code/confirmation-code.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    RequestPasswordComponent,
+    ConfirmationCodeComponent
   ],
   imports: [
     BrowserModule,

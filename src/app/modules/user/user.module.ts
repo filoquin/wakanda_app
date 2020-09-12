@@ -10,7 +10,7 @@ import { ProfileEditComponent } from './pages/profile-edit/profile-edit.componen
 export const routes = [
   { path: '', component: ProfileComponent},
   { path: 'profile',   PathMatch: 'full', component: ProfileComponent},
-  { path: 'profile/edit',   PathMatch: 'full', component: ProfileEditComponent}
+  { path: 'profile/edit',   PathMatch: 'full', component: ProfileEditComponent},
 ];
 
 @NgModule({
