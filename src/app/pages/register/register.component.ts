@@ -57,7 +57,7 @@ export class RegisterComponent implements OnInit {
     const year = this.registerForm.controls.year.value;
     this.userService.register(user,password,completename,email,phone,address,day,month,year).subscribe((data: any) => {
       if (data.result) {
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/welcome');
       }else{
         alert('Ocurrio un error');
       }
