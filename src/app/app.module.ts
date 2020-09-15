@@ -16,6 +16,7 @@ import {ToastrModule} from "ngx-toastr";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { RequestPasswordComponent } from './pages/request-password/request-password.component';
 import { ConfirmationCodeComponent } from './pages/confirmation-code/confirmation-code.component';
+import { WelcomeVideoComponent } from './pages/welcome-video/welcome-video.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ConfirmationCodeComponent } from './pages/confirmation-code/confirmatio
     LoginComponent,
     RegisterComponent,
     RequestPasswordComponent,
-    ConfirmationCodeComponent
+    ConfirmationCodeComponent,
+    WelcomeVideoComponent
   ],
   imports: [
     BrowserModule,
