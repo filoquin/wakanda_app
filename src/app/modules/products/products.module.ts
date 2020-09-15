@@ -5,13 +5,15 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductSelectComponent } from './product-select/product-select.component';
 import {BsModalService, ModalModule} from 'ngx-bootstrap/modal';
 import { ProductItemComponent } from './product-item/product-item.component';
+import {ProductBestsellersComponent} from './product-bestsellers/product-betsellers.component';
 
 export const routes = [
-  { path: '', component: ProductListComponent}
+  { path: '', component: ProductListComponent},
+  { path: 'bestsellers', component: ProductBestsellersComponent}
 ];
 
 @NgModule({
-  declarations: [ProductListComponent, ProductSelectComponent, ProductItemComponent],
+  declarations: [ProductListComponent, ProductSelectComponent, ProductItemComponent, ProductBestsellersComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

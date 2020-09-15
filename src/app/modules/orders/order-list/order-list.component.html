@@ -43,8 +43,8 @@
                 <div class="col-5 text-center text-white">
                   {{order.display_name}}
                 </div>
-                <div class="col-3 text-left text-white">
-                 {{order.amount_total|currency}}
+                <div class="col-3 text-right text-white">
+                 {{order.amount_total|currency: '$':true:'2.0'}}
                 </div>
               </div>
             </div>
@@ -87,7 +87,7 @@
                         </div>
 
                         <div class="col-4 text-right">
-                          <small>  {{line['price_total'] | currency}}</small>
+                          <small>  {{line['price_total'] | currency:'$':true:'2.0'}}</small>
                         </div>
                       </div>
                     </div>
