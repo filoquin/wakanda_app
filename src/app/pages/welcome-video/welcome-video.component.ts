@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
 	styleUrls: ["./welcome-video.component.css"],
 })
 export class WelcomeVideoComponent implements OnInit {
-	safeURL: string;
+	safeURL;
 	constructor( private router: Router, private _sanitizer: DomSanitizer) {
 		this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/iAPwOPzD20k');
 	}

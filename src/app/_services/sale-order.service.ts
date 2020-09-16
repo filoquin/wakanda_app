@@ -11,15 +11,15 @@ export class SaleOrderService {
         return this.odooRPC.searchRead(
             "product.category",
             [["wkn_publish", "=", true]],
-            ["name", "display_name", "user_price","final_price"]
+            ["name", "display_name", "user_price", "final_price"]
         );
     }
-    
+
     getSaleRank() {
         return this.odooRPC.searchRead(
             "sale.rank",
-            [["rank", "<=",5]],
-            ["wkn_categ_id", "product_id", "rank"]
+            [["rank", "<=", 5]],
+            ["wkn_categ_id", "category_name", "name", "product_id", "rank"]
         );
     }
 

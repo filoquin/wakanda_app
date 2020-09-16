@@ -17,6 +17,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { RequestPasswordComponent } from './pages/request-password/request-password.component';
 import { ConfirmationCodeComponent } from './pages/confirmation-code/confirmation-code.component';
 import { WelcomeVideoComponent } from './pages/welcome-video/welcome-video.component';
+import { LocationComponent } from './pages/location/location.component';
+import { CatalogComponent } from './pages/catalog/catalog.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { WelcomeVideoComponent } from './pages/welcome-video/welcome-video.compo
     RegisterComponent,
     RequestPasswordComponent,
     ConfirmationCodeComponent,
-    WelcomeVideoComponent
+    WelcomeVideoComponent,
+    LocationComponent,
+    CatalogComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,8 @@ import {RequestPasswordComponent} from './pages/request-password/request-passwor
 import {ConfirmationCodeComponent} from './pages/confirmation-code/confirmation-code.component';
 import {AuthGuard} from "./_helpers/auth.guard";
 import {WelcomeVideoComponent} from './pages/welcome-video/welcome-video.component';
+import {LocationComponent} from './pages/location/location.component';
+import {CatalogComponent} from './pages/catalog/catalog.component';
 
 
 const routes: Routes = [
@@ -15,7 +17,6 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'requestpassword', component: RequestPasswordComponent},
   {path: 'confirmationcode', component: ConfirmationCodeComponent},
-  {path: 'welcome', component: WelcomeVideoComponent},
   {
     path: '',
     component: PagesComponent,
@@ -25,6 +26,10 @@ const routes: Routes = [
         path: '',
         loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule)
       },
+        {path: 'location', component: LocationComponent },
+        {path: 'welcome', component: WelcomeVideoComponent},
+        {path: 'catalog', component: CatalogComponent},
+
       {
         path: 'user',
         loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule)

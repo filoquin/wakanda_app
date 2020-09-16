@@ -1,0 +1,20 @@
+.product-title{
+  background-color: #ff5dbc ;/*#f762ad;*/
+  font-family: 'AronGrotesque-Regular';
+  font-size: 1.25em;
+  border-radius: 5px;
+
+}
+.summary{
+  background-color: #ffbce4;
+  border-radius: 15px;
+  margin-bottom: 60px;
+   color: #ffffff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /*transform: translate(-50%, 0);*/
+  font-size: 0.8em;
+
+}

@@ -1,13 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import {SaleOrderService} from "../../../_services/sale-order.service";
+import { Component, OnInit } from "@angular/core";
+import { SaleOrderService } from "../../../_services/sale-order.service";
 
 @Component({
-  selector: 'app-product-betsellers',
-  templateUrl: './product-betsellers.component.html',
-  styleUrls: ['./product-betsellers.component.css']
+  selector: "app-product-betsellers",
+  templateUrl: "./product-betsellers.component.html",
+  styleUrls: ["./product-betsellers.component.css"],
 })
 export class ProductBestsellersComponent implements OnInit {
- public bestsellers: any = [];
+  public bestsellers: any = [];
+
+   lastCategoryName: string = '';
+
   constructor(private saleOrderService: SaleOrderService) {}
   ngOnInit(): void {
     this.saleOrderService
@@ -20,5 +23,4 @@ export class ProductBestsellersComponent implements OnInit {
         console.log(err);
       });
   }
-
 }

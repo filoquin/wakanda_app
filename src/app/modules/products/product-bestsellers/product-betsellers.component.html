@@ -2,7 +2,7 @@
   <div class="container pt-1 text-center edit">
 
     <div class="row bestsellers-main  mt-2 ml-1 mr-1 pb-2" >
-      <div class="col-md-12 col-12 mx-auto">
+      <div *ngIf="bestsellers" class="col-md-12 col-12 mx-auto">
 
 
         <div class="row mt-2 mb-2">
@@ -16,10 +16,14 @@
 
         <div *ngFor="let bs of bestsellers" class="row text-white">
           <div class="col-12  text-center">
-            {{bs.product_id[1] }}
+              <h4 *ngIf="lastCategoryName != bs.category_name"> 
+                {{ bs.category_name }}
+              </h4>
+            <strong>{{bs.rank}}</strong> {{bs.name}}
           </div>
 
         </div>
+
 
       </div>
     </div>
