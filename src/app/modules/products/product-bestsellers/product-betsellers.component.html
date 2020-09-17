@@ -16,10 +16,14 @@
 
         <div *ngFor="let bs of bestsellers" class="row text-white">
           <div class="col-12  text-center">
-              <h4 *ngIf="lastCategoryName != bs.category_name"> 
-                {{ bs.category_name }}
+              <h4 >
+                {{ bs.category}}
               </h4>
-            <strong>{{bs.rank}}</strong> {{bs.name}}
+
+          </div>
+          <div class="col-12 text-center" *ngFor="let product of bs.products">
+              <small>{{product.name}}</small>
+
           </div>
 
         </div>

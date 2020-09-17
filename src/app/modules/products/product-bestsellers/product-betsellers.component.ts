@@ -17,10 +17,38 @@ export class ProductBestsellersComponent implements OnInit {
       .getSaleRank()
       .then((res) => {
         console.log(res.records);
-        this.bestsellers = res.records;
+        //this.bestsellers = res.records;
+        this.sortAndFillByCategory(res.records);
       })
       .catch((err) => {
         console.log(err);
       });
+  }
+
+  sortAndFillByCategory(lines){
+    const categories = [];
+    //Filter unique categories
+    lines.forEach(line => {
+       if ( !categories.find(c => c === line.category_name)){
+         categories.push(line.category_name);
+      }
+    });
+    console.log(categories);
+    categories.forEach(category => {
+      let item = {
+          category,
+          products : []
+      };
+      lines.forEach(line => {
+        item.category = category;
+        if ( category === line.category_name){
+          item.products.push(line);
+        }
+      });
+      this.bestsellers.push(item);
+    });
+
+
+    console.log(this.bestsellers);
   }
 }
