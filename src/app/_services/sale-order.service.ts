@@ -19,7 +19,7 @@ export class SaleOrderService {
         return this.odooRPC.searchRead(
             "sale.rank",
             [["rank", "<=", 5]],
-            ["wkn_categ_id", "category_name", "name", "product_id", "rank"]
+            ["wkn_app_categ_id", "category_name", "name", "product_id", "rank"]
         );
     }
 

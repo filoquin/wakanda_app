@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { SaleOrderService } from "../../../_services/sale-order.service";
 import { Router, ActivatedRoute } from "@angular/router";
+import {ToastrService} from "ngx-toastr";
+
 
 @Component({
     selector: "app-order-confirm",
@@ -15,7 +17,8 @@ export class OrderConfirmComponent implements OnInit {
     constructor(
         private actRoute: ActivatedRoute,
         private saleOrderService: SaleOrderService,
-        private router: Router
+        private router: Router,
+        private toasterService: ToastrService
     ) {}
     ngOnInit(): void {
         this.orderId = Number(this.actRoute.snapshot.paramMap.get("id"));

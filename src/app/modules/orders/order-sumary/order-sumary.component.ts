@@ -1,24 +1,28 @@
-import {Component, OnInit} from '@angular/core';
-import {SaleOrderService} from "../../../_services/sale-order.service";
-import {Router} from "@angular/router";
+import { Component, OnInit } from "@angular/core";
+import { SaleOrderService } from "../../../_services/sale-order.service";
+import { Router } from "@angular/router";
+import { ToastrService } from "ngx-toastr";
 
 @Component({
-  selector: 'app-order-sumary',
-  templateUrl: './order-sumary.component.html',
-  styleUrls: ['./order-sumary.component.css']
+  selector: "app-order-sumary",
+  templateUrl: "./order-sumary.component.html",
+  styleUrls: ["./order-sumary.component.css"],
 })
 export class OrderSumaryComponent implements OnInit {
   public order: any = null;
   public total = 0;
   private lines: any = [];
 
-  constructor(private saleOrderService: SaleOrderService, private router: Router) {
-    this.order = JSON.parse(localStorage.getItem('tmpOrder'));
+  constructor(
+    private saleOrderService: SaleOrderService,
+    private router: Router,
+    private toasterService: ToastrService
+  ) {
+    this.order = JSON.parse(localStorage.getItem("tmpOrder"));
 
-    this.order.forEach(item => {
-
-      item.productsSelected.forEach(product => {
-        let line = {'id': product.id, 'qty': product.qty_select};
+    this.order.forEach((item) => {
+      item.productsSelected.forEach((product) => {
+        let line = { id: product.id, qty: product.qty_select };
         this.lines.push(line);
         this.total += product.qty_select * product.user_price;
         // this.total.gain += (product.qty_select * product.final_price) - (product.qty_select * product.user_price);
@@ -27,25 +31,26 @@ export class OrderSumaryComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   saveOrder() {
-    this.saleOrderService.createSaleOrder(this.lines)
+    this.saleOrderService
+      .createSaleOrder(this.lines)
       .then((res) => {
         console.log(res);
-        if(res){
-          let idorder= res[0].id;
-          if (res[0].show_promos){
-            this.router.navigate(['/orders/promos/' + idorder]);
-          }else{
-            this.router.navigate(['/orders/delivery/' + idorder]);
+        if (res) {
+          let idorder = res[0].id;
+          if (res[0].show_promos) {
+            this.router.navigate(["/orders/promos/" + idorder]);
+          } else {
+            this.router.navigate(["/orders/delivery/" + idorder]);
           }
-          localStorage.removeItem('tmpOrder');
+          localStorage.removeItem("tmpOrder");
         }
       })
       .catch((err) => {
-        console.log( err);
+        const errormessage = err.error.data.message;
+        this.toasterService.warning(errormessage);
       });
   }
 }

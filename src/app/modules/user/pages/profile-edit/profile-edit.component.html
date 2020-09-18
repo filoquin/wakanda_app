@@ -61,7 +61,7 @@
           <div class="col-4">
             <select class="form-control input-custom" id="day"   formControlName="day">
               <option value=""> Dia</option>
-              <option value="28">28</option>
+                <option value="{{i +1}}" *ngFor="let in of counter(31) ;let i = index">{{i +1}}</option>
 
             </select>
             <div *ngIf="isSubmitted && formControls.day.errors" class="help-block">
@@ -72,7 +72,19 @@
           <div class="col-4">
             <select class="form-control input-custom" id="month"   formControlName="month">
               <option value=""> Mes</option>
-              <option value="02">Feb</option>
+                <option value=""> Mes</option>
+                <option value="01">En</option>
+                <option value="02">Feb</option>
+                <option value="03">Mar</option>
+                <option value="04">Abr</option>
+                <option value="05">May</option>
+                <option value="06">Jun</option>
+                <option value="07">Jul</option>
+                <option value="08">Ago</option>
+                <option value="09">Sep</option>
+                <option value="10">Oct</option>
+                <option value="11">Nov</option>
+                <option value="12">Dic</option>
 
             </select>
             <div *ngIf="isSubmitted && formControls.day.errors" class="help-block">
@@ -82,7 +94,7 @@
           <div class="col-4">
             <select class="form-control input-custom" id="year"   formControlName="year">
               <option value=""> Año</option>
-              <option value="1975">1975</option>
+                <option value="{{actual_year() - i - 18}}" *ngFor="let in of counter(50) ;let i = index">{{actual_year() - i - 18 }}</option>
             </select>
             <div *ngIf="isSubmitted && formControls.year.errors" class="help-block">
               <div *ngIf="formControls.year.errors.required">Debe seleccionar un año</div>
@@ -99,5 +111,7 @@
     </form>
   </div>
 </div>
+<br/><br/>
+<br/><br/>
   </div>
 </div>

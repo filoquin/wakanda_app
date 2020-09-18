@@ -9,13 +9,13 @@ import {WakCatalogService} from "../../_services/wak-catalog.service";
 export class CatalogComponent implements OnInit {
 
   public catalogs: any = null;
+  public images: any = null;
   constructor(private WakCatalogService: WakCatalogService) {
   }
 
   ngOnInit(): void {
     this.WakCatalogService.getCatalog()
       .then((res) => {
-        console.log(res);
         this.catalogs = res;
       })
       .catch((err: any) => {
