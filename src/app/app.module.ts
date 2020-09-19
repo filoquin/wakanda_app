@@ -19,6 +19,7 @@ import { ConfirmationCodeComponent } from './pages/confirmation-code/confirmatio
 import { WelcomeVideoComponent } from './pages/welcome-video/welcome-video.component';
 import { LocationComponent } from './pages/location/location.component';
 import { CatalogComponent } from './pages/catalog/catalog.component';
+import {CarouselModule} from "ngx-bootstrap/carousel";
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { CatalogComponent } from './pages/catalog/catalog.component';
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    CarouselModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
