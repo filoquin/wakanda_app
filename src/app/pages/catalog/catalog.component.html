@@ -7,11 +7,13 @@
     </div>
     <div  class="row overflow-auto row-category h-100">
       <div *ngFor="let cat of catalogs">
-        <div *ngFor="let item of cat['images']" class=" col-12 my-auto">
-              <img src="data:image/jpg;base64,{{item.image}}" class="img-fluid" />
-        </div>
+        <carousel>
+          <slide *ngFor="let item of cat['images']">
+                <img src="data:image/jpg;base64,{{item.image}}" class="img-fluid" />
+          </slide>
+        </carousel>
       </div>
-          
+
     </div>
         <div class="row order-actions mx-auto w-100">
       <div class="col-12 text-center">

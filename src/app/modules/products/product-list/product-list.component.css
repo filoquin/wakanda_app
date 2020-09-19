@@ -10,7 +10,7 @@
 .product-title{
   background-color: #ff5dbc ;/*#f762ad;*/
   font-family: 'AronGrotesque-Regular';
-  font-size: 1.25em;
+  font-size: 4vw;
   border-radius: 5px;
 
 }
@@ -39,8 +39,8 @@
 .img-circle{
   background-color: #ffffff;
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
 }
 
 
@@ -49,8 +49,8 @@
 @media (min-width: 428px) {
 .img-circle{
 
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
   }
 }
 
@@ -58,8 +58,8 @@
 @media (min-width: 576px) {
 .img-circle{
 
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
   }
 }
 
@@ -67,8 +67,8 @@
 @media (min-width: 768px) {
 .img-circle{
 
-    width: 250px;
-    height: 250px;
+    width: 175px;
+    height: 175px;
   }
 }
 
@@ -76,8 +76,8 @@
 @media (min-width: 992px) {
 .img-circle{
 
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
   }
 }
 
@@ -85,7 +85,7 @@
 @media (min-width: 1200px) {
 .img-circle{
 
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
   }
 }

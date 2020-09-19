@@ -1,7 +1,7 @@
 <div class="fill container-main">
-  <div class="container pt-1 text-center edit">
+  <div class="container pt-1 pb-2 text-center edit">
 
-    <div class="row bestsellers-main  mt-2 ml-1 mr-1 pb-2" >
+    <div class="row bestsellers-main  mt-2 ml-1 mr-1 custom-mb" >
       <div *ngIf="bestsellers" class="col-md-12 col-12 mx-auto">
 
 
@@ -15,15 +15,20 @@
         </div>
 
         <div *ngFor="let bs of bestsellers" class="row text-white">
-          <div class="col-12  text-center">
+          <div class="col-12 ml-4 text-left">
               <h4 >
+                <u>
                 {{ bs.category}}
+                </u>
               </h4>
 
           </div>
-          <div class="col-12 text-center" *ngFor="let product of bs.products">
-              <small>{{product.name}}</small>
-
+          <div class="col-12 text-left" >
+            <ul>
+              <li *ngFor="let product of bs.products">
+                {{product.name}}
+              </li>
+            </ul>
           </div>
 
         </div>

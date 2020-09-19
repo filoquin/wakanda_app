@@ -1,20 +1,21 @@
 <div class="fill container-main">
 <div class="container pt-1 text-center">
-  <div class="row">
+  <div class="row pt-3 pb-3">
     <div class="col-6 mx-auto">
       <h5 class="product-title m-2  text-uppercase text-white">Categorias</h5>
     </div>
   </div>
   <div class="row overflow-auto row-category h-100">
-    <div  *ngFor="let category of categories"  class=" col-6 my-auto">
+    <div  *ngFor="let category of categories"  class=" col-4 my-auto mx-auto">
       <a
          (click)="showProducts(category)">
-        <div class="col-12 mx-auto">
+        <div class=" ">
           <img src="data:image/png;base64,{{category.wkn_categ_image}}" class="img-circle p-2" />
-        </div>
-        <div class="col-12 text-category">
+          <div class=" text-category text-center mx-auto">
         {{category.name}}
         </div>
+        </div>
+
       </a>
 
     </div>

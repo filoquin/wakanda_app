@@ -26,10 +26,13 @@
 
 .text-big{
   font-family: GlacialIndifference-Bold;
-  font-size: 2em;
+  font-size: 8vw;
 }
 .logo{
   width:  5.5em;
   vertical-align: center;
   display: inline-block;
+}
+.custom-mb{
+  margin-bottom: 65px ;
 }
