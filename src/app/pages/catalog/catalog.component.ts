@@ -16,7 +16,6 @@ export class CatalogComponent implements OnInit {
   ngOnInit(): void {
     this.WakCatalogService.getCatalog()
       .then((res) => {
-        console.log(res['pdf']);
         this.catalogs = res;
       })
       .catch((err: any) => {
