@@ -11,6 +11,8 @@
 
 .container-main {
   background-color: #ffd3f2 !important;
+    margin-bottom: 60px;
+
 }
 .bestsellers-main {
   background-color: #ff5dbc;
@@ -35,4 +37,9 @@
 }
 .custom-mb{
   margin-bottom: 65px ;
+}
+.text-uppercase {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.2em;
 }

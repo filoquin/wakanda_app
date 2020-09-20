@@ -1,42 +1,54 @@
 <div class="fill container-main">
   <div class="container pt-1 text-center edit">
-
-    <div class="row prices-main  mt-2 ml-1 mr-1 pb-2" >
+    <div class="row prices-main  mt-2 ml-1 mr-1 pb-2">
       <div class="col-md-12 col-12 mx-auto">
-
-
-      <div class="row mt-2 mb-2">
+        <div class="row mt-2 mb-2">
           <div class="col-4  my-auto mx-auto  d-flex justify-content-center">
-            <img src="assets/img/logo-white.png" class="img-fluid mr-2 logo  align-self-start my-auto"/>
+            <img src="assets/img/logo-white.png" class="img-fluid mr-2 logo  align-self-start my-auto" />
           </div>
           <div class="col-8 text-center my-auto">
             <div class="order m-2 text-white p-2 text-big">Precios Mayoristas</div>
             <small><strong class="text-uppercase text-white">a partir de 10 unidades</strong></small>
           </div>
         </div>
-        <div  class="row text-white">
+        <div class="row text-white">
           <div class="col-6 text-price text-left">
-
           </div>
           <div class="col-3 ">
-            <strong class="text-uppercase">COSTO</strong>
+            <strong class="text-uppercase text-small">COSTO</strong>
           </div>
           <div class="col-3 ">
             <strong class="text-uppercase text-small">VENTA AL PUBLICO</strong>
           </div>
         </div>
-        <div *ngFor="let price of prices" class="row text-white">
-          <div class="col-6  text-left">
-            {{price.name}}
+        <div class="row">
+          <div class="col-6"></div>
+          <div class="col-2"></div>
+          <div class="col-2 small_circle_container">
+            <div class="small_circle"></div>
           </div>
-          <div class="col-3 ">
+          <div class="col-2"></div>
+        </div>
+        <div *ngFor="let price of prices" class="row text-white">
+          <div class="col-6 bpadding">
+            <div class="text-center text-uppercase">{{price.name}}</div>
+            <div class="text-center text-italic">{{price.wkn_description}}</div>
+          </div>
+          <div class="col-3 bpadding text-strong line-right">
             {{price.user_price| currency: '$':true:'2.0'}}
           </div>
-          <div class="col-3 ">
+          <div class="col-3 bpadding text-strong">
             {{price.final_price| currency: '$':true:'2.0'}}
           </div>
         </div>
-
+        <div class="row">
+          <div class="col-6"></div>
+          <div class="col-2"></div>
+          <div class="col-2 small_circle_container">
+            <div class="small_circle"></div>
+          </div>
+          <div class="col-2"></div>
+        </div>
       </div>
     </div>
   </div>

@@ -68,9 +68,10 @@ export class ProfileEditComponent implements OnInit {
     const email = this.editForm.controls.email.value;
     const phone = this.editForm.controls.phone.value;
     const street = this.editForm.controls.address.value;
+    const birthdate = this.editForm.controls.year.value + "-" + ("00" + this.editForm.controls.month.value).slice(-2) + "-" +this.editForm.controls.day.value ;
 
     this.userService
-      .saveProfile(this.partnerId, name, email, phone, street)
+      .saveProfile(this.partnerId, name, email, phone, street, birthdate)
       .then((res) => {
         console.log(res);
         this.router.navigateByUrl("/user/profile");

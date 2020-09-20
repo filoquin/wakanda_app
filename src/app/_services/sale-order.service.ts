@@ -11,7 +11,7 @@ export class SaleOrderService {
         return this.odooRPC.searchRead(
             "product.category",
             [["wkn_publish", "=", true]],
-            ["name", "display_name", "user_price", "final_price"]
+            ["name", "display_name", "user_price", "final_price","wkn_description"]
         );
     }
 

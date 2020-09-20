@@ -1,5 +1,6 @@
 .container-main {
   background-color: #ffd3f2 !important;
+  margin-bottom: 60px;
 }
 .prices-main {
   background-color: #ff5dbc;
@@ -21,4 +22,33 @@
   width:  5.5em;
   vertical-align: center;
   display: inline-block;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.text-italic{
+    font-style: italic;
+}
+.bpadding{
+  padding-bottom: 20px;
+}
+.line-right{
+  border-right: 1px solid #FFF;
+}
+.text-strong{
+    font-weight: 700;
+}
+.small_circle{
+  background: #FFF;
+  border-radius: 50%;
+  color: #FFF;
+  height: 10px;
+  width: 10px;
+  margin: auto;
+
+}
+.small_circle_container{
+  text-align: center;
 }
