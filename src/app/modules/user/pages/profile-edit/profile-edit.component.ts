@@ -30,9 +30,9 @@ export class ProfileEditComponent implements OnInit {
       email: ["", Validators.required],
       phone: ["", Validators.required],
       address: ["", Validators.required],
-      day: ["28", Validators.required],
-      month: ["02", Validators.required],
-      year: ["1975", Validators.required],
+      day: ["", Validators.required],
+      month: ["", Validators.required],
+      year: ["", Validators.required],
     });
 
     this.userService
@@ -46,6 +46,9 @@ export class ProfileEditComponent implements OnInit {
           email: res["email"],
           phone: res["phone"],
           address: res["street"],
+          day: res["day"],
+          month: res["month"],
+          year: res["year"]
         });
       })
       .catch((err) => {
@@ -65,9 +68,10 @@ export class ProfileEditComponent implements OnInit {
     const email = this.editForm.controls.email.value;
     const phone = this.editForm.controls.phone.value;
     const street = this.editForm.controls.address.value;
+    const birthdate = this.editForm.controls.year.value + "-" + ("00" + this.editForm.controls.month.value).slice(-2) + "-" +this.editForm.controls.day.value ;
 
     this.userService
-      .saveProfile(this.partnerId, name, email, phone, street)
+      .saveProfile(this.partnerId, name, email, phone, street, birthdate)
       .then((res) => {
         console.log(res);
         this.router.navigateByUrl("/user/profile");

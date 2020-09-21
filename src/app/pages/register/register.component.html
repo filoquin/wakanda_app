@@ -16,8 +16,8 @@
         <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.user.errors }">
           <label for="user" class="text-white">Usuario</label>
           <input type="email" class="form-control input-custom" id="user" formControlName="user">
-          <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
-            <div *ngIf="formControls.email.errors.required">Debe ingresar un usuario</div>
+          <div *ngIf="isSubmitted && formControls.user.errors" class="help-block">
+            <div *ngIf="formControls.user.errors.required">Debe ingresar un usuario</div>
           </div>
         </div>
         <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
@@ -30,8 +30,8 @@
         <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.completename.errors }">
           <label for="completename" class="text-white">Nombre y Apellido</label>
           <input type="text" class="form-control input-custom" id="completename" formControlName="completename">
-          <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
-            <div *ngIf="formControls.email.errors.required">Debe ingresar Nombre y Apellido </div>
+          <div *ngIf="isSubmitted && formControls.completename.errors" class="help-block">
+            <div *ngIf="formControls.completename.errors.required">Debe ingresar Nombre y Apellido </div>
           </div>
         </div>
         <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
@@ -44,15 +44,33 @@
         <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.phone.errors }">
           <label for="phone" class="text-white">Teléfono</label>
           <input type="phone" class="form-control input-custom" id="phone" formControlName="phone">
-          <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
-            <div *ngIf="formControls.email.errors.required">Debe ingresar un telefono</div>
+          <div *ngIf="isSubmitted && formControls.phone.errors" class="help-block">
+            <div *ngIf="formControls.phone.errors.required">Debe ingresar un telefono</div>
           </div>
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.phone.errors }">
+        <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.address.errors }">
           <label for="address" class="text-white">Dirección</label>
           <input type="text" class="form-control input-custom" id="address" formControlName="address">
-          <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
-            <div *ngIf="formControls.email.errors.required">Debe ingresar una dirección</div>
+          <div *ngIf="isSubmitted && formControls.address.errors" class="help-block">
+            <div *ngIf="formControls.address.errors.required">Debe ingresar una dirección</div>
+          </div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.state.errors }">
+          <label for="states" class="text-white">Provincia</label>
+              <select class="form-control input-custom" id="id" formControlName="state">
+                <option value="">Provincia</option>
+                <option value="{{state['id']}}" *ngFor="let state of  states">{{ state['name'] }}</option>
+              </select>
+
+          <div *ngIf="isSubmitted && formControls.state.errors" class="help-block">
+            <div *ngIf="formControls.state.errors.required">Debe ingresar una provincia</div>
+          </div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.knowUs.errors }">
+          <label for="knowUs" class="text-white">¿Como nos conocio?</label>
+          <input type="text" class="form-control input-custom" id="knowUs" formControlName="knowUs">
+          <div *ngIf="isSubmitted && formControls.knowUs.errors" class="help-block">
+            <div *ngIf="formControls.knowUs.errors.required">Es obligatorio</div>
           </div>
         </div>
         <div class="form-group">

@@ -68,7 +68,9 @@ export class UserService {
     address,
     day,
     month,
-    year
+    year,
+    knowUs,
+    state
   ) {
     return this.http
       .post(`${this.apiUrl}/wkn/json_register`, {
@@ -82,6 +84,8 @@ export class UserService {
           day: day,
           month: month,
           year: year,
+          know_us: knowUs,
+          state_id: state
         },
       })
       .pipe(
@@ -100,11 +104,11 @@ export class UserService {
   getProfile() {
     return this.odooRPC.call("res.users", "wkn_my_profile", [], {});
   }
-  saveProfile(id, name, email, phone, street) {
+  saveProfile(id, name, email, phone, street, birthdate) {
     return this.odooRPC.call(
       "res.partner",
       "write",
-      [id, { name: name, email: email, phone: phone }],
+      [id, { name: name, email: email, phone: phone , birthdate_date : birthdate}],
       {}
     );
   }
@@ -144,4 +148,14 @@ export class UserService {
         })
       );
   }
+  /*getStates() {
+    console.log(`${this.apiUrl}/wkn/states`);
+    this.http.get(`${this.apiUrl}/wkn/states`,'').pipe(
+      map((data: any) => {
+        console.log(data);
+        return data;
+      })
+    );
+    console.log("oooo");
+  }*/
 }

@@ -1,5 +1,6 @@
 .container-main{
   background-color: #ffd3f2 !important;
+
 }
 
 .btn-product{
@@ -40,6 +41,7 @@
 /*}*/
 
 .img-circle{
+  margin-top:50%;
   background-color: #ffffff;
   border-radius: 50%;
   width: 80px;
