@@ -6,7 +6,9 @@
       </div>
     </div>
     <div  class="row overflow-auto row-category h-100">
-      <div *ngFor="let cat of catalogs">
+      <ngx-spinner></ngx-spinner>
+
+      <div *ngFor="let cat of catalogs" class="col-12 my-auto mx-auto">
         <carousel>
           <slide *ngFor="let item of cat['images']">
                 <img src="data:image/jpg;base64,{{item.image}}" class="img-fluid" />
