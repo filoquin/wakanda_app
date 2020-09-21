@@ -24,10 +24,10 @@
   font-size: x-small;
 }
 
-.text-big{
-  font-family: GlacialIndifference-Bold;
-  font-size: 8vw;
-}
+/*.text-big{*/
+/*  font-family: GlacialIndifference-Bold;*/
+/*  font-size: 1.75em;*/
+/*}*/
 .logo{
   width:  5.5em;
   vertical-align: center;

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +20,7 @@ import { WelcomeVideoComponent } from './pages/welcome-video/welcome-video.compo
 import { LocationComponent } from './pages/location/location.component';
 import { CatalogComponent } from './pages/catalog/catalog.component';
 import {CarouselModule} from "ngx-bootstrap/carousel";
+import {NgxSpinnerModule} from "ngx-spinner";
 
 
 @NgModule({
@@ -45,9 +46,12 @@ import {CarouselModule} from "ngx-bootstrap/carousel";
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    NgxSpinnerModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+
 })
 export class AppModule { }

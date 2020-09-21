@@ -17,7 +17,7 @@
 @import "assets/fonts/ElliotSans-Regular/style.css";
 @import "assets/fonts/ElliotSans-RegularItalic/style.css";
 
-
+@import "assets/fonts/Acumin-Variable-Concept/style.css";
 
 
 
@@ -70,3 +70,38 @@ body{
 .container-main{
   background-color: #ffd3f2 !important;
 }
+.text-big{
+  font-family: "Acumin Variable Concept";
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  .text-big{
+       font-size: 1.2em;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+  .text-big{
+    font-size: 1.4em;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .text-big{
+    font-size: 1.6em;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .text-big{
+    font-size: 1.6em;
+  }
+}
+
+

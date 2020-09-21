@@ -10,7 +10,7 @@
 .product-title{
   background-color: #ff5dbc ;/*#f762ad;*/
   font-family: 'AronGrotesque-Regular';
-  font-size: 4vw;
+  font-size: 1.5em;
   border-radius: 5px;
 
 }
@@ -55,6 +55,9 @@
     width: 140px;
     height: 140px;
   }
+  .product-title{
+       font-size: 1.5em;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -63,6 +66,9 @@
 
     width: 150px;
     height: 150px;
+  }
+  .product-title{
+    font-size: 2em;
   }
 }
 
@@ -73,6 +79,9 @@
     width: 175px;
     height: 175px;
   }
+  .product-title{
+    font-size: 2em;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -82,6 +91,9 @@
     width: 180px;
     height: 180px;
   }
+  .product-title{
+    font-size: 2.5em;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -90,5 +102,8 @@
 
     width: 180px;
     height: 180px;
+  }
+  .product-title{
+    font-size: 2.5em;
   }
 }
