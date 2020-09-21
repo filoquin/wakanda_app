@@ -16,8 +16,8 @@
 
     </div>
         <div class="row order-actions mx-auto w-100">
-      <div class="col-12 text-center">
-        <a href="{{cat['link']}}" class="btn btn-wkn btn-sm text-uppercase pull-left">Descargar Catalogo</a>
+      <div *ngIf="catalogs" class="col-12 text-center">
+        <a href="{{catalogs[0]['link']}}" class="btn btn-wkn btn-sm text-uppercase pull-left">Descargar Catalogo</a>
       </div>
     </div>
   </div>
