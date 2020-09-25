@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1600559786947,
+  "timestamp": 1600991476109,
   "index": "./index.html",
   "assetGroups": [
     {
@@ -37,6 +37,9 @@
         "ignoreVary": true
       },
       "urls": [
+        "./AcuminVariableConcept.eot",
+        "./AcuminVariableConcept.ttf",
+        "./AcuminVariableConcept.woff2",
         "./AronGrotesque-black.eot",
         "./AronGrotesque-black.otf",
         "./AronGrotesque-black.svg",
@@ -127,6 +130,10 @@
         "./GlacialIndifference-Regular.ttf",
         "./GlacialIndifference-Regular.woff",
         "./GlacialIndifference-Regular.woff2",
+        "./assets/fonts/Acumin-Variable-Concept/AcuminVariableConcept.eot",
+        "./assets/fonts/Acumin-Variable-Concept/AcuminVariableConcept.ttf",
+        "./assets/fonts/Acumin-Variable-Concept/AcuminVariableConcept.woff2",
+        "./assets/fonts/Acumin-Variable-Concept/style.css",
         "./assets/fonts/AronGrotesque-Black/fonts/AronGrotesque-black.eot",
         "./assets/fonts/AronGrotesque-Black/fonts/AronGrotesque-black.otf",
         "./assets/fonts/AronGrotesque-Black/fonts/AronGrotesque-black.svg",
@@ -311,10 +318,13 @@
   "hashTable": {
     "./10.js": "c91a689e488e1be5dd4404c2d62e0f3fc20a96c0",
     "./5.js": "b317fa6703070ab433246aeef5ea28ade8a3fad7",
-    "./6.js": "b5b74b71c14eab9fc3e9de1e0ce861372ada1e2d",
-    "./7.js": "206cdbce5693d0a16d538dc67feed12b7e3d747f",
-    "./8.js": "50d2c7611d30b98023af113974c6d4897aef6b67",
+    "./6.js": "ea9b0f0dcc318c8216492681b644995108e13a30",
+    "./7.js": "7f7a54020cd04902ebbb569ece5e56de448594d4",
+    "./8.js": "78b52d3f6191b901aa54754608d8753ef679b1ee",
     "./9.js": "5d5fc7553bf8638b5510064358d61ae203cd005f",
+    "./AcuminVariableConcept.eot": "7caffd3ef7dece45d11e6713c5bd205fb2d73490",
+    "./AcuminVariableConcept.ttf": "e0dc2603ed7d079646c0e629d32058d5aa9fbd4c",
+    "./AcuminVariableConcept.woff2": "ea694a0c8628bb0d6e1ea288e7d18c68fdc4c63d",
     "./AronGrotesque-black.eot": "97edb512c75fc51c4118a9872f2d8eaa8a34aa18",
     "./AronGrotesque-black.otf": "e8327d7f0e5505f56396811116c74f092033f96e",
     "./AronGrotesque-black.svg": "2dbf054e9816bb195b92bbd771d87c366c2d19dd",
@@ -405,6 +415,10 @@
     "./GlacialIndifference-Regular.ttf": "58a8896cf9f849da7882f0c4e07af8af01c4bee8",
     "./GlacialIndifference-Regular.woff": "2621e8fbaaea7e32482ed35e46b0327d62854445",
     "./GlacialIndifference-Regular.woff2": "c205438521100da3968b459527702a58a0a929f6",
+    "./assets/fonts/Acumin-Variable-Concept/AcuminVariableConcept.eot": "7caffd3ef7dece45d11e6713c5bd205fb2d73490",
+    "./assets/fonts/Acumin-Variable-Concept/AcuminVariableConcept.ttf": "e0dc2603ed7d079646c0e629d32058d5aa9fbd4c",
+    "./assets/fonts/Acumin-Variable-Concept/AcuminVariableConcept.woff2": "ea694a0c8628bb0d6e1ea288e7d18c68fdc4c63d",
+    "./assets/fonts/Acumin-Variable-Concept/style.css": "7c260a563eae92c905693abea7d3caa5a9e4f631",
     "./assets/fonts/AronGrotesque-Black/fonts/AronGrotesque-black.eot": "97edb512c75fc51c4118a9872f2d8eaa8a34aa18",
     "./assets/fonts/AronGrotesque-Black/fonts/AronGrotesque-black.otf": "e8327d7f0e5505f56396811116c74f092033f96e",
     "./assets/fonts/AronGrotesque-Black/fonts/AronGrotesque-black.svg": "2dbf054e9816bb195b92bbd771d87c366c2d19dd",
@@ -582,14 +596,14 @@
     "./favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "./index.html": "01d727081eb2b63587b2b5e063dcca8a507b11aa",
     "./location.png": "c5d24e0ff4f2e2297fe7b0d15a4e34e5cb321fe0",
-    "./main.js": "287e3599d76a4ab83728dec253c104d36ba7ea9b",
+    "./main.js": "d3f1c88259753e096b422bcb4fa5b4604821d0e0",
     "./manifest.webmanifest": "f8857b53e289cebec7b3ab7a814da1b428a0b0ee",
     "./order.png": "4db5b2de70a63eab046462a34d439be3413226c6",
     "./polyfills.js": "57ce78cad97832ce8fec76620e3d215c8de2765e",
     "./prices.png": "52ac00e4e30090b4446418be97df104fbbe3eaa6",
     "./runtime.js": "a66d94934bc1a9259ee4158348821d331e42468a",
     "./scripts.js": "14abf70338f8ffd4ae45dab3afd431543b5c844f",
-    "./styles.css": "e1b4b1cf1fefe3127fc62bc6695a0a5c3fdc4ce7"
+    "./styles.css": "9a5d9675b8f4ffb270ac75159861448ebf5385cc"
   },
   "navigationUrls": [
     {

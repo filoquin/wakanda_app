@@ -1,35 +1,33 @@
-.container-main{
+.container-main {
   background-color: #ffd3f2 !important;
-
+  padding-bottom: 160px;
 }
 
-.btn-product{
-  background-color: #ff5dbc ;/*#ff3cae;*/
+.btn-product {
+  background-color: #ff5dbc;/*#ff3cae;*/
   color: #ffffff;
 }
 
-.product-title{
-  background-color: #ff5dbc ;/*#f762ad;*/
+.product-title {
+  background-color: #ff5dbc;/*#f762ad;*/
   font-family: 'AronGrotesque-Regular';
   font-size: 1.5em;
   border-radius: 5px;
-
 }
-.summary{
+
+.summary {
   background-color: #ffbce4;
   border-radius: 15px;
   margin-bottom: 60px;
-   color: #ffffff;
+  color: #ffffff;
   position: fixed;
   bottom: 0;
   left: 0;
-  right: 0;
-  /*transform: translate(-50%, 0);*/
+  right: 0;  /*transform: translate(-50%, 0);*/
   font-size: 0.8em;
-
 }
 
-.text-category{
+.text-category {
   color: #ff5dbc;
   font-size: 0.8em;
   font-family: GlacialIndifference-Regular;
@@ -37,75 +35,103 @@
 }
 
 /*.container{*/
+
 /*  background-color: #ffd3f2;*/
+
 /*}*/
 
-.img-circle{
-  margin-top:50%;
+.img-circle {
+  margin-top: 50%;
   background-color: #ffffff;
   border-radius: 50%;
   width: 80px;
   height: 80px;
 }
 
-
-
 /* Small devices (landscape phones, 378px and up) */
-@media (min-width: 428px) {
-.img-circle{
-
+@media (min-width:428px) {
+  .img-circle {
     width: 140px;
     height: 140px;
   }
-  .product-title{
-       font-size: 1.5em;
+
+  .product-title {
+    font-size: 1.5em;
   }
+
 }
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-.img-circle{
-
+@media (min-width:576px) {
+  .img-circle {
     width: 150px;
     height: 150px;
   }
-  .product-title{
+
+  .product-title {
     font-size: 2em;
   }
+
 }
 
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
-@media (min-width: 768px) {
-.img-circle{
-
+@media (min-width:768px) {
+  .img-circle {
     width: 175px;
     height: 175px;
   }
-  .product-title{
+
+  .product-title {
     font-size: 2em;
   }
+
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-.img-circle{
-
+@media (min-width:992px) {
+  .img-circle {
     width: 180px;
     height: 180px;
   }
-  .product-title{
+
+  .product-title {
     font-size: 2.5em;
   }
+
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-.img-circle{
-
+@media (min-width:1200px) {
+  .img-circle {
     width: 180px;
     height: 180px;
   }
-  .product-title{
+
+  .product-title {
     font-size: 2.5em;
   }
+
 }
+
+@media (max-height:768px) {
+  .img-circle {
+    margin-top: 30%;
+  }
+
+}
+@media (max-height:700px) {
+  .img-circle {
+    margin-top: 20%;
+  }
+
+}
+
+@media (max-height:600px) {
+  .img-circle {
+  width: 55px;
+  height: 55px; 
+    margin-top: 10%;
+  }
+
+}
+

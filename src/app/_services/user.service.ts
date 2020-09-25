@@ -108,7 +108,7 @@ export class UserService {
     return this.odooRPC.call(
       "res.partner",
       "write",
-      [id, { name: name, email: email, phone: phone , birthdate_date : birthdate}],
+      [id, { name: name, email: email, phone: phone ,street:street, birthdate_date : birthdate}],
       {}
     );
   }
