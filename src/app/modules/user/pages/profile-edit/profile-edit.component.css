@@ -1,3 +1,7 @@
+.container-main{
+    margin-bottom: 60px;
+
+}
 .edit {
   margin-top: 5px;
 }
@@ -17,12 +21,16 @@
 }
 
 .img-upload-btn {
-  position: absolute;
+  /*position: absolute;
   padding: 0;
   width: calc(100% - 30px);
   height: 38px;
-  opacity: 0;
+  opacity: 0;*/
 }
+input[type="file"] {
+    display: none;
+}
+
 
 .image-wrapper {
   position: relative;

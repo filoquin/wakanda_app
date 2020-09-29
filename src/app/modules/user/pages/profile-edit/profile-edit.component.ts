@@ -42,8 +42,8 @@ export class ProfileEditComponent implements OnInit {
     this.userService
       .getProfile()
       .then((res) => {
-        console.log(res);
         this.partnerId = res["partner_id"];
+        this.image = res["image"];
 
         this.editForm.patchValue({
           completename: res["name"],

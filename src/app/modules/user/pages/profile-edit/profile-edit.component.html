@@ -1,18 +1,13 @@
 <div class="fill container-main">
   <div class="container pt-1 text-center edit">
     <div class="row mt-5">
-
       <div class="col-12 text-center mx-auto ">
         <h4 class="text-white">Editar Perfil</h4>
       </div>
-
     </div>
     <div class="row ">
       <div class="col-md-4 col-12 mx-auto">
-
-
         <form [formGroup]="editForm" class="login-container" (ngSubmit)="save()">
-
           <!--      <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.user.errors }">-->
           <!--        <label for="user" class="text-white">Usuario</label>-->
           <!--        <input type="email" class="form-control input-custom" id="user"  formControlName="user">-->
@@ -33,18 +28,15 @@
               <img [attr.src]="image" *ngIf="image" width="100%">
               <img src="assets/img/icons/profile-white.png" *ngIf="!image" width="50%">
             </div>
-            <input type="file" (change)="fileChange(input)" #input class="img-upload-btn" />
-
-            <button class="btn btn-upload btn-block rounded-0" type="button">
+            <label class="btn btn-upload btn-block rounded-0">
+            <input type="file" (change)="fileChange(input)" #input />
               <span *ngIf="!image"><i class="fa fa-upload"></i> Seleccione una imagen de perfil... </span>
               <span *ngIf="image"><i class="fa fa-refresh"></i> Cambiar imagen de perfil... </span>
-            </button>
 
-
+            </label>
 
 
           </div>
-
           <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.completename.errors }">
             <label for="completename" class="text-white">Nombre y Apellido</label>
             <input type="text" class="form-control input-custom" id="completename" formControlName="completename">
@@ -80,11 +72,9 @@
                 <select class="form-control input-custom" id="day" formControlName="day">
                   <option value=""> Dia</option>
                   <option value="{{i +1}}" *ngFor="let in of counter(31) ;let i = index">{{i +1}}</option>
-
                 </select>
                 <div *ngIf="isSubmitted && formControls.day.errors" class="help-block">
                   <div *ngIf="formControls.day.errors.required">Debe seleccionar un día</div>
-
                 </div>
               </div>
               <div class="col-4">
@@ -103,7 +93,6 @@
                   <option value="10">Oct</option>
                   <option value="11">Nov</option>
                   <option value="12">Dic</option>
-
                 </select>
                 <div *ngIf="isSubmitted && formControls.day.errors" class="help-block">
                   <div *ngIf="formControls.month.errors.required">Debe seleccionar un mes</div>
@@ -125,12 +114,10 @@
             <div class="col-12 text-center">
               <button type="submit" class="btn btn-login btn-lg">Guardar</button>
             </div>
-
           </div>
         </form>
       </div>
     </div>
-    <br /><br />
-    <br /><br />
+
   </div>
 </div>

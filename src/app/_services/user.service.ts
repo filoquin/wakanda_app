@@ -105,6 +105,9 @@ export class UserService {
     return this.odooRPC.call("res.users", "wkn_my_profile", [], {});
   }
   saveProfile(id, name, email, phone, street, birthdate, image) {
+    if (image){
+      image = image.split(',')[1]
+    }
     return this.odooRPC.call(
       "res.partner",
       "write",
@@ -122,7 +125,6 @@ export class UserService {
       })
       .pipe(
         map((data: any) => {
-          console.log(data);
           return data;
         })
       );
@@ -137,7 +139,6 @@ export class UserService {
       })
       .pipe(
         map((data: any) => {
-          console.log(data);
           if (data.result) {
             const user = data.result.user;
             // store user details and jwt token in local storage to keep user logged in between page refreshes
