@@ -18,7 +18,7 @@ export class SaleOrderService {
     getSaleRank() {
         return this.odooRPC.searchRead(
             "sale.rank",
-            [["rank", "<=", 5]],
+            [["rank", "<=", 10]],
             ["wkn_app_categ_id", "category_name", "name", "product_id", "rank"]
         );
     }
@@ -34,7 +34,7 @@ export class SaleOrderService {
     getProducts(categoryId) {
         return this.odooRPC.searchRead(
             "product.template",
-            [
+            [   ['qty_available', '>', 0],
                 ["wak_published", "=", true],
                 ["categ_id", "child_of", categoryId],
             ],
@@ -97,16 +97,18 @@ export class SaleOrderService {
             "sale.order.line",
             [["order_id", "=", orderId]],
             ["name", "product_id", "product_uom_qty", "price_total"]
+            ,  100,0,{'display_default_code':false},
+
         );
     }
     getMyOrders() {
         return this.odooRPC.searchRead(
             "sale.order",
             [],
-            ["name", "display_name", "state", "date_order", "amount_total"],
+            ["name", "display_name", "state",  "date_order", "amount_total"],
             50,
             0,
-            {},
+            {'display_default_code':false},
             "create_date desc"
         );
     }

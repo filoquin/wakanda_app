@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1601349679453,
+  "timestamp": 1601385995911,
   "index": "./index.html",
   "assetGroups": [
     {
@@ -318,10 +318,10 @@
   "hashTable": {
     "./10.js": "c3c183980b41451aadf3725dc961edf7f5d7bbeb",
     "./5.js": "5986b61eabfd646ed6405bc71149d582cf935ad6",
-    "./6.js": "ca6a7dec0ff623f5779a758658a83f4964d2b2e4",
+    "./6.js": "ada37dd495bfc7360a82c6ac97e40f84c3e5c52e",
     "./7.js": "953e15c8597c85b706cebf08436b20ccf4006583",
     "./8.js": "23b4ea83ece351782213d8c41d4d7ccaf97ca463",
-    "./9.js": "0876ec229c0b769e2e474a838abd551f14050cf4",
+    "./9.js": "a7bea2c09fddd164701b7a9fa831c2461a7712dc",
     "./AcuminVariableConcept.eot": "7caffd3ef7dece45d11e6713c5bd205fb2d73490",
     "./AcuminVariableConcept.ttf": "e0dc2603ed7d079646c0e629d32058d5aa9fbd4c",
     "./AcuminVariableConcept.woff2": "ea694a0c8628bb0d6e1ea288e7d18c68fdc4c63d",
@@ -591,12 +591,12 @@
     "./assets/img/right-triangle.png": "1f45938159350ce8b1710dbd12c75d23c0a393e2",
     "./bestsellers.png": "977505a4c1639210b74d12249db0de1f86df14b5",
     "./catalog.png": "dd61635ff3180ac86bfa18c87dc848a72ba35852",
-    "./common.js": "8b3748781541ff22739f2def90541afa6ef6b4c3",
+    "./common.js": "98e97acbcdc17fe5da0d737d913d6ea8c7946f59",
     "./faq.png": "12d36dc617d060c032b1c6a7efb0074df25dc447",
     "./favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "./index.html": "01d727081eb2b63587b2b5e063dcca8a507b11aa",
     "./location.png": "c5d24e0ff4f2e2297fe7b0d15a4e34e5cb321fe0",
-    "./main.js": "17d9da710fbac58d53dd1d256ff757e7d1f3d726",
+    "./main.js": "3c0fc7a364b7c7753fc41a043cf76a7b4d6d21b4",
     "./manifest.webmanifest": "f8857b53e289cebec7b3ab7a814da1b428a0b0ee",
     "./order.png": "4db5b2de70a63eab046462a34d439be3413226c6",
     "./polyfills.js": "57ce78cad97832ce8fec76620e3d215c8de2765e",

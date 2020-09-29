@@ -5,6 +5,7 @@ import {RouterModule} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ProfileEditComponent } from './pages/profile-edit/profile-edit.component';
+import {NgxSpinnerModule} from "ngx-spinner";
 
 
 export const routes = [
@@ -20,6 +21,7 @@ export const routes = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
+    NgxSpinnerModule
   ]
 })
 export class UserModule { }
