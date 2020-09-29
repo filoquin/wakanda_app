@@ -112,13 +112,39 @@
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-
+  .item-main-img
+ {
+  width:300px;
+  height: 300px; 
+  }
+.item-main-text {
+    font-size: 1.8em;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+  .item-main-img
+ {
+  width:400px;
+  height: 400px; 
+  }
 
 }
 
 
+@media (max-height:600px) {
+  .item-main-img
+ {
+  width: 76px;
+  height: 76px; 
+  }
+
+  .item-main-img .p-4{
+    padding: 1rem!important;
+}
+.container-dashboard .pt-4 {
+    padding-top: 0.3rem!important;
+}
+}
 
