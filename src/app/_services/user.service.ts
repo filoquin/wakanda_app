@@ -33,7 +33,7 @@ export class UserService {
   }
   login(username, password) {
     return this.http
-      .post<User>(`${this.apiUrl}/wkn/json_login`, {
+      .post<User>(`${this.apiUrl}/wkn/json_login?db=wakandaa`, {
         params: { login: username, password: password },
       })
       .pipe(

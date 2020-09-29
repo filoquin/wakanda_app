@@ -49,8 +49,8 @@ export class OrderSumaryComponent implements OnInit {
         }
       })
       .catch((err) => {
-        const errormessage = err.error.data.message;
-        this.toasterService.warning(errormessage);
+        //const errormessage = err.error.data.message;
+        this.toasterService.warning('La orden no cumple con el minimo');
       });
   }
 }
