@@ -3,8 +3,8 @@
     <div class="row">
       <div class="col-4"></div>
       <div class="col-4 text-center mx-auto ">
-        <img *ngIf="!profile['photo'] "src="assets/img/icons/profile-white.png" class="img-fluid p-4"/>
-        <img *ngIf="profile['photo'] "src="assets/img/none.png" class="img-fluid p-4"/>
+        <img *ngIf="!profile['image']"  src="assets/img/icons/profile-white.png" class="img-fluid p-4"/>
+        <img *ngIf="profile['image']" [attr.src]="profile['image']" class="img-fluid p-4"/>
       </div>
       <div class="col-4"></div>
     </div>

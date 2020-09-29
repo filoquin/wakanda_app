@@ -82,7 +82,7 @@ export class ProfileEditComponent implements OnInit {
       this.editForm.controls.day.value;
 
     this.userService
-      .saveProfile(this.partnerId, name, email, phone, street, birthdate)
+      .saveProfile(this.partnerId, name, email, phone, street, birthdate, this.image)
       .then((res) => {
         console.log(res);
         this.spinner.hide();
@@ -104,6 +104,7 @@ export class ProfileEditComponent implements OnInit {
       const file = input.files[0];
       reader.onload = () => {
         this.image = reader.result;
+        console.log(this.image);
       }
       reader.readAsDataURL(file);
     }

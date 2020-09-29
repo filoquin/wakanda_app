@@ -104,11 +104,11 @@ export class UserService {
   getProfile() {
     return this.odooRPC.call("res.users", "wkn_my_profile", [], {});
   }
-  saveProfile(id, name, email, phone, street, birthdate) {
+  saveProfile(id, name, email, phone, street, birthdate, image) {
     return this.odooRPC.call(
       "res.partner",
       "write",
-      [id, { name: name, email: email, phone: phone ,street:street, birthdate_date : birthdate}],
+      [id, { name: name, email: email, phone: phone ,street:street, birthdate_date : birthdate, image_1920:image }],
       {}
     );
   }
