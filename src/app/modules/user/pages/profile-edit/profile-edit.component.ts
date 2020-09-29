@@ -14,24 +14,16 @@ export class ProfileEditComponent implements OnInit {
   editForm: FormGroup;
   isSubmitted = false;
   partnerId: number;
-  public image:any;
+  public image: any;
   constructor(
     private userService: UserService,
     private router: Router,
-<<<<<<< HEAD
-    private formBuilder: FormBuilder
-  ) { }
-  actual_year() {
-    return new Date().getFullYear()
-
-=======
     private formBuilder: FormBuilder,
     private spinner: NgxSpinnerService,
     private toasterService: ToastrService
-  ) {}
+  ) { }
   actual_year() {
     return new Date().getFullYear();
->>>>>>> d3ba13e31a2490585c016e9dd8073d9a7c329f23
   }
   counter(i: number) {
     return new Array(i);
@@ -82,16 +74,12 @@ export class ProfileEditComponent implements OnInit {
     const email = this.editForm.controls.email.value;
     const phone = this.editForm.controls.phone.value;
     const street = this.editForm.controls.address.value;
-<<<<<<< HEAD
-    const birthdate = this.editForm.controls.year.value + "-" + ("00" + this.editForm.controls.month.value).slice(-2) + "-" + this.editForm.controls.day.value;
-=======
     const birthdate =
       this.editForm.controls.year.value +
       "-" +
       ("00" + this.editForm.controls.month.value).slice(-2) +
       "-" +
       this.editForm.controls.day.value;
->>>>>>> d3ba13e31a2490585c016e9dd8073d9a7c329f23
 
     this.userService
       .saveProfile(this.partnerId, name, email, phone, street, birthdate)
@@ -110,19 +98,19 @@ export class ProfileEditComponent implements OnInit {
       });
   }
 
-  fileChange(input){
+  fileChange(input) {
     const reader = new FileReader();
     if (input.files.length) {
-        const file = input.files[0];
-        reader.onload = () => {
-            this.image = reader.result;
-        }
-        reader.readAsDataURL(file);
+      const file = input.files[0];
+      reader.onload = () => {
+        this.image = reader.result;
+      }
+      reader.readAsDataURL(file);
     }
-}
+  }
 
-removeImage():void{
+  removeImage(): void {
     this.image = '';
-}
+  }
 
 }
