@@ -1,6 +1,6 @@
 {
     "\/api/proxy": {
-        "target": "http://157.245.250.143:8013",
+        "target": "https://app.wakanda.com.ar",
         "secure": false,
         "changeOrigin": true,
         "pathRewrite": {

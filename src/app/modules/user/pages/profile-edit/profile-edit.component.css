@@ -1,18 +1,49 @@
-.edit{
+.edit {
   margin-top: 5px;
 }
-.logo{
+.logo {
   width: 150px;
 }
 
-.input-custom{
+.input-custom {
   border: none;
   background-color: #ffa7e2;
   color: #ffffff;
 }
 
-
-.btn-login{
+.btn-login {
   background-color: #fe2399;
-  color:#fff;
+  color: #fff;
+}
+
+.img-upload-btn {
+  position: absolute;
+  padding: 0;
+  width: calc(100% - 30px);
+  height: 38px;
+  opacity: 0;
+}
+
+.image-wrapper {
+  position: relative;
+
+}
+
+.image-wrapper .delete-img {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 3px 5px;
+  border-radius: 50%;
+  visibility: hidden;
+  cursor: pointer;
+}
+.image-wrapper :hover .delete-img {
+  visibility: visible;
+}
+.btn-upload{
+  background-color:#fe2399 ;
+  color: #ffffff;
 }
