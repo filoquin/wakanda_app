@@ -4,7 +4,7 @@
       <div class="col-2"></div>
       <div class="col-8 text-center mx-auto ">
         <img *ngIf="!profile['image']"  src="assets/img/icons/profile-white.png" class="img-fluid p-4"/>
-        <img *ngIf="profile['image']" [attr.src]="profile['image']" class="img-fluid p-4"/>
+        <img *ngIf="profile['image']" [attr.src]="profile['image']" class="profile-image p-4  rounded-circle"/>
       </div>
       <div class="col-2"></div>
     </div>
