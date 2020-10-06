@@ -13,7 +13,7 @@ export class OrderSumaryComponent implements OnInit {
   public order: any = null;
   public total = 0;
   private lines: any = [];
-  public code:string = '';
+  public code: string = "";
   editForm: FormGroup;
   isSubmitted = false;
 
@@ -38,20 +38,19 @@ export class OrderSumaryComponent implements OnInit {
 
   ngOnInit(): void {
     this.editForm = this.formBuilder.group({
-      disc_code: ["sss"]
+      disc_code: ["sss"],
     });
   }
 
-    get formControls() {
+  get formControls() {
     return this.editForm.controls;
   }
 
   saveOrder() {
-const disc_code = this.editForm.controls.disc_code.value;
-    console.log('disc_code',disc_code);
-    return;
+    const disc_code = this.editForm.controls.disc_code.value;
+    console.log("disc_code", disc_code);
     this.saleOrderService
-      .createSaleOrder(this.lines,disc_code)
+      .createSaleOrder(this.lines, disc_code)
       .then((res) => {
         console.log(res);
         if (res) {
@@ -66,7 +65,7 @@ const disc_code = this.editForm.controls.disc_code.value;
       })
       .catch((err) => {
         //const errormessage = err.error.data.message;
-        this.toasterService.warning('La orden no cumple con el minimo');
+        this.toasterService.warning("La orden no cumple con el minimo o el codigo de descuento no es valido");
       });
   }
 }

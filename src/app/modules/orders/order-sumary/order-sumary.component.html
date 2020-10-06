@@ -32,18 +32,12 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-12 text-center">
-      <div class="form-group">
-        <form [formGroup]="editForm">
-          <input type="text" [formGroup]="editForm" class="form-control" placeholder="Codigo de descuento" formControlName="disc_code">
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+
 <div class="row order-total mx-auto w-100">
   <div class="col-6">
+            <form [formGroup]="editForm">
+          <input type="text" class="form-control" placeholder="Codigo de descuento"  (ngSubmit)="saveOrder()" formControlName="disc_code">
+        </form>
   </div>
   <div class="col-6 text-right">
     Total : {{total|currency}}
