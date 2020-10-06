@@ -32,22 +32,21 @@
       </div>
     </div>
   </div>
-
-<div class="row order-total mx-auto w-100">
-  <div class="col-6">
-            <form [formGroup]="editForm">
-          <input type="text" class="form-control" placeholder="Codigo de descuento"  (ngSubmit)="saveOrder()" formControlName="disc_code">
-        </form>
+  <div class="row order-total mx-auto w-100">
+    <div class="col-6">
+      <form [formGroup]="editForm">
+        <input type="text" class="form-control disc_code" placeholder="Codigo de descuento" (ngSubmit)="saveOrder()" formControlName="disc_code">
+      </form>
+    </div>
+    <div class="col-6 text-right">
+      Total : {{total|currency}}
+    </div>
   </div>
-  <div class="col-6 text-right">
-    Total : {{total|currency}}
+  <div class="row order-actions mx-auto w-100">
+    <div class="col-6 text-left">
+      <a routerLink="/products" class="btn btn-wkn btn-sm text-uppercase pull-left"> volver</a>
+    </div>
+    <div class="col-6 text-right">
+      <a class="btn btn-wkn btn-sm text-uppercase pull-right" (click)="saveOrder()">siguiente</a>
+    </div>
   </div>
-</div>
-<div class="row order-actions mx-auto w-100">
-  <div class="col-6 text-left">
-    <a routerLink="/products" class="btn btn-wkn btn-sm text-uppercase pull-left"> volver</a>
-  </div>
-  <div class="col-6 text-right">
-    <a class="btn btn-wkn btn-sm text-uppercase pull-right" (click)="saveOrder()">siguiente</a>
-  </div>
-</div>

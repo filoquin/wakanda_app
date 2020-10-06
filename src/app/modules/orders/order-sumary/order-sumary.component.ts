@@ -38,7 +38,7 @@ export class OrderSumaryComponent implements OnInit {
 
   ngOnInit(): void {
     this.editForm = this.formBuilder.group({
-      disc_code: ["sss"],
+      disc_code: [""],
     });
   }
 
