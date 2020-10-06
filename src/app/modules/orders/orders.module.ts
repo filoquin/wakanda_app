@@ -6,6 +6,7 @@ import { OrderSumaryComponent } from './order-sumary/order-sumary.component';
 import { OrderPromosComponent } from './order-promos/order-promos.component';
 import { OrderDeliveryComponent } from './order-delivery/order-delivery.component';
 import { OrderConfirmComponent } from './order-confirm/order-confirm.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 export const routes = [
   { path: '', component: OrderListComponent},
@@ -17,9 +18,10 @@ export const routes = [
 
 @NgModule({
   declarations: [OrderListComponent, OrderSumaryComponent, OrderPromosComponent, OrderDeliveryComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes)
-  ]
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        ReactiveFormsModule
+    ]
 })
 export class OrdersModule { }

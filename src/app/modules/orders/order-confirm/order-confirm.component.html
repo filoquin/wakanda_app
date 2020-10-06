@@ -30,7 +30,7 @@
             {{ line['product_uom_qty']}}
           </div>
           <div class="col-6 text-left">
-            {{ line['product_id'][1] }} { line['discount'] }}  </div>
+            {{ line['product_id'][1] }} {{ line['discount'] }}  </div>
           <div class="col-4 text-right">
             {{line['price_total'] | currency}}
           </div>
@@ -43,3 +43,4 @@
       </div>
     </div>
   </div>
+</div>
