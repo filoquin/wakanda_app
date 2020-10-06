@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { SaleOrderService } from "../../../_services/sale-order.service";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: "app-order-sumary",
@@ -12,10 +13,14 @@ export class OrderSumaryComponent implements OnInit {
   public order: any = null;
   public total = 0;
   private lines: any = [];
+  public code:string = '';
+  editForm: FormGroup;
+  isSubmitted = false;
 
   constructor(
     private saleOrderService: SaleOrderService,
     private router: Router,
+    private formBuilder: FormBuilder,
     private toasterService: ToastrService
   ) {
     this.order = JSON.parse(localStorage.getItem("tmpOrder"));
@@ -31,11 +36,22 @@ export class OrderSumaryComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.editForm = this.formBuilder.group({
+      disc_code: ["sss"]
+    });
+  }
+
+    get formControls() {
+    return this.editForm.controls;
+  }
 
   saveOrder() {
+const disc_code = this.editForm.controls.disc_code.value;
+    console.log('disc_code',disc_code);
+    return;
     this.saleOrderService
-      .createSaleOrder(this.lines)
+      .createSaleOrder(this.lines,disc_code)
       .then((res) => {
         console.log(res);
         if (res) {

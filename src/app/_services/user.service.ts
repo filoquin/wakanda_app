@@ -52,8 +52,11 @@ export class UserService {
 
   logout() {
     // remove user from local storage and set current user to null
-    //this.http.post(`${this.apiUrl}/wkn/json_logout`, null, {});
-    this.odooRPC.logout();
+    this.http.post(`${this.apiUrl}/wkn/json_logout`, null, {}).pipe(
+      map((data: any) => {
+        this.odooRPC.login("wakandaa", "", "");
+      })
+    );
     localStorage.removeItem("user");
     this.userSubject.next(null);
     this.router.navigate(["/login"]);
@@ -85,7 +88,7 @@ export class UserService {
           month: month,
           year: year,
           know_us: knowUs,
-          state_id: state
+          state_id: state,
         },
       })
       .pipe(
@@ -105,13 +108,23 @@ export class UserService {
     return this.odooRPC.call("res.users", "wkn_my_profile", [], {});
   }
   saveProfile(id, name, email, phone, street, birthdate, image) {
-    if (image){
-      image = image.split(',')[1]
+    if (image) {
+      image = image.split(",")[1];
     }
     return this.odooRPC.call(
       "res.partner",
       "write",
-      [id, { name: name, email: email, phone: phone ,street:street, birthdate_date : birthdate, image_1920:image }],
+      [
+        id,
+        {
+          name: name,
+          email: email,
+          phone: phone,
+          street: street,
+          birthdate_date: birthdate,
+          image_1920: image,
+        },
+      ],
       {}
     );
   }

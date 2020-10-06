@@ -13,7 +13,7 @@
       </div>
       <div class="row justify-content-center">
         <div class="col-10 text-left my-auto d-flex ">
-          Muchas gracias por tu pedido, nos prondremos en contacto con vos por whatsapp dentro de las proximas 72hs habiles para coordinar la entrega
+          Muchas gracias por tu pedido, nos prondremos en contacto con vos por whatsapp dentro de las proximas 72hs habiles para coordinar la entrega<br/><br/>
         </div>
       </div>
       <div class="row">
@@ -30,7 +30,7 @@
             {{ line['product_uom_qty']}}
           </div>
           <div class="col-6 text-left">
-            {{ line['product_id'][1] }} </div>
+            {{ line['product_id'][1] }} { line['discount'] }}  </div>
           <div class="col-4 text-right">
             {{line['price_total'] | currency}}
           </div>

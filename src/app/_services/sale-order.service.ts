@@ -50,8 +50,9 @@ export class SaleOrderService {
         );
     }
 
-    createSaleOrder(lines) {
-        return this.odooRPC.call("sale.order", "wkn_create", [lines], {});
+    createSaleOrder(lines,code) {
+        console.log('code',code);
+        return this.odooRPC.call("sale.order", "wkn_create", [lines,code], {});
     }
 
     getPromos(orderId) {
@@ -96,7 +97,7 @@ export class SaleOrderService {
         return this.odooRPC.searchRead(
             "sale.order.line",
             [["order_id", "=", orderId]],
-            ["name", "product_id", "product_uom_qty", "price_total"]
+            ["name", "product_id", "discount", "product_uom_qty", "price_total"]
             ,  100,0,{'display_default_code':false},
 
         );
@@ -113,3 +114,4 @@ export class SaleOrderService {
         );
     }
 }
+    
