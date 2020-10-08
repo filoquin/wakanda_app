@@ -5,14 +5,14 @@
         <h5 class="product-title m-2  text-uppercase text-white">Orden finalizada</h5>
       </div>
     </div>
-    <div class="summary" *ngIf="order">
+    <div  *ngIf="order" class="summary" id="order">
       <div class="row">
         <div class="col-12 text-center">
           <strong>Tu orden de pedido tiene el numero {{ order['display_name'] }}. </strong>
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-10 text-left my-auto d-flex ">
+        <div id="msgend" class="col-10 text-left my-auto d-flex ">
           Muchas gracias por tu pedido, nos prondremos en contacto con vos por whatsapp dentro de las proximas 72hs habiles para coordinar la entrega<br/><br/>
         </div>
       </div>
@@ -24,7 +24,7 @@
           Total {{order['amount_total'] | currency}}
         </div>
       </div>
-      <div *ngIf="orderLines">
+      <div id="line" *ngIf="orderLines">
         <div ngClass="row  {{odd ? 'odd' : 'even'}}" *ngFor="let line of orderLines;let odd =odd;">
           <div class="col-2 text-right">
             {{ line['product_uom_qty']}}
@@ -39,7 +39,7 @@
     </div>
     <div class="row order-actions mx-auto w-100">
       <div class="col-12 text-center">
-        <a routerLink="/" class="btn btn-wkn btn-sm text-uppercase pull-left"> Cerrar</a>
+        <a routerLink="/" class="btn btn-wkn btn-sm text-uppercase pull-left">Cerrar</a>
       </div>
     </div>
   </div>

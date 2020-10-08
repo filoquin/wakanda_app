@@ -52,18 +52,18 @@ export class SaleOrderService {
 
     createSaleOrder(lines,code) {
         console.log('code',code);
-        return this.odooRPC.call("sale.order", "wkn_create", [lines,code], {});
+        return this.odooRPC.call("sale.order", "wkn_create", [lines,code],{'display_default_code':false},);
     }
 
     getPromos(orderId) {
-        return this.odooRPC.call("sale.order", "read_promos", [[orderId]], {});
+        return this.odooRPC.call("sale.order", "read_promos", [[orderId]],{'display_default_code':false},);
     }
 
-    selectPromo(promoId) {
+    selectPromo(promoId,count=false) {
         return this.odooRPC.call(
             "sale.order.promo",
             "add_promo_read_promos",
-            [[promoId]],
+            [[promoId],count],
             {}
         );
     }

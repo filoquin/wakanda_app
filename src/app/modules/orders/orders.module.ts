@@ -17,7 +17,7 @@ export const routes = [
 ];
 
 @NgModule({
-  declarations: [OrderListComponent, OrderSumaryComponent, OrderPromosComponent, OrderDeliveryComponent],
+  declarations: [OrderListComponent, OrderSumaryComponent, OrderPromosComponent, OrderDeliveryComponent, OrderConfirmComponent],
     imports: [
         CommonModule,
         RouterModule.forChild(routes),

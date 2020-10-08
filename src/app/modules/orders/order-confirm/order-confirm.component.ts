@@ -32,6 +32,8 @@ export class OrderConfirmComponent implements OnInit {
             })
             .catch((err: any) => {
                 console.log("errors" + err);
+                        this.toasterService.warning("La orden no esta disponible");
+
             });
 
         this.saleOrderService
@@ -40,6 +42,7 @@ export class OrderConfirmComponent implements OnInit {
                 this.orderLines = res['records'];
             })
             .catch((err: any) => {
+                        this.toasterService.warning("La orden no esta disponible");
                 console.log("errors" + err);
             });
     }
