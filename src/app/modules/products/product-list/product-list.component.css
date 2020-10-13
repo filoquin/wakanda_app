@@ -2,6 +2,18 @@
   background-color: #ffd3f2 !important;
   padding-bottom: 160px;
 }
+.container-category {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item {
+  width: 32%;
+  /*padding-bottom: 32%; !* Same as width, sets height *!*/
+  /*margin-bottom: 2%; !* (100-32*3)/2 *!*/
+  position: relative;
+}
 
 .btn-product {
   background-color: #ff5dbc;/*#ff3cae;*/
@@ -41,7 +53,7 @@
 /*}*/
 
 .img-circle {
-  margin-top: 50%;
+  margin-top: 5%;
   background-color: #ffffff;
   border-radius: 50%;
   width: 80px;
@@ -114,23 +126,23 @@
 }
 
 @media (max-height:768px) {
-  .img-circle {
-    margin-top: 30%;
-  }
+  /*.img-circle {*/
+  /*  margin-top: 30%;*/
+  /*}*/
 
 }
 @media (max-height:700px) {
-  .img-circle {
-    margin-top: 20%;
-  }
+  /*.img-circle {*/
+  /*  margin-top: 20%;*/
+  /*}*/
 
 }
 
 @media (max-height:600px) {
   .img-circle {
   width: 55px;
-  height: 55px; 
-    margin-top: 10%;
+  height: 55px;
+    /*margin-top: 10%;*/
   }
 
 }

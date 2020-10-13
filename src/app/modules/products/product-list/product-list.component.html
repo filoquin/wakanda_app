@@ -5,21 +5,38 @@
       <h5 class="product-title m-2  text-uppercase text-white">Categorias</h5>
     </div>
   </div>
-  <div class="row overflow-auto row-category h-100">
-    <div  *ngFor="let category of categories"  class=" col-4 my-auto mx-auto">
-      <a
-         (click)="showProducts(category)">
-        <div class=" ">
-          <img src="data:image/png;base64,{{category.wkn_categ_image}}" class="img-circle p-2" />
-          <div class=" text-category text-center mx-auto text-uppercase">
-        {{category.name}}
-        </div>
-        </div>
+<!--  <div class="row overflow-auto row-category h-100">-->
+<!--    <div  *ngFor="let category of categories"  class=" col-4 my-auto mx-auto">-->
+<!--      <a-->
+<!--         (click)="showProducts(category)">-->
+<!--        <div class=" ">-->
+<!--          <img src="data:image/png;base64,{{category.wkn_categ_image}}" class="img-circle p-2" />-->
+<!--          <div class=" text-category text-center mx-auto text-uppercase">-->
+<!--        {{category.name}}-->
+<!--        </div>-->
+<!--        </div>-->
 
-      </a>
+<!--      </a>-->
 
-    </div>
+<!--    </div>-->
+<!--  </div>-->
+  <div class="container-category">
+
+      <a  *ngFor="let category of categories"  class="item" (click)="showProducts(category)">
+
+                  <img src="data:image/png;base64,{{category.wkn_categ_image}}" class="img-circle p-2" />
+                  <div class=" text-category text-center mx-auto text-uppercase">
+                {{category.name}}
+                </div>
+
+
+       </a>
+
+
   </div>
+
+
+
   <div class="row summary mr-1 ml-1 ">
     <div class=" col-12 mt-2 pt-1 pb-1 pl-4 pr-4">
       <div class="row">
