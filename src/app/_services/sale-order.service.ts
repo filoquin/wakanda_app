@@ -60,6 +60,7 @@ export class SaleOrderService {
     }
 
     selectPromo(promoId,count=false) {
+        console.log('count',count);
         return this.odooRPC.call(
             "sale.order.promo",
             "add_promo_read_promos",

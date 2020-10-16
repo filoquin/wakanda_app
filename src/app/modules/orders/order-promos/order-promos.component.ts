@@ -32,9 +32,9 @@ export class OrderPromosComponent implements OnInit {
                 console.log("errors" + err);
             });
     }
-    selectPromo(promoId) {
+    selectPromo(promo) {
         this.saleOrderService
-            .selectPromo(promoId)
+            .selectPromo(promo.id,promo.product_qty)
             .then((res) => {
 
                 if (res.length == 0) {
