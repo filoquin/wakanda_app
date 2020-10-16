@@ -15,7 +15,7 @@ export class OrderPromosComponent implements OnInit {
     ) {}
     promos: any = [];
     orderId: number;
-    ngOnInit(): void {    
+    ngOnInit(): void {
         this.orderId = Number(this.actRoute.snapshot.paramMap.get('id'))
         this.loadPromos(this.orderId);
     }
@@ -36,14 +36,32 @@ export class OrderPromosComponent implements OnInit {
         this.saleOrderService
             .selectPromo(promoId)
             .then((res) => {
+
                 if (res.length == 0) {
                     this.router.navigate(["/orders/delivery/" + this.orderId]);
                 }
                 this.promos = res;
-                console.log(this.promos);
+               // console.log(this.promos);
             })
             .catch((err: any) => {
                 console.log("errors" + err);
             });
     }
+
+  removeProductPromoQty(promo: any) {
+
+    if ( promo.product_qty > 0 ){
+      promo.product_qty -= 1;
+    }else{
+      alert('No puede realizar esta operacion');
+    }
+  }
+
+  addProductPromoQty(promo: any) {
+    if ( !promo.product_qty){
+      promo.product_qty = 1;
+    }else {
+      promo.product_qty += 1;
+    }
+  }
 }

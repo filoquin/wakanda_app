@@ -10,17 +10,24 @@
     <div class="row">
 
       <div class="col-12 text-center">
-       <strong> ¡Tenes Promos> disṕonibles con tu pedido!</strong>
+       <strong> ¡Tenes Promos disṕonibles con tu pedido!</strong>
       </div>
     </div>
     <div class="" >
     <div ngClass="row  {{odd ? 'odd' : 'even'}}" *ngFor="let promo of promos">
 
       <div class="col-8 text-left">
-        {{promo.product_id[1]}} ({{promo.product_qty}})
+        <div class="row">
+          <div class="col-9">
+          {{promo.product_id[1]}}
+          </div>
+        <div class="col-1 m-0 p-0  text-center  my-auto"><a class=""><img src="assets/img/minus.png" class="img-fluid" (click)="removeProductPromoQty(promo)"></a></div>
+        <div class="col-1 m-0 p-0 text-center  my-auto"><strong>({{promo.product_qty}})</strong></div>
+        <div class="col-1 m-0 p-0  text-center  my-auto"><a class=""><img src="assets/img/plus.png" class="img-fluid" (click)="addProductPromoQty(promo)"></a></div>
+        </div>
       </div>
       <div class="col-4 text-center">
-      	              <a class="btn btn-wkn btn-sm text-uppercase pull-right" (click)="selectPromo(promo.id)">Elegir</a>
+      <a class="btn btn-wkn btn-sm text-uppercase pull-right" (click)="selectPromo(promo.id)">Elegir</a>
 
 
       </div>
