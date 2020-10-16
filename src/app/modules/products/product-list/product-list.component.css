@@ -60,6 +60,18 @@
   height: 80px;
 }
 
+@media (min-height: 820px) {
+  .container-category{
+    height: 70vh;
+  }
+  .img-circle {
+    margin-top: 5%;
+    background-color: #ffffff;
+    border-radius: 50%;
+    width: 95px;
+    height: 95px;
+  }
+}
 /* Small devices (landscape phones, 378px and up) */
 @media (min-width:428px) {
   .img-circle {
