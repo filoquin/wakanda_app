@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {HostListener , Component, OnInit} from '@angular/core';
 import {ProductSelectComponent} from '../product-select/product-select.component';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 import {SaleOrderService} from '../../../_services/sale-order.service';
 import {Route, Router} from "@angular/router";
 import {PlatformLocation} from "@angular/common";
 import {ToastrService} from "ngx-toastr";
+import { DOCUMENT } from '@angular/common'; 
 
 @Component({
   selector: 'app-product-list',
@@ -15,6 +16,7 @@ export class ProductListComponent implements OnInit {
 
   bsModalRef: BsModalRef;
   categories: any = [];
+  minHeight = 20;
   public total: any = {quantity: 0, amount: 0, gain: 0};
   private productsSelected: any = [];
 
@@ -27,8 +29,12 @@ export class ProductListComponent implements OnInit {
     platformLocation.onPopState(() => this.bsModalService.hide(1));
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+      this.computeHeigths();
+  }
   ngOnInit(): void {
-
+    this.computeHeigths();
     this.saleOrderService.getCategories()
       .then((res) => {
         this.categories = res.records;
@@ -90,6 +96,12 @@ export class ProductListComponent implements OnInit {
 
   }
 
+  computeHeigths(){
+    const yTitleBottom = document.getElementById('title').offsetTop +  document.getElementById('title').offsetHeight;
+    const ySummaryTop = document.getElementById('summary').offsetTop;
+    this.minHeight =ySummaryTop- yTitleBottom  - 20 ;
+  }
+  
   private updateTotal() {
     this.total.amount = 0;
     this.total.gain = 0;
