@@ -34,7 +34,7 @@ export class SaleOrderService {
     getProducts(categoryId) {
         return this.odooRPC.searchRead(
             "product.template",
-            [   ['qty_available', '>', 0],
+            [   
                 ["wak_published", "=", true],
                 ["categ_id", "child_of", categoryId],
             ],
@@ -43,6 +43,8 @@ export class SaleOrderService {
                 "name",
                 "display_name",
                 "qty_available",
+                "potential_qty",
+                "immediately_usable_qty",
                 "list_price",
                 "final_price",
                 "user_price",

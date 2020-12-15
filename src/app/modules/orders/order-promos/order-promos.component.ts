@@ -16,7 +16,7 @@ export class OrderPromosComponent implements OnInit {
     promos: any = [];
     orderId: number;
     ngOnInit(): void {
-        this.orderId = Number(this.actRoute.snapshot.paramMap.get('id'))
+        this.orderId = Number(this.actRoute.snapshot.paramMap.get("id"));
         this.loadPromos(this.orderId);
     }
     loadPromos(orderId) {
@@ -26,6 +26,11 @@ export class OrderPromosComponent implements OnInit {
                 if (res.length == 0) {
                     this.router.navigate(["/orders/delivery/" + this.orderId]);
                 }
+
+                res.forEach((p) => {
+                    p.qty_select = 0;
+                });
+
                 this.promos = res;
             })
             .catch((err: any) => {
@@ -34,34 +39,31 @@ export class OrderPromosComponent implements OnInit {
     }
     selectPromo(promo) {
         this.saleOrderService
-            .selectPromo(promo.id,promo.product_qty)
+            .selectPromo(promo.id, promo.qty_select)
             .then((res) => {
-
                 if (res.length == 0) {
                     this.router.navigate(["/orders/delivery/" + this.orderId]);
                 }
+                res.forEach((p) => {
+                    p.qty_select = 0;
+                });
                 this.promos = res;
-               // console.log(this.promos);
+                // console.log(this.promos);
             })
             .catch((err: any) => {
                 console.log("errors" + err);
             });
     }
 
-  removeProductPromoQty(promo: any) {
-
-    if ( promo.product_qty > 0 ){
-      promo.product_qty -= 1;
-    }else{
-      alert('No puede realizar esta operacion');
+    removeProductPromoQty(promo: any) {
+        if (promo.qty_select > 0) {
+            promo.qty_select -= 1;
+        }
     }
-  }
 
-  addProductPromoQty(promo: any) {
-    if ( !promo.product_qty){
-      promo.product_qty = 1;
-    }else {
-      promo.product_qty += 1;
+    addProductPromoQty(promo: any) {
+        if (promo.qty_select < promo.product_qty) {
+            promo.qty_select += 1;
+        }
     }
-  }
 }

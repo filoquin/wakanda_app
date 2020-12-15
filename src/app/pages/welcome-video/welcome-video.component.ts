@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { BrowserModule } from '@angular/platform-browser';
-import {Router} from '@angular/router';
+import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
+import { BrowserModule } from "@angular/platform-browser";
+import { Router } from "@angular/router";
+import { UserService } from "../../_services/user.service";
 
 @Component({
 	selector: "app-welcome-video",
@@ -10,14 +11,18 @@ import {Router} from '@angular/router';
 })
 export class WelcomeVideoComponent implements OnInit {
 	safeURL;
-	constructor( private router: Router, private _sanitizer: DomSanitizer) {
-		this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/iAPwOPzD20k');
+	constructor(
+		private userService: UserService,
+		private router: Router,
+		private _sanitizer: DomSanitizer
+	) {}
+	ngOnInit(): void {
+		this.userService.getWelcomevideo().then((res) => {
+			this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(res);
+		});
 	}
-	ngOnInit(): void {}
 
-	endWelcome(){
-		        this.router.navigateByUrl('/');
-
+	endWelcome() {
+		this.router.navigateByUrl("/");
 	}
 }
-

@@ -1,32 +1,30 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-product-item',
-  templateUrl: './product-item.component.html',
-  styleUrls: ['./product-item.component.css']
+  selector: "app-product-item",
+  templateUrl: "./product-item.component.html",
+  styleUrls: ["./product-item.component.css"],
 })
 export class ProductItemComponent implements OnInit {
   @Input() product: any;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   removeProductQty(product: any) {
-
-    if ( product.qty_select > 0 ){
+    if (product.qty_select > 0) {
       product.qty_select -= 1;
-    }else{
-      alert('No puede realizar esta operacion');
+    } else {
+      alert("No puede realizar esta operacion");
     }
-
   }
 
   addProductQty(product: any) {
-    if ( !product.qty_select){
-      product.qty_select = 1;
-    }else {
+    if (!product.qty_select) {
+      product.qty_select = 0;
+    }
+    if (product.qty_select < product.immediately_usable_qty) {
       product.qty_select += 1;
     }
   }

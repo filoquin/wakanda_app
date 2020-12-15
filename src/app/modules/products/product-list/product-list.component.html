@@ -20,9 +20,9 @@
 
 <!--    </div>-->
 <!--  </div>-->
-  <div class="container-category " [style.min-height.px]="minHeight">
+  <div id="container-category" class="container-category " [style.min-height.px]="minHeight">
 
-      <a  *ngFor="let category of categories"   class="item" (click)="showProducts(category)">
+      <a  *ngFor="let category of categories"  [style.min-height.px]="rowMinHeight"  class="item" (click)="showProducts(category)">
 
                   <img src="data:image/png;base64,{{category.wkn_categ_image}}" class="img-circle p-2" />
                   <div class=" text-category text-center mx-auto text-uppercase">

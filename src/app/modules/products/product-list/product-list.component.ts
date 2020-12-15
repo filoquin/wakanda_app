@@ -17,6 +17,7 @@ export class ProductListComponent implements OnInit {
   bsModalRef: BsModalRef;
   categories: any = [];
   minHeight = 20;
+  rowMinHeight = 20;
   public total: any = {quantity: 0, amount: 0, gain: 0};
   private productsSelected: any = [];
 
@@ -97,9 +98,12 @@ export class ProductListComponent implements OnInit {
   }
 
   computeHeigths(){
-    const yTitleBottom = document.getElementById('title').offsetTop +  document.getElementById('title').offsetHeight;
-    const ySummaryTop = document.getElementById('summary').offsetTop;
-    this.minHeight =ySummaryTop- yTitleBottom  - 20 ;
+    const outerHeight = window.outerHeight;
+    const yTitleHeigtht = document.getElementById('title').offsetHeight ;
+    const ySummaryHeight = document.getElementById('summary').offsetHeight;
+    this.minHeight = outerHeight - ySummaryHeight - ySummaryHeight - 150;
+    this.rowMinHeight = this.minHeight/3; 
+ 
   }
   
   private updateTotal() {

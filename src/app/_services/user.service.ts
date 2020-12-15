@@ -107,6 +107,10 @@ export class UserService {
   getProfile() {
     return this.odooRPC.call("res.users", "wkn_my_profile", [], {});
   }
+  getWelcomevideo(){
+    return this.odooRPC.call("res.users", "welcomevideo", [], {});
+    
+  }
   saveProfile(id, name, email, phone, street, birthdate, image) {
     if (image) {
       image = image.split(",")[1];
