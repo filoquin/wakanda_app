@@ -14,7 +14,6 @@ export class PricesListComponent implements OnInit {
 		this.saleOrderService
 			.getCategoriesPrices()
 			.then((res) => {
-				console.log(res.records);
 				this.prices = res.records;
 			})
 			.catch((err) => {

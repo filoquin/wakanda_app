@@ -1,0 +1,12 @@
+        <div *ngFor="let template of templates" class="row text-white">
+          <div class="col-6 bpadding">
+            <div class="text-center">{{template.name}}</div>
+          </div>
+          <div class="col-3 bpadding text-strong line-right">
+          	            {{template.user_price| currency: '$':true:'2.0'}}
+
+          </div>
+          <div class="col-3 bpadding text-strong">
+          	            {{template.final_price| currency: '$':true:'2.0'}}
+          </div>
+      </div>

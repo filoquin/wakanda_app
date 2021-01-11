@@ -47,6 +47,7 @@ export class ProductListComponent implements OnInit {
   }
 
 
+
   showProducts(category) {
     let oldProductsSelected = null;
     this.productsSelected.forEach(tps => {
@@ -113,10 +114,14 @@ export class ProductListComponent implements OnInit {
 
     this.productsSelected.forEach(tps => {
       tps.productsSelected.forEach(item => {
-        this.total.amount += item.qty_select * item.final_price;
+        this.total.amount += item.qty_select * item.user_price;
         this.total.gain += (item.qty_select * item.final_price) - (item.qty_select * item.user_price);
         this.total.quantity += item.qty_select;
       });
     });
+  }
+  clearOrder(){
+    this.productsSelected = [];
+
   }
 }

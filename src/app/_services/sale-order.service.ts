@@ -11,7 +11,14 @@ export class SaleOrderService {
         return this.odooRPC.searchRead(
             "product.category",
             [["wkn_publish", "=", true]],
-            ["name", "display_name", "user_price", "final_price","wkn_description"]
+            ["name", "display_name", "user_price", "final_price","wkn_description", "list_templates"]
+        );
+    }
+    getCategoriesTemplate(categoryId) {
+        return this.odooRPC.searchRead(
+            "product.template",
+            [["wak_is_published", "=", true], ['categ_id','child_of',categoryId ]],
+            ["name", "display_name", "user_price", "final_price"]
         );
     }
 
@@ -26,14 +33,15 @@ export class SaleOrderService {
     getCategories() {
         return this.odooRPC.searchRead(
             "product.category",
-            [["wkn_publish", "=", true]],
-            ["name", "display_name", "wkn_categ_image"]
+            ['|',["wkn_publish", "=", true],['my_category','=',true]],
+            ["name", "display_name", "wkn_categ_image"],0,0,{}
         );
     }
 
     getProducts(categoryId) {
+        console.log(categoryId)
         return this.odooRPC.searchRead(
-            "product.template",
+            "product.product",
             [   
                 ["wak_published", "=", true],
                 ["categ_id", "child_of", categoryId],
@@ -48,12 +56,15 @@ export class SaleOrderService {
                 "list_price",
                 "final_price",
                 "user_price",
-            ]
+            ],0,0,
+            {'display_default_code':false}
         );
     }
 
     createSaleOrder(lines,code) {
-        console.log('code',code);
+        console.log('lines',lines);
+                console.log('code',code);
+
         return this.odooRPC.call("sale.order", "wkn_create", [lines,code],{'context':{'display_default_code':false}},);
     }
 

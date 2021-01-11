@@ -48,7 +48,6 @@ export class OrderSumaryComponent implements OnInit {
 
   saveOrder() {
     const disc_code = this.editForm.controls.disc_code.value;
-    console.log("disc_code", disc_code);
     this.saleOrderService
       .createSaleOrder(this.lines, disc_code)
       .then((res) => {
