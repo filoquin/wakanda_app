@@ -16,11 +16,10 @@ export class AppComponent {
     private userService: UserService,
     public odooRPC: OdooRPCService
   ) {
-        this.odooRPC.init({
-            odoo_server: environment.apiUrl,
-            http_auth: "username:password" // optional
-        });
-
+    this.odooRPC.init({
+      odoo_server: environment.apiUrl,
+      http_auth: "username:password", // optional
+    });
     // redirect to home if already logged in
     // if (this.userService.userValue) {
     //   this.router.navigate(['/']);

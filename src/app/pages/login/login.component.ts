@@ -3,6 +3,8 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {UserService} from '../../_services/user.service';
 import {ToastrService} from "ngx-toastr";
+import { environment } from "../../../environments/environment";
+import { OdooRPCService } from "../../_services/odoorcp.service";
 
 @Component({
   selector: 'app-login',
@@ -14,7 +16,7 @@ export class LoginComponent implements OnInit {
   isSubmitted = false;
   usernamestorage = null;
 
-  constructor(private userService: UserService, private router: Router, private formBuilder: FormBuilder, private toasterService: ToastrService) {
+  constructor(private userService: UserService, private router: Router, private formBuilder: FormBuilder, private toasterService: ToastrService, public odooRPC: OdooRPCService) {
     if ( localStorage.getItem('usernamestorage')){
       this.usernamestorage = localStorage.getItem('usernamestorage');
     }
@@ -40,12 +42,13 @@ export class LoginComponent implements OnInit {
     const username = this.authForm.controls.email.value;
     const password = this.authForm.controls.password.value;
     localStorage.setItem('usernamestorage', username);
-    this.userService.login(username, password).subscribe((data: any) => {
-      if (data.result) {
-        this.router.navigateByUrl('/');
-      }else{
-        const errormessage = data.error.data.message;
+
+    this.userService.loginOdoo(username, password).subscribe((data: any) => {
+      if (data.error) {
+        const errormessage = data.error;
         this.toasterService.warning(errormessage);
+      }else{
+        this.router.navigate(['/']);
       }
     });
   }

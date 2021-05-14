@@ -16,7 +16,11 @@ export const routes = [
   ],
   declarations: [
     DashboardComponent
-  ]
+  ],
+
 })
 
-export class DashboardModule { }
+export class DashboardModule {
+
+
+}

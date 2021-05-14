@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { BehaviorSubject, Observable } from "rxjs";
-import { map } from "rxjs/operators";
+import { catchError, map, tap } from "rxjs/operators";
 import { User } from "../_models/user";
 import { environment } from "../../environments/environment";
 import { OdooRPCService } from "./odoorcp.service";
@@ -31,6 +31,28 @@ export class UserService {
   public get userValue(): User {
     return this.userSubject.value;
   }
+  get isLogged() {
+    const session_act = new Observable((observer) => {
+      this.odooRPC
+        .getSessionInfo()
+        .then((result: any) => {
+          console.log(result);
+          if (result.uid) {
+            observer.next(true);
+            observer.complete();
+          } else {
+            observer.next(false);
+            observer.complete();
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          observer.next(false);
+          observer.complete();
+        });
+    });
+    return session_act;
+  }
   login(username, password) {
     return this.http
       .post<User>(`${this.apiUrl}/wkn/json_login?db=wakandaa`, {
@@ -50,16 +72,58 @@ export class UserService {
       );
   }
 
+  public loginOdoo(username, password) {
+    const loguer = new Observable((observer) => {
+      this.odooRPC
+        .login(environment.db, username, password)
+        .then((res) => {
+          const user = {
+            id: res["uid"],
+            login: username,
+            name: res["partner_display_name"],
+          };
+            this.odooRPC.cookies.set_sessionId(res.session_id);
+
+          // store user details and jwt token in local storage to keep user logged in between page refreshes
+          localStorage.setItem("user", JSON.stringify(user));
+          this.userSubject.next(user);
+          observer.next(user);
+          observer.complete();
+        })
+        .catch((err) => {
+          console.log(err);
+          
+          localStorage.removeItem("user");
+          this.userSubject.next(null);
+          this.router.navigate(["/login"]);
+          observer.next({ error: "No pudo ingresar. Verifique sus datos" });
+          observer.complete();
+        });
+    });
+    return loguer;
+  }
+
+  public forceUid(user) {
+    this.userSubject.next(user);
+  }
   logout() {
+    /*this.odooRPC.logout(false).then((res) => {
+      localStorage.removeItem("user");
+      this.userSubject.next(null);
+      this.router.navigate(["/login"]);
+    });*/
+
+    console.log(`${this.apiUrl}/web/session/destroy`);
+
     // remove user from local storage and set current user to null
-    this.http.post(`${this.apiUrl}/wkn/json_logout`, null, {}).pipe(
-      map((data: any) => {
-        this.odooRPC.login("wakandaa", "", "");
+    this.http
+      .post(`${this.apiUrl}/web/session/destroy`, {
+        headers: new HttpHeaders({ "Content-Type": "application/json" }),
       })
-    );
-    localStorage.removeItem("user");
-    this.userSubject.next(null);
-    this.router.navigate(["/login"]);
+      .subscribe((data) => {
+        console.log(data);
+        this.router.navigate(["/login"]);
+      });
   }
 
   register(
@@ -93,7 +157,6 @@ export class UserService {
       })
       .pipe(
         map((data: any) => {
-          console.log(data);
           if (data.result) {
             const user = data.result.user;
             // store user details and jwt token in local storage to keep user logged in between page refreshes
@@ -107,9 +170,9 @@ export class UserService {
   getProfile() {
     return this.odooRPC.call("res.users", "wkn_my_profile", [], {});
   }
-  getWelcomevideo(){
+
+  getWelcomevideo() {
     return this.odooRPC.call("res.users", "welcomevideo", [], {});
-    
   }
   saveProfile(id, name, email, phone, street, birthdate, image) {
     if (image) {

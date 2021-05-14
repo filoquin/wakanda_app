@@ -6,10 +6,12 @@ import { ProductSelectComponent } from './product-select/product-select.componen
 import {BsModalService, ModalModule} from 'ngx-bootstrap/modal';
 import { ProductItemComponent } from './product-item/product-item.component';
 import {ProductBestsellersComponent} from './product-bestsellers/product-betsellers.component';
+import {AuthGuard} from "../../_helpers/auth.guard";
+
 
 export const routes = [
-  { path: '', component: ProductListComponent},
-  { path: 'bestsellers', component: ProductBestsellersComponent}
+  { path: '', component: ProductListComponent,canActivate: [AuthGuard]},
+  { path: 'bestsellers', component: ProductBestsellersComponent,canActivate: [AuthGuard]}
 ];
 
 @NgModule({

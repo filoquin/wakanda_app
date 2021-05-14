@@ -21,6 +21,7 @@ import { LocationComponent } from './pages/location/location.component';
 import { CatalogComponent } from './pages/catalog/catalog.component';
 import {CarouselModule} from "ngx-bootstrap/carousel";
 import {NgxSpinnerModule} from "ngx-spinner";
+import {OdooRPCService} from './_services/odoorcp.service';
 
 
 @NgModule({
@@ -49,9 +50,11 @@ import {NgxSpinnerModule} from "ngx-spinner";
     CarouselModule.forRoot(),
     NgxSpinnerModule
   ],
-  providers: [],
+  providers: [OdooRPCService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
 })
-export class AppModule { }
+export class AppModule {
+
+}

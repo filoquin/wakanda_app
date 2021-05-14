@@ -56,6 +56,12 @@ body{
   color:#fff !important;
   text-decoration: none;
 }
+.btn-wkn2{
+  background-color: #ffbae2 !important; /* #fe2399 !important;*/
+  color:#fff !important;
+  text-decoration: none;
+}
+
 .product-select .modal-content{
   background-color: #ffd3f2 !important;
   color: #ff5dbc;

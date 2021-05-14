@@ -39,9 +39,7 @@ export class ProfileEditComponent implements OnInit {
       year: ["", Validators.required],
     });
 
-    this.userService
-      .getProfile()
-      .then((res) => {
+    this.userService.getProfile().then((res) => {
         this.partnerId = res["partner_id"];
         this.image = res["image"];
 
@@ -104,7 +102,6 @@ export class ProfileEditComponent implements OnInit {
       const file = input.files[0];
       reader.onload = () => {
         this.image = reader.result;
-        console.log(this.image);
       }
       reader.readAsDataURL(file);
     }

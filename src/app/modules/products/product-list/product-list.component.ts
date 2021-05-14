@@ -39,8 +39,15 @@ export class ProductListComponent implements OnInit {
     this.saleOrderService.getCategories()
       .then((res) => {
         this.categories = res.records;
+        if (res.length< 1){
+        this.router.navigate(['/login']);
+        }
+
       })
       .catch((err) => {
+        alert(err);
+        this.router.navigate(['/login']);
+
         console.log(err);
       });
 
@@ -120,8 +127,17 @@ export class ProductListComponent implements OnInit {
       });
     });
   }
-  clearOrder(){
-    this.productsSelected = [];
 
+
+  clearOrder(){
+    var clear =  confirm("¿Desea vaciar la orden?");
+    if (clear){
+        this.productsSelected = []; 
+        this.total.amount = 0;
+        this.total.gain = 0;
+        this.total.quantity = 0;
+
+      }
+    
   }
 }
