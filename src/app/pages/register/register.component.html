@@ -10,114 +10,290 @@
       <h6 class="text-white">Revendedores</h6>
     </div>
   </div>
-  <div class="row ">
+  <div class="row">
+    <div class="col-12 text-white col-md-4 mx-auto my-3">
+      Por favor, te pedimos que te registres con tus datos reales ya que esos
+      serán los datos de facturación, contacto y envio en el caso que fuera
+      necesario!
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-heart-fill"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+        />
+      </svg>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-md-4 col-12 mx-auto">
-      <form [formGroup]="registerForm" class="login-container" (ngSubmit)="register()">
-        <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.user.errors }">
+      <form
+        [formGroup]="registerForm"
+        class="login-container"
+        (ngSubmit)="register()"
+      >
+        <div
+          class="form-group"
+          [ngClass]="{ 'has-error': isSubmitted && formControls.user.errors }"
+        >
           <label for="user" class="text-white">Usuario</label>
-          <input type="email" class="form-control input-custom" id="user" formControlName="user">
-          <div *ngIf="isSubmitted && formControls.user.errors" class="help-block">
-            <div *ngIf="formControls.user.errors.required">Debe ingresar un usuario</div>
+          <input
+            type="email"
+            class="form-control input-custom"
+            id="user"
+            formControlName="user"
+          />
+          <div
+            *ngIf="isSubmitted && formControls.user.errors"
+            class="help-block"
+          >
+            <div *ngIf="formControls.user.errors.required">
+              Debe ingresar un usuario
+            </div>
           </div>
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+        <div
+          class="form-group"
+          [ngClass]="{
+            'has-error': isSubmitted && formControls.password.errors
+          }"
+        >
           <label for="password" class="text-white">Contraseña</label>
-          <input type="password" class="form-control input-custom" id="password" formControlName="password">
-          <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
-            <div *ngIf="formControls.password.errors.required">Debe ingresar una contraseña</div>
+          <input
+            type="password"
+            class="form-control input-custom"
+            id="password"
+            formControlName="password"
+          />
+          <div
+            *ngIf="isSubmitted && formControls.password.errors"
+            class="help-block"
+          >
+            <div *ngIf="formControls.password.errors.required">
+              Debe ingresar una contraseña
+            </div>
           </div>
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.completename.errors }">
+        <div
+          class="form-group"
+          [ngClass]="{
+            'has-error': isSubmitted && formControls.completename.errors
+          }"
+        >
           <label for="completename" class="text-white">Nombre y Apellido</label>
-          <input type="text" class="form-control input-custom" id="completename" formControlName="completename">
-          <div *ngIf="isSubmitted && formControls.completename.errors" class="help-block">
-            <div *ngIf="formControls.completename.errors.required">Debe ingresar Nombre y Apellido </div>
+          <input
+            type="text"
+            class="form-control input-custom"
+            id="completename"
+            formControlName="completename"
+          />
+          <div
+            *ngIf="isSubmitted && formControls.completename.errors"
+            class="help-block"
+          >
+            <div *ngIf="formControls.completename.errors.required">
+              Debe ingresar Nombre y Apellido
+            </div>
           </div>
         </div>
         <div class="row">
           <div class="col-4">
-
-   
-
-          <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.state.errors }">
-            <label for="tipo_documento" class="text-white">Tipo</label>
-                <select class="form-control input-custom" value="1"  formControlName="tipo_documento">
-                  <option value="1">DNI</option>
-                  <option value="2">CUIL/CUIT</option>
-                </select>
-            <div *ngIf="isSubmitted && formControls.tipo_documento.errors" class="help-block">
-              <div *ngIf="formControls.tipo_documento.errors.required">Debe ingresar tipo documento</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-8">
-
-  
-          <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.documento.errors }">
-            <label for="documento" class="text-white">Nro Documento</label>
-            <input type="string" class="form-control input-custom" id="documento" formControlName="documento">
-            <div *ngIf="isSubmitted && formControls.documento.errors" class="help-block">
-              <div *ngIf="formControls.documento.errors.required">Debe Ingresar documento </div>
-            </div>
-          </div>
-        </div>
-        </div>
-
-
-        <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
-          <label for="email" class="text-white">Mail</label>
-          <input type="email" class="form-control input-custom" id="email" formControlName="email">
-          <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
-            <div *ngIf="formControls.email.errors.required">Debe ingresar una dirección de correo</div>
-          </div>
-        </div>
-        <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.phone.errors }">
-          <label for="phone" class="text-white">Teléfono</label>
-          <input type="phone" class="form-control input-custom" id="phone" formControlName="phone">
-          <div *ngIf="isSubmitted && formControls.phone.errors" class="help-block">
-            <div *ngIf="formControls.phone.errors.required">Debe ingresar un telefono</div>
-          </div>
-        </div>
-        <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.address.errors }">
-          <label for="address" class="text-white">Dirección</label>
-          <input type="text" class="form-control input-custom" id="address" formControlName="address">
-          <div *ngIf="isSubmitted && formControls.address.errors" class="help-block">
-            <div *ngIf="formControls.address.errors.required">Debe ingresar una dirección</div>
-          </div>
-        </div>
-        <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.state.errors }">
-          <label for="states" class="text-white">Provincia</label>
-              <select class="form-control input-custom" id="id" formControlName="state">
-                <option value="">Provincia</option>
-                <option value="{{state['id']}}" *ngFor="let state of  states">{{ state['name'] }}</option>
+            <div
+              class="form-group"
+              [ngClass]="{
+                'has-error': isSubmitted && formControls.state.errors
+              }"
+            >
+              <label for="tipo_documento" class="text-white">Tipo</label>
+              <select
+                class="form-control input-custom"
+                value="1"
+                formControlName="tipo_documento"
+              >
+                <option value="1">DNI</option>
+                <option value="2">CUIL/CUIT</option>
               </select>
-
-          <div *ngIf="isSubmitted && formControls.state.errors" class="help-block">
-            <div *ngIf="formControls.state.errors.required">Debe ingresar una provincia</div>
+              <div
+                *ngIf="isSubmitted && formControls.tipo_documento.errors"
+                class="help-block"
+              >
+                <div *ngIf="formControls.tipo_documento.errors.required">
+                  Debe ingresar tipo documento
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-8">
+            <div
+              class="form-group"
+              [ngClass]="{
+                'has-error': isSubmitted && formControls.documento.errors
+              }"
+            >
+              <label for="documento" class="text-white">Nro Documento</label>
+              <input
+                type="string"
+                class="form-control input-custom"
+                id="documento"
+                formControlName="documento"
+              />
+              <div
+                *ngIf="isSubmitted && formControls.documento.errors"
+                class="help-block"
+              >
+                <div *ngIf="formControls.documento.errors.required">
+                  Debe Ingresar documento
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.knowUs.errors }">
+
+        <div
+          class="form-group"
+          [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }"
+        >
+          <label for="email" class="text-white">Mail</label>
+          <input
+            type="email"
+            class="form-control input-custom"
+            id="email"
+            formControlName="email"
+          />
+          <div
+            *ngIf="isSubmitted && formControls.email.errors"
+            class="help-block"
+          >
+            <div *ngIf="formControls.email.errors.required">
+              Debe ingresar una dirección de correo
+            </div>
+          </div>
+        </div>
+        <div
+          class="form-group"
+          [ngClass]="{ 'has-error': isSubmitted && formControls.phone.errors }"
+        >
+          <label for="phone" class="text-white">Teléfono</label>
+          <input
+            type="phone"
+            class="form-control input-custom"
+            id="phone"
+            formControlName="phone"
+          />
+          <div
+            *ngIf="isSubmitted && formControls.phone.errors"
+            class="help-block"
+          >
+            <div *ngIf="formControls.phone.errors.required">
+              Debe ingresar un telefono
+            </div>
+          </div>
+        </div>
+        <div
+          class="form-group"
+          [ngClass]="{
+            'has-error': isSubmitted && formControls.address.errors
+          }"
+        >
+          <label for="address" class="text-white">Dirección</label>
+          <input
+            type="text"
+            class="form-control input-custom"
+            id="address"
+            formControlName="address"
+          />
+          <div
+            *ngIf="isSubmitted && formControls.address.errors"
+            class="help-block"
+          >
+            <div *ngIf="formControls.address.errors.required">
+              Debe ingresar una dirección
+            </div>
+          </div>
+        </div>
+        <div
+          class="form-group"
+          [ngClass]="{ 'has-error': isSubmitted && formControls.state.errors }"
+        >
+          <label for="states" class="text-white">Provincia</label>
+          <select
+            class="form-control input-custom"
+            id="id"
+            formControlName="state"
+          >
+            <option value="">Provincia</option>
+            <option value="{{ state['id'] }}" *ngFor="let state of states">
+              {{ state["name"] }}
+            </option>
+          </select>
+
+          <div
+            *ngIf="isSubmitted && formControls.state.errors"
+            class="help-block"
+          >
+            <div *ngIf="formControls.state.errors.required">
+              Debe ingresar una provincia
+            </div>
+          </div>
+        </div>
+        <div
+          class="form-group"
+          [ngClass]="{ 'has-error': isSubmitted && formControls.knowUs.errors }"
+        >
           <label for="knowUs" class="text-white">¿Como nos conocio?</label>
-          <input type="text" class="form-control input-custom" id="knowUs" formControlName="knowUs">
-          <div *ngIf="isSubmitted && formControls.knowUs.errors" class="help-block">
-            <div *ngIf="formControls.knowUs.errors.required">Es obligatorio</div>
+          <input
+            type="text"
+            class="form-control input-custom"
+            id="knowUs"
+            formControlName="knowUs"
+          />
+          <div
+            *ngIf="isSubmitted && formControls.knowUs.errors"
+            class="help-block"
+          >
+            <div *ngIf="formControls.knowUs.errors.required">
+              Es obligatorio
+            </div>
           </div>
         </div>
         <div class="form-group">
           <label for="address" class="text-white">Fecha de nacimiento</label>
           <div class="row">
             <div class="col-4">
-              <select class="form-control input-custom" id="day" formControlName="day">
-                <option value=""> Dia</option>
-                <option value="{{i +1}}" *ngFor="let in of counter(31) ;let i = index">{{i +1}}</option>
+              <select
+                class="form-control input-custom"
+                id="day"
+                formControlName="day"
+              >
+                <option value="">Dia</option>
+                <option
+                  value="{{ i + 1 }}"
+                  *ngFor="let in of counter(31); let i = index"
+                >
+                  {{ i + 1 }}
+                </option>
               </select>
-              <div *ngIf="isSubmitted && formControls.day.errors" class="help-block">
-                <div *ngIf="formControls.day.errors.required">Debe seleccionar un día</div>
+              <div
+                *ngIf="isSubmitted && formControls.day.errors"
+                class="help-block"
+              >
+                <div *ngIf="formControls.day.errors.required">
+                  Debe seleccionar un día
+                </div>
               </div>
             </div>
             <div class="col-4">
-              <select class="form-control input-custom" id="month" formControlName="month">
-                <option value=""> Mes</option>
+              <select
+                class="form-control input-custom"
+                id="month"
+                formControlName="month"
+              >
+                <option value="">Mes</option>
                 <option value="01">En</option>
                 <option value="02">Feb</option>
                 <option value="03">Mar</option>
@@ -131,29 +307,46 @@
                 <option value="11">Nov</option>
                 <option value="12">Dic</option>
               </select>
-              <div *ngIf="isSubmitted && formControls.day.errors" class="help-block">
-                <div *ngIf="formControls.month.errors.required">Debe seleccionar un mes</div>
+              <div
+                *ngIf="isSubmitted && formControls.day.errors"
+                class="help-block"
+              >
+                <div *ngIf="formControls.month.errors.required">
+                  Debe seleccionar un mes
+                </div>
               </div>
             </div>
             <div class="col-4">
-              <select class="form-control input-custom" id="year" formControlName="year">
-                <option value=""> Año</option>
-                <option value="{{actual_year() - i - 18}}" *ngFor="let in of counter(50) ;let i = index">{{actual_year() - i - 18 }}</option>
+              <select
+                class="form-control input-custom"
+                id="year"
+                formControlName="year"
+              >
+                <option value="">Año</option>
+                <option
+                  value="{{ actual_year() - i - 18 }}"
+                  *ngFor="let in of counter(50); let i = index"
+                >
+                  {{ actual_year() - i - 18 }}
+                </option>
               </select>
-              <div *ngIf="isSubmitted && formControls.year.errors" class="help-block">
-                <div *ngIf="formControls.year.errors.required">Debe seleccionar un año</div>
+              <div
+                *ngIf="isSubmitted && formControls.year.errors"
+                class="help-block"
+              >
+                <div *ngIf="formControls.year.errors.required">
+                  Debe seleccionar un año
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-12 text-center">
-            <button type="submit" class="btn btn-login btn-lg">Registrarse</button>
+            <button type="submit" class="btn btn-login btn-lg">
+              Registrarse
+            </button>
           </div>
-
-
-
-
         </div>
       </form>
     </div>

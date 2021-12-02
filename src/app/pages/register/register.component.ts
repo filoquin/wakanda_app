@@ -91,8 +91,6 @@ export class RegisterComponent implements OnInit {
     const year = this.registerForm.controls.year.value;
     const knowUs = this.registerForm.controls.knowUs.value;
     const state = this.registerForm.controls.state.value;
-    console.log('TIPO DOCUMENTO',tipo_documento)
-    return
     this.userService
       .register(
         user,
