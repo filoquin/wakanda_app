@@ -6,7 +6,7 @@ WORKDIR /app
 # copy and install app dependencies
 COPY package.json /app/package.json
 RUN npm install
-RUN npm install -g @angular/cli@latest
+RUN npm install -g @angular/cli@10.0.8
 # add app
 COPY . /app
 EXPOSE 4200

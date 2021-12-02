@@ -34,6 +34,36 @@
             <div *ngIf="formControls.completename.errors.required">Debe ingresar Nombre y Apellido </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col-4">
+
+   
+
+          <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.state.errors }">
+            <label for="tipo_documento" class="text-white">Tipo</label>
+                <select class="form-control input-custom" value="1"  formControlName="tipo_documento">
+                  <option value="1">DNI</option>
+                  <option value="2">CUIL/CUIT</option>
+                </select>
+            <div *ngIf="isSubmitted && formControls.tipo_documento.errors" class="help-block">
+              <div *ngIf="formControls.tipo_documento.errors.required">Debe ingresar tipo documento</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-8">
+
+  
+          <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.documento.errors }">
+            <label for="documento" class="text-white">Nro Documento</label>
+            <input type="string" class="form-control input-custom" id="documento" formControlName="documento">
+            <div *ngIf="isSubmitted && formControls.documento.errors" class="help-block">
+              <div *ngIf="formControls.documento.errors.required">Debe Ingresar documento </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+
         <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
           <label for="email" class="text-white">Mail</label>
           <input type="email" class="form-control input-custom" id="email" formControlName="email">
@@ -120,6 +150,10 @@
           <div class="col-12 text-center">
             <button type="submit" class="btn btn-login btn-lg">Registrarse</button>
           </div>
+
+
+
+
         </div>
       </form>
     </div>

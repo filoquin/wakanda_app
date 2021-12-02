@@ -1,16 +1,16 @@
-import { Injectable } from "@angular/core";
-import { Router } from "@angular/router";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { BehaviorSubject, Observable } from "rxjs";
-import { catchError, map, tap } from "rxjs/operators";
-import { User } from "../_models/user";
-import { environment } from "../../environments/environment";
-import { OdooRPCService } from "./odoorcp.service";
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
+import { User } from '../_models/user';
+import { environment } from '../../environments/environment';
+import { OdooRPCService } from './odoorcp.service';
 
 // import { environment } from '@environments/environment';
 // import { User } from '@app/_models';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class UserService {
   private userSubject: BehaviorSubject<User>;
   public user: Observable<User>;
@@ -23,7 +23,7 @@ export class UserService {
     public odooRPC: OdooRPCService
   ) {
     this.userSubject = new BehaviorSubject<User>(
-      JSON.parse(localStorage.getItem("user"))
+      JSON.parse(localStorage.getItem('user'))
     );
     this.user = this.userSubject.asObservable();
   }
@@ -64,7 +64,7 @@ export class UserService {
           if (data.result) {
             const user = data.result.user;
             // store user details and jwt token in local storage to keep user logged in between page refreshes
-            localStorage.setItem("user", JSON.stringify(user));
+            localStorage.setItem('user', JSON.stringify(user));
             this.userSubject.next(user);
           }
           return data;
@@ -78,25 +78,25 @@ export class UserService {
         .login(environment.db, username, password)
         .then((res) => {
           const user = {
-            id: res["uid"],
+            id: res['uid'],
             login: username,
-            name: res["partner_display_name"],
+            name: res['partner_display_name'],
           };
-            this.odooRPC.cookies.set_sessionId(res.session_id);
+          this.odooRPC.cookies.set_sessionId(res.session_id);
 
           // store user details and jwt token in local storage to keep user logged in between page refreshes
-          localStorage.setItem("user", JSON.stringify(user));
+          localStorage.setItem('user', JSON.stringify(user));
           this.userSubject.next(user);
           observer.next(user);
           observer.complete();
         })
         .catch((err) => {
           console.log(err);
-          
-          localStorage.removeItem("user");
+
+          localStorage.removeItem('user');
           this.userSubject.next(null);
-          this.router.navigate(["/login"]);
-          observer.next({ error: "No pudo ingresar. Verifique sus datos" });
+          this.router.navigate(['/login']);
+          observer.next({ error: 'No pudo ingresar. Verifique sus datos' });
           observer.complete();
         });
     });
@@ -118,11 +118,11 @@ export class UserService {
     // remove user from local storage and set current user to null
     this.http
       .post(`${this.apiUrl}/web/session/destroy`, {
-        headers: new HttpHeaders({ "Content-Type": "application/json" }),
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
       })
       .subscribe((data) => {
         console.log(data);
-        this.router.navigate(["/login"]);
+        this.router.navigate(['/login']);
       });
   }
 
@@ -137,7 +137,9 @@ export class UserService {
     month,
     year,
     knowUs,
-    state
+    state,
+    documento,
+    tipo_documento
   ) {
     return this.http
       .post(`${this.apiUrl}/wkn/json_register`, {
@@ -153,6 +155,8 @@ export class UserService {
           year: year,
           know_us: knowUs,
           state_id: state,
+          documento: documento,
+          tipo_documento: tipo_documento,
         },
       })
       .pipe(
@@ -160,7 +164,7 @@ export class UserService {
           if (data.result) {
             const user = data.result.user;
             // store user details and jwt token in local storage to keep user logged in between page refreshes
-            localStorage.setItem("user", JSON.stringify(user));
+            localStorage.setItem('user', JSON.stringify(user));
             this.userSubject.next(user);
           }
           return data;
@@ -168,19 +172,19 @@ export class UserService {
       );
   }
   getProfile() {
-    return this.odooRPC.call("res.users", "wkn_my_profile", [], {});
+    return this.odooRPC.call('res.users', 'wkn_my_profile', [], {});
   }
 
   getWelcomevideo() {
-    return this.odooRPC.call("res.users", "welcomevideo", [], {});
+    return this.odooRPC.call('res.users', 'welcomevideo', [], {});
   }
   saveProfile(id, name, email, phone, street, birthdate, image) {
     if (image) {
-      image = image.split(",")[1];
+      image = image.split(',')[1];
     }
     return this.odooRPC.call(
-      "res.partner",
-      "write",
+      'res.partner',
+      'write',
       [
         id,
         {
@@ -222,7 +226,7 @@ export class UserService {
           if (data.result) {
             const user = data.result.user;
             // store user details and jwt token in local storage to keep user logged in between page refreshes
-            localStorage.setItem("user", JSON.stringify(user));
+            localStorage.setItem('user', JSON.stringify(user));
             this.userSubject.next(user);
           }
           return data;
